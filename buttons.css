@@ -7,49 +7,66 @@ a:hover,
 a:active,
 a:focus {
     outline: none;
-    border: none;
     text-decoration: none;
 }
-
-#send-location {
-    width: 30px;
-    height: 30px;
-    margin-left: auto;
-    padding: 0;
-}
-
-
-.btn-3d {
-    background-color: #e254ff;
-    color: #fff;
-    outline: none;
-    padding: 10px 5px;
-    font-weight: 900;
+.btn {
     font-family: Lato,Helvetica,Arial,sans-serif;
-    font-size: 12px;
-    text-transform: uppercase;
+    display: inline-block;
+    padding: 6px 12px;
+    margin-bottom: 0;
+    font-size: 14px;
+    font-weight: 900;
+    line-height: 1.42857143;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-image: none;
+    border: 1px solid transparent;
     border-radius: 4px;
-    transform-style: preserve-3d;
-    -moz-transform-style: preserve-3d;
+    text-transform: uppercase;
+}
+.btn-3d {
+    position: relative;
+    background-color: #c6ff00;
+    color: #0039cb;
+    outline: none;
     -webkit-transform-style: preserve-3d;
-    /* add support */
+    -moz-transform-style: preserve-3d;
+    -ms-transform-style: preserve-3d;
+    -o-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    -webkit-transform: rotateX(15deg);
+    -moz-transform: rotateX(15deg);
+    -ms-transform: rotateX(15deg);
+    -o-transform: rotateX(15deg);
     transform: rotateX(15deg);
 }
 .btn-3d::after {
     -webkit-transition: all 0.35s;
     -moz-transition: all 0.35s;
+    -ms-transition: all 0.35s;
+    -o-transition: all 0.35s;
     transition: all 0.35s;
     position: absolute;
     border-bottom-left-radius: 4px;
     border-bottom-right-radius: 4px;
     z-index: -1;
     content: "";
-    width: 100%;
-    height: 40%;
+    width: 99%;
+    height: 60%;
     left: 0;
     top: 100%;
-    background-color: #7200ca;
-    /* add support */
+    -webkit-transform: rotateX(-90deg);
+    -moz-transform: rotateX(-90deg);
+    -ms-transform: rotateX(-90deg);
+    -o-transform: rotateX(-90deg);
     transform: rotateX(-90deg);
     transform-origin: 0% 0%;
     -ms-transform-origin: 0% 0%;
@@ -57,13 +74,13 @@ a:focus {
     -webkit-transform-origin: 0% 0%;
 }
 .btn-3d:active {
-    background-color: #aa00ff;
-    /* add support */
+    -webkit-transform: rotateX(0deg);
+    -moz-transform: rotateX(0deg);
+    -ms-transform: rotateX(0deg);
+    -o-transform: rotateX(0deg);
     transform: rotateX(0deg); 
 }
 .btn-3d:hover, .btn-3d:focus {
-    background-color: #e254ff;
-    color: #fff;
     outline: none !important;
     outline-style: none;        
 }
@@ -71,10 +88,25 @@ a:focus {
     outline: none;
     outline-style: none;
 }
-
+.btn-3d-primary::after {
+    /* darker */
+    border: 1px solid #90cc00;
+}
+.btn-3d-primary::after {
+    /* darker */
+    background-color: #90cc00;
+    color: #2962ff;
+}
+.btn-3d-primary:active, .btn-3d-primary:hover {
+    /* lighter */
+    background-color: #cff83a; 
+    color: #2962ff;
+}
 .perspective {
-    perspective: 800px;
-    -moz-perspective: 800px;
     -webkit-perspective: 800px;
+    -moz-perspective: 800px;
+    -ms-perspective: 800px;
+    -o-perspective: 800px;
+    perspective: 800px;
     display: inline-block;
 }

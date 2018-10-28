@@ -9,45 +9,56 @@
   <meta name="description" content="I love cooking &amp; coding and I've managed to mix those two and passionately work on projects I enjoy. Currently designing the future kitchen!">
   <meta name="author" content="www.github.com/charisTheo">
   <meta property="og:site_name" content="charisTheo Portfolio website" />
-  <meta property="og:description" content="I love cooking &amp; coding and I've managed to mix those two and passionately work on projects I enjoy. Currently designing the future kitchen!"/>
+  <meta property="og:description" content="I love cooking &amp; coding and I've managed to mix those two and passionately work on projects I enjoy. Currently designing the future kitchen!" />
   <meta property="og:url" content="https://charisTheo.github.io/" />
   <meta property="og:image" content="https://avatars2.githubusercontent.com/u/9759549?s=400&u=421a644722383a6a6c28fa32f016bda079c245e9&v=4" />
 
   <title>charisTheo Portfolio website</title>
 
-  <!-- <script href="https://use.fontawesome.com/d4632b623f.js"></script> -->
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz"
+    crossorigin="anonymous">
   <link href="https://fonts.googleapis.com/css?family=Michroma" rel="stylesheet">
-  
+
+  <!-- Screenshot Grabber -->
+  <script src="https://cdn.jsdelivr.net/gh/GrabzIt/grabzit@js-3.2.9.8/javascript/grabzit.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
   <script async defer src="https://buttons.github.io/buttons.js"></script>
 
   <link rel="stylesheet" href="./scrollBar.css" type="text/css">
   <link rel="stylesheet" href="./buttons.css" type="text/css">
   <link rel="stylesheet" href="./styles.css" type="text/css">
+  <link rel="stylesheet" href="./card.css" type="text/css">
   <link rel="stylesheet" href="./media.css" type="text/css">
 
 </head>
 
 <body>
-	<main>
+  <main>
     <!-- https://www.cooksurfing.eu -->
     <!-- https://web-app-chat.herokuapp.com/ -->
     <!-- https://animath.herokuapp.com/ -->
     <!-- https://charistheo.github.io/under-construction/ -->
 
-		<div class="container">
+
+    <!-- <div class="perspective">
+          <a class="btn btn-3d btn-3d-primary" href="#" target="_blank">
+            3D button
+          </a>
+        </div> -->
+
+    <div class="container">
       <h2 id="title">Welcome to charisTheoLand!</h2>
       <div class="personal-info">
         <div class="follow-me-button">
-          <a class="github-button" href="https://github.com/charisTheo" data-show-count="true" aria-label="Follow @charisTheo on GitHub">Follow @charisTheo</a>
+          <a class="github-button" href="https://github.com/charisTheo" data-show-count="true" aria-label="Follow @charisTheo on GitHub">Follow
+            @charisTheo</a>
         </div>
-        
+
         <ul class="social-links">
           <li>
-              <a href="https://github.com/charisTheo" target="_blank">
-                <i class="fab fa-github"></i>
-              </a>
+            <a href="https://github.com/charisTheo" target="_blank">
+              <i class="fab fa-github"></i>
+            </a>
           </li>
           <li>
             <a href="https://stackoverflow.com/users/7380613/charis-theo" target="_blank">
@@ -60,14 +71,14 @@
             </a>
           </li>
           <li>
-            <a href="https://www.facebook.com/haris.theodoulou" target="_blank"> 
+            <a href="https://www.facebook.com/haris.theodoulou" target="_blank">
               <i class="fab fa-facebook-f"></i>
             </a>
-          </li> 
+          </li>
           <li>
             <a href="https://twitter.com/CharisTheodoul1" target="_blank">
               <i class="fab fa-twitter"></i>
-            </a> 
+            </a>
           </li>
           <li>
             <a href="https://www.linkedin.com/in/charistheo/" target="_blank">
@@ -77,73 +88,167 @@
         </ul>
       </div>
       <hr>
-        
-      <div class="project-link-container">
-        <div class="perspective">
-          <a class="btn btn-3d btn-3d-primary" href="https://www.cooksurfing.eu" target="_blank">
-            Cooksurfing web-app
-          </a>
-        </div>
-      </div>
 
-      <div class="project-link-container">
-        <div class="perspective">
-          <a class="btn btn-3d btn-3d-primary" href="https://web-app-chat.herokuapp.com/" target="_blank">
-            Chat web-app
-          </a>
+<div class="projects">
+      <div class="card">
+        <img src="./screenshots/Cooksurfing.png" alt="Projects image/screenshot">
+        <div class="headings">
+          <h3 class="card-title">
+            Project Title
+          </h3>
+          <h4 class="card-subtitle">
+            Project Subtitle
+          </h4>
         </div>
-      </div>
+        <div class="card-additional">
+          <p class="card-description card-subtitle">
+            lorem ipsum allo kas mdert oeto portia
+          </p>
+          <a class="github-button" href="https://github.com/charisTheo/cooksurfing" data-icon="octicon-star" data-size="large"
+            data-show-count="true" aria-label="Star charisTheo/myrepo on GitHub">Star</a>
+          <a class="github-button" href="https://github.com/charisTheo/cooksurfing/subscription" data-icon="octicon-eye"
+            data-size="large" data-show-count="true" aria-label="Watch charisTheo/myrepo on GitHub">Watch</a>
+          <a class="github-button" href="https://github.com/charisTheo/cooksurfing/fork" data-icon="octicon-repo-forked"
+            data-size="large" data-show-count="true" aria-label="Fork charisTheo/myrepo on GitHub">Fork</a>
 
-      <div class="project-link-container">
-        <div class="perspective">
-          <a class="btn btn-3d btn-3d-primary" href="/under-construction" target="_blank">
-            Under Construction
-          </a>
-        </div>
-      </div>
-
-      <div class="project-link-container">
-        <div class="perspective">
-          <a class="btn btn-3d btn-3d-primary" href="https://animath.herokuapp.com/" target="_blank">
-            Animath
-          </a>
-        </div>
-      </div>
-
-      <div class="project-link-container">
-        <div class="perspective">
-          <a class="btn btn-3d btn-3d-primary" href="/bubble-sort" target="_blank">
-            Bubble Sort Algorithm
+          <a class="share-button" href="https://www.cooksurfing.eu" target="_blank">
+            <!-- share button -->
+            <span class="share-button-text" hidden>
+              Check out my repository Cooksurfing web-app!
+            </span>
+            <i class="fas fa-share-alt"></i>
           </a>
         </div>
       </div>
 
       <div class="card">
-        <div class="card-container">
-          <img src="./" alt="Projects image/screenshot">
-          <h3 class="card-title"></h3>
-          <h4 class="card-subtitle"></h4>
-          <div class="card-additional">
-            <p class="card-description">
-              lorem ipsum allo kas mdert oeto portia
-            </p>
-            <a class="github-button" href="https://github.com/charisTheo/TODO:myRepo" data-icon="octicon-star" data-size="large" data-show-count="true" aria-label="Star charisTheo/myrepo on GitHub">Star</a>
-            <a class="github-button" href="https://github.com/charisTheo/myrepo/subscription" data-icon="octicon-eye" data-size="large" data-show-count="true" aria-label="Watch charisTheo/myrepo on GitHub">Watch</a>
-            <a class="github-button" href="https://github.com/charisTheo/myrepo/fork" data-icon="octicon-repo-forked" data-size="large" data-show-count="true" aria-label="Fork charisTheo/myrepo on GitHub">Fork</a>
-            <a class="share-button" href="TODO: repo's link">
-              <!-- share button -->
-              <span class="share-button-text" hidden>
-                Check out my repository!
-              </span>
-              <i class="fas fa-share-alt"></i>
-            </a>
-          </div>
+        <img src="./screenshots/ChatApp.png" alt="Projects image/screenshot">
+        <div class="headings">
+          <h3 class="card-title">
+            Project Title
+          </h3>
+          <h4 class="card-subtitle">
+            Project Subtitle
+          </h4>
+        </div>
+        <div class="card-additional">
+          <p class="card-description">
+            lorem ipsum allo kas mdert oeto portia
+          </p>
+          <a class="github-button" href="https://github.com/charisTheo/node-chat-app" data-icon="octicon-star"
+            data-size="large" data-show-count="true" aria-label="Star charisTheo/myrepo on GitHub">Star</a>
+          <a class="github-button" href="https://github.com/charisTheo/node-chat-app/subscription" data-icon="octicon-eye"
+            data-size="large" data-show-count="true" aria-label="Watch charisTheo/myrepo on GitHub">Watch</a>
+          <a class="github-button" href="https://github.com/charisTheo/node-chat-app/fork" data-icon="octicon-repo-forked"
+            data-size="large" data-show-count="true" aria-label="Fork charisTheo/myrepo on GitHub">Fork</a>
+
+          <a class="share-button" href="https://web-app-chat.herokuapp.com/" target="_blank">
+            <!-- share button -->
+            <span class="share-button-text" hidden>
+              Check out my Chat Web App!
+            </span>
+            <i class="fas fa-share-alt"></i>
+          </a>
         </div>
       </div>
 
-		</div>
+      <div class="card">
+        <img src="./screenshots/Under-Construction.png" alt="Projects image/screenshot">
+        <div class="headings">
+          <h3 class="card-title">
+            Project Title
+          </h3>
+          <h4 class="card-subtitle">
+            Project Subtitle
+          </h4>
+        </div>
+        <div class="card-additional">
+          <p class="card-description">
+            lorem ipsum allo kas mdert oeto portia
+          </p>
+          <a class="github-button" href="https://github.com/charisTheo/under-construction" data-icon="octicon-star"
+            data-size="large" data-show-count="true" aria-label="Star charisTheo/myrepo on GitHub">Star</a>
+          <a class="github-button" href="https://github.com/charisTheo/under-construction/subscription" data-icon="octicon-eye"
+            data-size="large" data-show-count="true" aria-label="Watch charisTheo/myrepo on GitHub">Watch</a>
+          <a class="github-button" href="https://github.com/charisTheo/under-construction/fork" data-icon="octicon-repo-forked"
+            data-size="large" data-show-count="true" aria-label="Fork charisTheo/myrepo on GitHub">Fork</a>
+
+          <a class="share-button" href="https://charistheo.github.io/under-construction/" target="_blank">
+            <!-- share button -->
+            <span class="share-button-text" hidden>
+              Check out my repository Under Construction!
+            </span>
+            <i class="fas fa-share-alt"></i>
+          </a>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="./screenshots/animath.png" alt="Projects image/screenshot">
+        <div class="headings">
+          <h3 class="card-title">
+            Project Title
+          </h3>
+          <h4 class="card-subtitle">
+            Project Subtitle
+          </h4>
+        </div>
+        <div class="card-additional">
+          <p class="card-description">
+            lorem ipsum allo kas mdert oeto portia
+          </p>
+          <a class="github-button" href="https://github.com/charisTheo/animath/" data-icon="octicon-star" data-size="large"
+            data-show-count="true" aria-label="Star charisTheo/myrepo on GitHub">Star</a>
+          <a class="github-button" href="https://github.com/charisTheo/animath/subscription" data-icon="octicon-eye"
+            data-size="large" data-show-count="true" aria-label="Watch charisTheo/myrepo on GitHub">Watch</a>
+          <a class="github-button" href="https://github.com/charisTheo/animath/fork" data-icon="octicon-repo-forked"
+            data-size="large" data-show-count="true" aria-label="Fork charisTheo/myrepo on GitHub">Fork</a>
+
+          <a class="share-button" href="https://animath.herokuapp.com/" target="_blank">
+            <!-- share button -->
+            <span class="share-button-text" hidden>
+              Check out Animath!
+            </span>
+            <i class="fas fa-share-alt"></i>
+          </a>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="./screenshots/Bubble-Sort.png" alt="Projects image/screenshot">
+        <div class="headings">
+          <h3 class="card-title">
+            Project Title
+          </h3>
+          <h4 class="card-subtitle">
+            Project Subtitle
+          </h4>
+        </div>
+        <div class="card-additional">
+          <p class="card-description">
+            lorem ipsum allo kas mdert oeto portia
+          </p>
+          <a class="github-button" href="https://github.com/charisTheo/bubble-sort" data-icon="octicon-star" data-size="large"
+            data-show-count="true" aria-label="Star charisTheo/myrepo on GitHub">Star</a>
+          <a class="github-button" href="https://github.com/charisTheo/bubble-sort/subscription" data-icon="octicon-eye"
+            data-size="large" data-show-count="true" aria-label="Watch charisTheo/myrepo on GitHub">Watch</a>
+          <a class="github-button" href="https://github.com/charisTheo/bubble-sort/fork" data-icon="octicon-repo-forked"
+            data-size="large" data-show-count="true" aria-label="Fork charisTheo/myrepo on GitHub">Fork</a>
+
+          <a class="share-button" href="https://charistheo.github.io/bubble-sort/" target="_blank">
+            <!-- share button -->
+            <span class="share-button-text" hidden>
+              Check out my repository Bubble Sort Algorithm!
+            </span>
+            <i class="fas fa-share-alt"></i>
+          </a>
+        </div>
+      </div>
+      </div>
+
+    </div>
   </main>
-  
+
   <script src="./share.js"></script>
 </body>
 

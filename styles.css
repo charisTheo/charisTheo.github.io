@@ -131,6 +131,17 @@ main .personal-info .social-links li a i:focus {
   text-shadow: initial;
   color: #0a00b6;
 }
+main .projects {
+  display: -webkit-flex;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  flex-flow: row wrap;
+  align-content: flex-start;
+  justify-content: center;
+  align-items: center;
+}
 
 /***************************
 ****************************

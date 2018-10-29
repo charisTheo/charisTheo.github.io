@@ -41,12 +41,12 @@
     display: none;
 }
 .card .card-toggle {
-    z-index: 15;
     position: absolute;
     top: 0;
     right: 0;
     width: 100%;
     height: 100%;
+    z-index: 11;
 }
 .card .headings {
     position: absolute;
@@ -65,18 +65,12 @@
     color: #fff;
     margin: 0;
 }
-.card .card-additional {
+.card .card-description,
+.card .card-bottom-buttons {
+    color: #000;
     display: none;
     padding: 10px;
 }
-/* 
-.card .card-additional .card-description {
-
-} */
-
-/* .card .card-additional buttons{
-
-} */
 
 
 /* CARD TOGGLE */
@@ -91,8 +85,12 @@
     margin: 0;
     border-radius: 0;
     box-shadow: none;
-    z-index: 14;
+    z-index: 16;
     background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
 }
 /* remove inner drop shadow of project picture */
 .card.toggle::after {
@@ -112,4 +110,21 @@
 }
 .card.toggle img {
     height: 40%;
+}
+.card.toggle .card-bottom-buttons {
+    display: block;
+    align-self: center;
+}
+.card.toggle .card-description {
+    display: block;
+}
+.card.toggle .headings {
+    position: relative;
+}
+.card.toggle .headings .card-title {
+    color: #6200ea;
+}
+.card.toggle .headings .card-subtitle,
+.card.toggle .card-bottom-buttons i {
+    color: #000;
 }

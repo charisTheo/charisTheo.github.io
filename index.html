@@ -27,6 +27,9 @@
   <!-- Particles.js -->
   <script src="./particles/particles.js"></script>
 
+  <!-- TweenLite -->
+  <script async defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TweenMax.min.js"></script>
+
   <link rel="stylesheet" href="./scrollBar.css" type="text/css">
   <link rel="stylesheet" href="./buttons.css" type="text/css">
   <link rel="stylesheet" href="./styles.css" type="text/css">
@@ -94,8 +97,9 @@
       </div>
       <hr>
 
-      <div class="projects">
-        <div class="card">
+      <div id="perspective-parent" class="projects">
+
+        <div class="card perspective-item">
           <a class="card-toggle" href="#">
             <i class="far fa-times-circle"></i>
           </a>
@@ -129,7 +133,7 @@
           </div>
         </div>
 
-        <div class="card">
+        <div class="card perspective-item">
           <a class="card-toggle" href="#">
             <i class="far fa-times-circle"></i>
           </a>
@@ -163,7 +167,7 @@
           </div>
         </div>
 
-        <div class="card">
+        <div class="card perspective-item">
           <a class="card-toggle" href="#">
             <i class="far fa-times-circle"></i>
           </a>
@@ -197,7 +201,7 @@
           </div>
         </div>
 
-        <div class="card">
+        <div class="card perspective-item">
           <a class="card-toggle" href="#">
             <i class="far fa-times-circle"></i>
           </a>
@@ -231,7 +235,7 @@
           </div>
         </div>
 
-        <div class="card">
+        <div class="card perspective-item">
           <a class="card-toggle" href="#">
             <i class="far fa-times-circle"></i>
           </a>
@@ -269,8 +273,9 @@
     </div>
   </main>
 
-  <script src="./share.js"></script>
-  <script src="./index.js"></script>
+  <script src="./js/perpsective-hover.js"></script>
+  <script src="./js/share.js"></script>
+  <script src="./js/index.js"></script>
 </body>
 
 </html>

@@ -12,21 +12,21 @@
     opacity: 1;
 }
 *::-webkit-scrollbar:hover *::-webkit-scrollbar-thumb {
-    background: #c6ff00;
+    background: #6200ea;
 }
 *::-webkit-scrollbar-track {
 	background-color: #151515; 
 } 
 *::-webkit-scrollbar-thumb {
-	background: #c6ff00;
+	background: #6200ea;
 }  
 ::selection {
-    background-color: #c6ff00; 
+    background-color: #6200ea; 
     text-shadow: none;
     color: #151515;
 }
 ::-moz-selection {
-   background-color: #c6ff00; 
+   background-color: #6200ea; 
    text-shadow: none;
    color: #151515;
 }

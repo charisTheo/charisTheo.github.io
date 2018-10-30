@@ -10,13 +10,13 @@
 }
 @media only screen and (min-width: 767px) {
     .container  {
-        max-width: 70vw;
+        /* max-width: 70vw; */
         margin: 0 auto;
     }
 }
 @media only screen and (min-width: 959px) {
     .container  {
-        max-width: 50vw;
+        /* max-width: 50vw; */
     }
 }
 @media only screen and (min-width: 1439px) {

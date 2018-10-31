@@ -96,20 +96,20 @@
         </ul>
       </div>
 
-      <md-content ng-class="{'perspective-parent': cardToggle}" id="projects" class="md-padding"
+      <md-content id="projects" class="md-padding perspective-parent"
         layout-wrap>
         <md-card 
           md-theme="{{'default'}}" 
           md-theme-watch
           class="card perspective-item" 
-          ng-class="{'toggle': cardToggle}" 
           ng-mousemove="MouseMoveHandler($event)"
           ng-mouseenter="MouseEnterHandler($event)" 
           ng-mouseleave="MouseLeaveHandler($event)" 
           ng-repeat="project in projects"
           flex="30"
+          ng-click="selectCard($index)"
           >
-          <md-button class="md-icon-button card-toggle" ng-click="cardToggle = !cardToggle">
+          <md-button ng-show="$index == selectedCard" class="md-icon-button card-toggle">
             <i class="material-icons" md-colors="{color: 'accent'}">close</i>
           </md-button>
 
@@ -125,7 +125,7 @@
                 </div>
               </md-card-title-media> -->
             </md-card-title>
-            <md-card-content>{{ project.description }}</md-card-content>
+            <md-card-content ng-show="$index == selectedCard">{{ project.description }}</md-card-content>
             <md-card-actions layout="column">
                 <a class="github-button" ng-href="https://github.com/charisTheo/{{ project.github_repo_name }}" data-icon="octicon-star"
                   data-show-count="true" aria-label="Star charisTheo/myrepo on GitHub">Star</a>
@@ -146,6 +146,8 @@
                 </md-button>
               </md-card-actions>
           </md-card>
+
+
       </md-content>
   </main>
 

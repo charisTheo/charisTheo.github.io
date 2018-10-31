@@ -9,12 +9,19 @@
             });
 
             const handlers = PerspectiveHoverEffect.getHandlers();
-
             $scope.MouseLeaveHandler = handlers.MouseLeaveHandler;
             $scope.MouseMoveHandler = handlers.MouseMoveHandler;
             $scope.MouseEnterHandler = handlers.MouseEnterHandler;
-            $scope.CardToggleHandler = handlers.CardToggleHandler;
             $scope.cardToggle = false;
+
+            $scope.selectedCard = undefined;
+            $scope.selectCard = function(index) {
+                if ($scope.selectedCard != index) {
+                    $scope.selectedCard = index;
+                } else {
+                    $scope.selectedCard = undefined;
+                }
+            } 
         });
 
 

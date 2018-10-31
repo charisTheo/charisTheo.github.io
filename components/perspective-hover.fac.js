@@ -52,34 +52,16 @@
             };
         
             function MouseLeaveHandler(event) {
-                event.target.style = "";
+                event.target.closest('md-card').style = "";
             }
             function MouseMoveHandler(event) {
                 if (isTimeToUpdate()) {
-                    update(event, event.target);
+                    update(event, event.target.closest('md-card'));
                 }
             }
 
             function MouseEnterHandler(event) {
-                update(event, event.target);
-            }
-
-            function CardToggleHandler(event) {
-                event.preventDefault();
-                let _this = event.target;
-                let inner = _this.parentElement;
-                inner.classList.toggle('toggle');
-                // if is open
-                if (inner.classList.contains('toggle')) {
-                    // remove event listeners
-                    _this.style = "";
-                    _this.removeEventListener('mouseenter', MouseEnterHandler);
-                    _this.removeEventListener('mousemove', MouseMoveHandler);
-                } else {
-                    // inner.addEventListener('mouseleave', MouseLeaveHandler);
-                    // inner.addEventListener('mousemove', MouseMoveHandler);
-                    // inner.addEventListener('mouseenter', MouseEnterHandler);
-                }
+                update(event, event.target.closest('md-card'));
             }
 
             return {
@@ -87,8 +69,7 @@
                     return {
                         MouseEnterHandler,
                         MouseLeaveHandler,
-                        MouseMoveHandler,
-                        CardToggleHandler
+                        MouseMoveHandler
                     };
                 }
             };

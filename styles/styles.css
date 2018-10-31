@@ -151,7 +151,7 @@ main #projects {
 }
 
 .perspective-parent {
-  perspective: 25px;
+  perspective: 70px;
 }
 .perspective-item {
   box-shadow: 2px 2px 50px rgba(0, 0, 0, 0.2);

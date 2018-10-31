@@ -30,15 +30,15 @@
   <!-- TweenLite -->
   <script async defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TweenMax.min.js"></script>
 
-  <link rel="stylesheet" href="./scrollBar.css" type="text/css">
-  <link rel="stylesheet" href="./buttons.css" type="text/css">
-  <link rel="stylesheet" href="./styles.css" type="text/css">
-  <link rel="stylesheet" href="./card.css" type="text/css">
-  <link rel="stylesheet" href="./media.css" type="text/css">
+  <link rel="stylesheet" href="./styles/scrollBar.css" type="text/css">
+  <link rel="stylesheet" href="./styles/buttons.css" type="text/css">
+  <link rel="stylesheet" href="./styles/styles.css" type="text/css">
+  <link rel="stylesheet" href="./styles/card.css" type="text/css">
+  <link rel="stylesheet" href="./styles/media.css" type="text/css">
 
 </head>
 
-<body>
+<body ng-app="Portfolio" ng-controller="PortfolioCtrl">
   <main>
     <!-- <div class="perspective">
           <a class="btn btn-3d btn-3d-primary" href="#" target="_blank">
@@ -49,7 +49,6 @@
     <div class="container">
       <div id="particles-js"></div>
 
-      <h2 id="title">Welcome to charisTheoLand!</h2>
       <div class="personal-info">
         <div class="follow-me-button">
           <a class="github-button" href="https://github.com/charisTheo" data-show-count="true" aria-label="Follow @charisTheo on GitHub">Follow
@@ -93,183 +92,57 @@
 
       <div id="perspective-parent" class="projects">
 
-        <div class="card perspective-item">
+        <div class="card perspective-item" ng-repeat="project in projects">
           <a class="card-toggle" href="#">
-            <i class="far fa-times-circle"></i>
+            <i class="far fa-times-circle fa-2x"></i>
           </a>
-          <img src="./screenshots/Cooksurfing.png" alt="Projects image/screenshot">
+          <img ng-src="{{ project.images[0].src }}" alt="Projects image/screenshot">
           <div class="headings">
             <h3 class="card-title">
-              Cooksurfing
+              {{ project.title }}
             </h3>
             <h4 class="card-subtitle">
-              Dinner Hosting platform
+              {{ project.subtitle }}
             </h4>
           </div>
           <p class="card-description">
-            Cooksurfing is a web app dinner hosting platform based on the sharing economy concept 
+            {{ project.description }}
           </p>
           <div class="card-bottom-buttons">
-            <a class="github-button" href="https://github.com/charisTheo/cooksurfing" data-icon="octicon-star"
+            <a class="github-button" ng-href="https://github.com/charisTheo/{{ project.github_repo_name }}" data-icon="octicon-star"
               data-show-count="true" aria-label="Star charisTheo/myrepo on GitHub">Star</a>
-            <a class="github-button" href="https://github.com/charisTheo/cooksurfing/subscription" data-icon="octicon-eye"
-              data-show-count="true" aria-label="Watch charisTheo/myrepo on GitHub">Watch</a>
-            <a class="github-button" href="https://github.com/charisTheo/cooksurfing/fork" data-icon="octicon-repo-forked"
-              data-show-count="true" aria-label="Fork charisTheo/myrepo on GitHub">Fork</a>
+            <a class="github-button" ng-href="https://github.com/charisTheo/{{ project.github_repo_name }}/subscription"
+              data-icon="octicon-eye" data-show-count="true" aria-label="Watch charisTheo/myrepo on GitHub">Watch</a>
+            <a class="github-button" ng-href="https://github.com/charisTheo/{{ project.github_repo_name }}/fork"
+              data-icon="octicon-repo-forked" data-show-count="true" aria-label="Fork charisTheo/myrepo on GitHub">Fork</a>
 
-            <a class="share-button" href="https://www.cooksurfing.eu" target="_blank">
-              <!-- share button -->
+            <a class="share-button" ng-href="{{ project.url }}" target="_blank">
               <span class="share-button-text" hidden>
-                Check out my repository Cooksurfing web-app!
+                {{ project.share_description }}
               </span>
               <i class="fas fa-share-alt fa-1x"></i>
             </a>
           </div>
         </div>
 
-        <div class="card perspective-item">
-          <a class="card-toggle" href="#">
-            <i class="far fa-times-circle"></i>
-          </a>
-          <img src="./screenshots/ChatApp.png" alt="Projects image/screenshot">
-          <div class="headings">
-            <h3 class="card-title">
-              Chat App
-            </h3>
-            <h4 class="card-subtitle">
-              Project Subtitle
-            </h4>
-          </div>
-          <p class="card-description">
-            lorem ipsum allo kas mdert oeto portia
-          </p>
-          <div class="card-bottom-buttons">
-            <a class="github-button" href="https://github.com/charisTheo/node-chat-app" data-icon="octicon-star"
-              data-show-count="true" aria-label="Star charisTheo/myrepo on GitHub">Star</a>
-            <a class="github-button" href="https://github.com/charisTheo/node-chat-app/subscription" data-icon="octicon-eye"
-              data-show-count="true" aria-label="Watch charisTheo/myrepo on GitHub">Watch</a>
-            <a class="github-button" href="https://github.com/charisTheo/node-chat-app/fork" data-icon="octicon-repo-forked"
-              data-show-count="true" aria-label="Fork charisTheo/myrepo on GitHub">Fork</a>
-
-            <a class="share-button" href="https://web-app-chat.herokuapp.com/" target="_blank">
-              <!-- share button -->
-              <span class="share-button-text" hidden>
-                Check out my Chat Web App!
-              </span>
-              <i class="fas fa-share-alt fa-1x"></i>
-            </a>
-          </div>
-        </div>
-
-        <div class="card perspective-item">
-          <a class="card-toggle" href="#">
-            <i class="far fa-times-circle"></i>
-          </a>
-          <img src="./screenshots/Under-Construction.png" alt="Projects image/screenshot">
-          <div class="headings">
-            <h3 class="card-title">
-              Project Title
-            </h3>
-            <h4 class="card-subtitle">
-              Project Subtitle
-            </h4>
-          </div>
-          <p class="card-description">
-            lorem ipsum allo kas mdert oeto portia
-          </p>
-          <div class="card-bottom-buttons">
-            <a class="github-button" href="https://github.com/charisTheo/under-construction" data-icon="octicon-star"
-              data-show-count="true" aria-label="Star charisTheo/myrepo on GitHub">Star</a>
-            <a class="github-button" href="https://github.com/charisTheo/under-construction/subscription" data-icon="octicon-eye"
-              data-show-count="true" aria-label="Watch charisTheo/myrepo on GitHub">Watch</a>
-            <a class="github-button" href="https://github.com/charisTheo/under-construction/fork" data-icon="octicon-repo-forked"
-              data-show-count="true" aria-label="Fork charisTheo/myrepo on GitHub">Fork</a>
-
-            <a class="share-button" href="https://charistheo.github.io/under-construction/" target="_blank">
-              <!-- share button -->
-              <span class="share-button-text" hidden>
-                Check out my repository Under Construction!
-              </span>
-              <i class="fas fa-share-alt fa-1x"></i>
-            </a>
-          </div>
-        </div>
-
-        <div class="card perspective-item">
-          <a class="card-toggle" href="#">
-            <i class="far fa-times-circle"></i>
-          </a>
-          <img src="./screenshots/animath.png" alt="Projects image/screenshot">
-          <div class="headings">
-            <h3 class="card-title">
-              Project Title
-            </h3>
-            <h4 class="card-subtitle">
-              Project Subtitle
-            </h4>
-          </div>
-          <p class="card-description">
-            lorem ipsum allo kas mdert oeto portia
-          </p>
-          <div class="card-bottom-buttons">
-            <a class="github-button" href="https://github.com/charisTheo/animath/" data-icon="octicon-star"
-              data-show-count="true" aria-label="Star charisTheo/myrepo on GitHub">Star</a>
-            <a class="github-button" href="https://github.com/charisTheo/animath/subscription" data-icon="octicon-eye"
-              data-show-count="true" aria-label="Watch charisTheo/myrepo on GitHub">Watch</a>
-            <a class="github-button" href="https://github.com/charisTheo/animath/fork" data-icon="octicon-repo-forked"
-              data-show-count="true" aria-label="Fork charisTheo/myrepo on GitHub">Fork</a>
-
-            <a class="share-button" href="https://animath.herokuapp.com/" target="_blank">
-              <!-- share button -->
-              <span class="share-button-text" hidden>
-                Check out Animath!
-              </span>
-              <i class="fas fa-share-alt fa-1x"></i>
-            </a>
-          </div>
-        </div>
-
-        <div class="card perspective-item">
-          <a class="card-toggle" href="#">
-            <i class="far fa-times-circle"></i>
-          </a>
-          <img src="./screenshots/Bubble-Sort.png" alt="Projects image/screenshot">
-          <div class="headings">
-            <h3 class="card-title">
-              Project Title
-            </h3>
-            <h4 class="card-subtitle">
-              Project Subtitle
-            </h4>
-          </div>
-          <p class="card-description">
-            lorem ipsum allo kas mdert oeto portia
-          </p>
-          <div class="card-bottom-buttons">
-            <a class="github-button" href="https://github.com/charisTheo/bubble-sort" data-icon="octicon-star"
-              data-show-count="true" aria-label="Star charisTheo/myrepo on GitHub">Star</a>
-            <a class="github-button" href="https://github.com/charisTheo/bubble-sort/subscription" data-icon="octicon-eye"
-              data-show-count="true" aria-label="Watch charisTheo/myrepo on GitHub">Watch</a>
-            <a class="github-button" href="https://github.com/charisTheo/bubble-sort/fork" data-icon="octicon-repo-forked"
-              data-show-count="true" aria-label="Fork charisTheo/myrepo on GitHub">Fork</a>
-
-            <a class="share-button" href="https://charistheo.github.io/bubble-sort/" target="_blank">
-              <!-- share button -->
-              <span class="share-button-text" hidden>
-                Check out my repository Bubble Sort Algorithm!
-              </span>
-              <i class="fas fa-share-alt fa-1x"></i>
-            </a>
-          </div>
-        </div>
       </div>
-
-    </div>
   </main>
+
+  <!-- Particles -->
+  <script>particlesJS.load('particles-js', './particles/particles-config.json')</script>
+
+  <!-- Angular -->
+  <script src="/node_modules/angular/angular.js"></script>
+  <script src="/node_modules/angular-animate/angular-animate.js"></script>
+  <script src="/node_modules/angular-aria/angular-aria.js"></script>
+  <script src="/node_modules/angular-messages/angular-messages.js"></script>
+  <script src="/node_modules/angular-material/angular-material.js"></script>
+  <script src="./js/app.js"></script>
+  <script src="./components/card.ctr.js"></script>
 
   <script src="./js/perpsective-hover.js"></script>
   <script src="./js/share.js"></script>
-  <script src="./js/index.js"></script>
+
 </body>
 
 </html>

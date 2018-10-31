@@ -1,0 +1,27 @@
+{
+  "name": "charistheo.github.io",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/charisTheo/charisTheo.github.io.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/charisTheo/charisTheo.github.io/issues"
+  },
+  "homepage": "https://github.com/charisTheo/charisTheo.github.io#readme",
+  "dependencies": {
+    "angular": "^1.7.5",
+    "angular-animate": "^1.7.5",
+    "angular-aria": "^1.7.5",
+    "angular-material": "^1.1.10",
+    "angular-messages": "^1.7.5",
+    "mdi": "^2.2.43"
+  }
+}

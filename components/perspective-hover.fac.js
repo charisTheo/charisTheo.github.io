@@ -4,7 +4,7 @@
     angular
         .module('Portfolio')
         .factory('PerspectiveHoverEffect', function() {
-            let container = document.getElementById('perspective-parent');
+            let container = document.getElementById('projects');
             
             // Mouse
             let mouse = {
@@ -71,14 +71,11 @@
                 inner.classList.toggle('toggle');
                 // if is open
                 if (inner.classList.contains('toggle')) {
-                    // remove perspective style to align card correctly
-                    container.style.perspective = 'none';
                     // remove event listeners
                     _this.style = "";
                     _this.removeEventListener('mouseenter', MouseEnterHandler);
                     _this.removeEventListener('mousemove', MouseMoveHandler);
                 } else {
-                    container.style.perspective = '25px';
                     // inner.addEventListener('mouseleave', MouseLeaveHandler);
                     // inner.addEventListener('mousemove', MouseMoveHandler);
                     // inner.addEventListener('mouseenter', MouseEnterHandler);

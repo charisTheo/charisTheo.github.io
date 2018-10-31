@@ -14,6 +14,7 @@
             $scope.MouseMoveHandler = handlers.MouseMoveHandler;
             $scope.MouseEnterHandler = handlers.MouseEnterHandler;
             $scope.CardToggleHandler = handlers.CardToggleHandler;
+            $scope.cardToggle = false;
         });
 
 

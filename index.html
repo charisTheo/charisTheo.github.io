@@ -18,6 +18,8 @@
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz"
     crossorigin="anonymous">
   <link href="https://fonts.googleapis.com/css?family=Michroma" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
 
   <!-- Screenshot Grabber -->
   <script src="https://cdn.jsdelivr.net/gh/GrabzIt/grabzit@js-3.2.9.8/javascript/grabzit.min.js"></script>
@@ -30,9 +32,10 @@
   <!-- TweenLite -->
   <script async defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TweenMax.min.js"></script>
 
+
   <link rel="stylesheet" href="./styles/scrollBar.css" type="text/css">
   <link rel="stylesheet" href="./styles/styles.css" type="text/css">
-  <link rel="stylesheet" href="./styles/card.css" type="text/css">
+  <!-- <link rel="stylesheet" href="./styles/card.css" type="text/css"> -->
   <link rel="stylesheet" href="./styles/media.css" type="text/css">
 
   <link rel="stylesheet" href="/node_modules/angular-material/angular-material.css" type="text/css">
@@ -41,12 +44,14 @@
 
 <body ng-app="Portfolio" ng-controller="PortfolioCtrl">
   <md-toolbar>
-    <div class="md-toolbar-tools">
+    <div class="md-toolbar-tools" md-colors="{color: 'accent'}">
+      <md-button class="md-icon-button" aria-label="Settings">
+          <i class="material-icons">menu</i>
+      </md-button>
       <p><strong>Charis Theo</strong></p>
-
     </div>
   </md-toolbar>
-  
+
   <main>
     <div class="container">
       <div id="particles-js"></div>
@@ -90,50 +95,58 @@
           </li>
         </ul>
       </div>
-      <hr>
 
-      <div id="perspective-parent" class="projects">
-
-        <div 
+      <md-content ng-class="{'perspective-parent': cardToggle}" id="projects" class="md-padding"
+        layout-wrap>
+        <md-card 
+          md-theme="{{'default'}}" 
+          md-theme-watch
           class="card perspective-item" 
-          ng-mousemove="MouseMoveHandler($event)" 
+          ng-class="{'toggle': cardToggle}" 
+          ng-mousemove="MouseMoveHandler($event)"
           ng-mouseenter="MouseEnterHandler($event)" 
           ng-mouseleave="MouseLeaveHandler($event)" 
           ng-repeat="project in projects"
+          flex="30"
           >
-          <a class="card-toggle" href="#" ng-click="CardToggleHandler($event)">
-            <i class="far fa-times-circle fa-2x"></i>
-          </a>
-          <img ng-src="{{ project.images[0].src }}" alt="Projects image/screenshot">
-          <div class="headings">
-            <h3 class="card-title">
-              {{ project.title }}
-            </h3>
-            <h4 class="card-subtitle">
-              {{ project.subtitle }}
-            </h4>
-          </div>
-          <p class="card-description">
-            {{ project.description }}
-          </p>
-          <div class="card-bottom-buttons">
-            <a class="github-button" ng-href="https://github.com/charisTheo/{{ project.github_repo_name }}" data-icon="octicon-star"
-              data-show-count="true" aria-label="Star charisTheo/myrepo on GitHub">Star</a>
-            <a class="github-button" ng-href="https://github.com/charisTheo/{{ project.github_repo_name }}/subscription"
-              data-icon="octicon-eye" data-show-count="true" aria-label="Watch charisTheo/myrepo on GitHub">Watch</a>
-            <a class="github-button" ng-href="https://github.com/charisTheo/{{ project.github_repo_name }}/fork"
-              data-icon="octicon-repo-forked" data-show-count="true" aria-label="Fork charisTheo/myrepo on GitHub">Fork</a>
+          <md-button class="md-icon-button card-toggle" ng-click="cardToggle = !cardToggle">
+            <i class="material-icons" md-colors="{color: 'accent'}">close</i>
+          </md-button>
 
-            <a class="share-button" ng-href="{{ project.url }}" target="_blank">
-              <span class="share-button-text" hidden>
-                {{ project.share_description }}
-              </span>
-              <i class="fas fa-share-alt fa-1x"></i>
-            </a>
-          </div>
-        </div>
-
-      </div>
+          <img ng-src="{{ project.images[0].src }}" class="md-card-image" alt="Projects image/screenshot">
+          
+          <md-card-title>
+            <md-card-title-text>
+              <span class="md-headline">{{ project.title }}</span>
+              <span class="md-subhead">{{ project.subtitle }}</span>
+            </md-card-title-text>
+            <!-- <md-card-title-media>
+              <div class="md-media-lg card-media">
+                </div>
+              </md-card-title-media> -->
+            </md-card-title>
+            <md-card-content>{{ project.description }}</md-card-content>
+            <md-card-actions layout="column">
+                <a class="github-button" ng-href="https://github.com/charisTheo/{{ project.github_repo_name }}" data-icon="octicon-star"
+                  data-show-count="true" aria-label="Star charisTheo/myrepo on GitHub">Star</a>
+                <a class="github-button" ng-href="https://github.com/charisTheo/{{ project.github_repo_name }}/subscription"
+                  data-icon="octicon-eye" data-show-count="true" aria-label="Watch charisTheo/myrepo on GitHub">Watch</a>
+                <a class="github-button" ng-href="https://github.com/charisTheo/{{ project.github_repo_name }}/fork"
+                  data-icon="octicon-repo-forked" data-show-count="true" aria-label="Fork charisTheo/myrepo on GitHub">Fork</a>
+  
+                <md-button class="md-icon-button">
+                  <!-- TODO: make it full if pressed <i class="material-icons">favorite</i> -->
+                  <i class="material-icons">favorite_border</i>
+                </md-button>
+                <md-button class="md-icon-button share-button" ng-href="{{ project.url }}">
+                    <span class="share-button-text" hidden>
+                      {{ project.share_description }}
+                    </span>
+                    <i class="material-icons">share</i>
+                </md-button>
+              </md-card-actions>
+          </md-card>
+      </md-content>
   </main>
 
   <!-- Particles -->

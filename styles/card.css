@@ -108,7 +108,6 @@ main .card.toggle {
     right: 10px;
     top: 5px;
     padding: 5px;
-    color: #03dac5;
 }
 .card.toggle .card-toggle i {
     display: block;
@@ -131,7 +130,7 @@ main .card.toggle {
     position: relative;
 }
 .card.toggle .headings .card-title {
-    color: #6200ea;
+    /* color: #6200ea; */
 }
 .card.toggle .headings .card-subtitle,
 .card.toggle .card-bottom-buttons i {

@@ -45,13 +45,51 @@
 <body ng-app="Portfolio" ng-controller="PortfolioCtrl">
   <md-toolbar>
     <div class="md-toolbar-tools" md-colors="{color: 'accent'}">
-      <md-button class="md-icon-button" aria-label="Settings">
+      <md-button ng-click="toggleSideNav()" class="md-icon-button" aria-label="Settings">
           <i class="material-icons">menu</i>
       </md-button>
       <p><strong>Charis Theo</strong></p>
     </div>
   </md-toolbar>
   
+  <md-sidenav 
+    md-component-id="left" 
+    class="md-sidenav-left" 
+    open="$mdMedia('max-width: 767px')"
+  >
+  
+  <md-content>
+      <md-toolbar layout-align="center right">
+          <md-button 
+            md-colors="{color: 'accent'}" 
+            ng-click="toggleSideNav()" 
+            class="md-icon-button" 
+            aria-label="Settings"
+          >
+            <i class="material-icons">close</i>
+          </md-button>
+      </md-toolbar>
+      <md-list>
+        <md-list-item class="md-2-line">
+          <md-button class="md-primary">Home</md-button>
+        </md-list-item>
+        <md-list-item class="md-2-line">
+          <md-button class="md-primary">Projects</md-button>
+        </md-list-item>
+        <md-list-item class="md-2-line">
+          <md-button class="md-primary">Blog</md-button>
+        </md-list-item>
+        <md-list-item class="md-2-line">
+          <md-button class="md-primary">Hire Me</md-button>
+        </md-list-item>
+        <md-list-item class="md-2-line">
+          <md-button class="md-primary">Contact</md-button>
+        </md-list-item>
+      </md-list>
+    </md-content>
+  </md-sidenav>
+
+
   <main>
     <div class="container">
       <div id="particles-js"></div>

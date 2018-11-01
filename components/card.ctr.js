@@ -3,7 +3,7 @@
 
     angular
         .module('Portfolio')
-        .controller('PortfolioCtrl', function($scope, $http, PerspectiveHoverEffect) {
+        .controller('PortfolioCtrl', function($scope, $http, PerspectiveHoverEffect, $mdSidenav) {
             $http.get('/projects-data.json').then(function(response) {
                 $scope.projects = response.data;
             });
@@ -21,7 +21,11 @@
                 } else {
                     $scope.selectedCard = undefined;
                 }
-            } 
+            }
+            
+            $scope.toggleSideNav = function() {
+                $mdSidenav('left').toggle();
+            }
         });
 
 

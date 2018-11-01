@@ -169,6 +169,11 @@ md-toolbar {
   md-toolbar .md-toolbar-tools {
     align-items: flex-end !important;
   }
+  
+  /* collapse side nav bar items */
+  side-nav-list md-list-item {
+    display: inline-block;
+  }
 }
 md-card {
   position: relative;
@@ -195,13 +200,34 @@ md-card .image-container::after {
   background-image:      -o-linear-gradient(180deg, rgba(0,0,0,0) 10%, rgba(0,0,0,0.5) 75%); 
   background-image:         linear-gradient(180deg, rgba(0,0,0,0) 10%, rgba(0,0,0,0.5) 75%);
 }
-md-sidenav md-list-item .md-button {
+md-sidenav md-list-item .md-secondary-container {
+  margin-right: auto;
+  margin-left: 0;
+}
+md-sidenav md-list-item .md-secondary-container .md-button {
   text-align: left;
 }
-
-side-nav-list md-list-item {
-  display: inline-block;
+.filters {
+  align-items: flex-start;
 }
+button.md-button.top-nav-search-btn {
+  margin-left: auto;
+}
+
+.card.ng-enter,
+.card.ng-move {
+  transition: 0.4s all;
+  opacity: 1;
+}
+.card.ng-enter.ng-enter-active, 
+.card.ng-move.ng-move-active { 
+  opacity: 1;
+}
+.card.ng-leave { 
+  transition: 0.4s all;
+  opacity: 0;
+}
+
 
 /***************************
 ****************************

@@ -43,32 +43,14 @@
 </head>
 
 <body ng-app="Portfolio" ng-controller="PortfolioCtrl">
-  <md-toolbar>
-    <div class="md-toolbar-tools" md-colors="{color: 'accent'}">
-      <md-button 
-        ng-click="toggleSideNav()" 
-        class="md-icon-button" 
-        aria-label="Settings"
-        ng-if="!$mdMedia('min-width: 959px')"
-      >
-          <i class="material-icons">menu</i>
-      </md-button>
-      <p><strong>Charis Theo</strong></p>
-
-      <side-nav-list 
-        ng-if="$mdMedia('min-width: 959px')"
-      >
-      </side-nav-list>
-    </div>
-  </md-toolbar>
   
+  <!---------- SIDE NAV ----------->
   <md-sidenav 
     md-component-id="left" 
     class="md-sidenav-left md-whiteframe-z2" 
     ng-if="!$mdMedia('min-width: 959px')"
   >
-  
-  <md-content>
+    <md-content>
       <md-toolbar layout-align="center right">
           <md-button 
             md-colors="{color: 'accent'}" 
@@ -83,12 +65,53 @@
       <side-nav-list></side-nav-list>
     </md-content>
   </md-sidenav>
+  <!---------- end of SIDE NAV ----------->
+
+  <!---------- TOP BAR MENU ----------->
+  <md-toolbar>
+    <div class="md-toolbar-tools" md-colors="{color: 'accent'}">
+      <md-button 
+        ng-click="toggleSideNav()" 
+        class="md-icon-button" 
+        aria-label="Show side menu"
+        ng-if="!$mdMedia('min-width: 959px')"
+      >
+          <i class="material-icons">menu</i>
+      </md-button>
+      <p><strong>Charis Theo</strong></p>
+
+      <side-nav-list 
+        ng-if="$mdMedia('min-width: 959px')"
+      >
+      </side-nav-list>
+    
+      <md-button class="top-nav-search-btn" ng-click="showFilters = !showFilters" aria-label="search the website">
+        <md-icon class="mdi mdi-magnify" md-colors="{color: 'accent'}"></md-icon> 
+      </md-button>   
+    </div>
+  </md-toolbar>    
+  <!---------- end of TOP BAR MENU ----------->
 
 
   <main>
     <div class="container">
       <div id="particles-js"></div>
 
+    <!---------- SEARCH FILTERS INPUT ----------->
+      <div ng-show="showFilters" layout="row" class="filters" layout-align="center center">
+        <md-input-container class="search-term">
+          <label>Search the website</label>
+          <input type="text" ng-model="searchFilter">
+        </md-input-container>
+        <md-input-container>
+          <md-button class="md-warn" ng-click="searchFilter = ''">
+            clear
+          </md-button>
+        </md-input-container>
+      </div>
+    <!---------- end of SEARCH FILTERS INPUT ----------->
+
+    <!---------- PERSONAL INFO & SOCIAL LINKS ----------->
       <div class="personal-info">
         <div class="follow-me-button">
           <a class="github-button" href="https://github.com/charisTheo" data-show-count="true" aria-label="Follow @charisTheo on GitHub">Follow
@@ -136,6 +159,7 @@
         layout="row"
         layout-xs="column"
       >
+        <!---------- CARDS ----------->
         <md-card 
           md-theme="{{'default'}}" 
           md-theme-watch
@@ -143,7 +167,7 @@
           ng-mousemove="MouseMoveHandler($event)"
           ng-mouseenter="MouseEnterHandler($event)" 
           ng-mouseleave="MouseLeaveHandler($event)" 
-          ng-repeat="project in projects"
+          ng-repeat="project in projects | filter: searchFilter"
           ng-click="selectCard($index)"
           flex-gt-xs="30"
         >
@@ -158,10 +182,6 @@
               <span class="md-headline">{{ project.title }}</span>
               <span class="md-subhead">{{ project.subtitle }}</span>
             </md-card-title-text>
-            <!-- <md-card-title-media>
-              <div class="md-media-lg card-media">
-                </div>
-              </md-card-title-media> -->
             </md-card-title>
             <md-card-content ng-show="$index == selectedCard">{{ project.description }}</md-card-content>
             <md-card-actions layout="column">

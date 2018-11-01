@@ -118,6 +118,7 @@ main .project-link-container {
 }
 main .personal-info {
   text-align: center;
+  position: relative;
 }
 main .personal-info .follow-me-button {
   margin: 20px;

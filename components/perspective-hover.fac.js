@@ -59,7 +59,6 @@
                     update(event, event.target.closest('md-card'));
                 }
             }
-
             function MouseEnterHandler(event) {
                 update(event, event.target.closest('md-card'));
             }

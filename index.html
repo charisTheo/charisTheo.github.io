@@ -129,19 +129,24 @@
         </ul>
       </div>
 
-      <md-content id="projects" class="md-padding perspective-parent"
-        layout-wrap>
+      <md-content 
+        id="projects" 
+        class="md-padding perspective-parent"
+        layout-wrap
+        layout="row"
+        layout-xs="column"
+      >
         <md-card 
           md-theme="{{'default'}}" 
           md-theme-watch
-          class="card perspective-item" 
+          class="card perspective-item"
           ng-mousemove="MouseMoveHandler($event)"
           ng-mouseenter="MouseEnterHandler($event)" 
           ng-mouseleave="MouseLeaveHandler($event)" 
           ng-repeat="project in projects"
-          flex="30"
           ng-click="selectCard($index)"
-          >
+          flex-gt-xs="30"
+        >
           <md-button ng-show="$index == selectedCard" class="md-icon-button card-toggle">
             <i class="material-icons" md-colors="{color: 'accent'}">close</i>
           </md-button>

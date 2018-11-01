@@ -3,10 +3,12 @@
 
     angular
         .module('Portfolio')
-        .controller('PortfolioCtrl', function($scope, $http, PerspectiveHoverEffect, $mdSidenav) {
+        .controller('PortfolioCtrl', function($scope, $http, PerspectiveHoverEffect, $mdSidenav, $mdMedia) {
             $http.get('/projects-data.json').then(function(response) {
                 $scope.projects = response.data;
             });
+
+            $scope.$mdMedia = $mdMedia;
 
             const handlers = PerspectiveHoverEffect.getHandlers();
             $scope.MouseLeaveHandler = handlers.MouseLeaveHandler;
@@ -27,6 +29,5 @@
                 $mdSidenav('left').toggle();
             }
         });
-
 
 })();

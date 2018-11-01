@@ -6,4 +6,10 @@ angular
         $mdThemingProvider.theme('default')
             .primaryPalette('deep-purple')
             .accentPalette('green');
+    })
+    .directive('sideNavList', function() {
+        return {
+            scope: false,
+            templateUrl: '/partials/sidenavList.html'
+        }
     });

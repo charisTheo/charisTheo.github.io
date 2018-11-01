@@ -164,6 +164,11 @@ main #projects {
 md-toolbar {
   position: relative;
 }
+@media only screen and (min-width: 969px) {
+  md-toolbar .md-toolbar-tools {
+    align-items: flex-end !important;
+  }
+}
 md-card {
   position: relative;
 }
@@ -193,6 +198,9 @@ md-sidenav md-list-item .md-button {
   text-align: left;
 }
 
+side-nav-list md-list-item {
+  display: inline-block;
+}
 
 /***************************
 ****************************

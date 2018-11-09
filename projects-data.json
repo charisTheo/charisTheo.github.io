@@ -3,6 +3,7 @@
         "title": "Cooksurfing",
         "subtitle": "Dinner Hosting platform",
         "description": "Cooksurfing is a web app dinner hosting platform based on the sharing economy concept",
+        "tools_used": ["Node.js", "Express.js", "MongoDB", "Mongoose.js", "GridFS", "Handlebars.js", "Bootstrap 4", "JWT", "Passport", "Service Workers", "Require AMD", "Gulp", "Nodemon", "Javascript", "Google Maps API", "CSS3", "SASS"],
         "url": "https://www.cooksurfing.eu",
         "github_repo_name": "cooksurfing",
         "share_description": "Check out my repository Cooksurfing web-app!",
@@ -18,7 +19,8 @@
     {
         "title": "Chat App",
         "subtitle": "A Node.js chat app built on socket.io",
-        "description": "lorem ipsum allo kas mdert oeto portia",
+        "description": "This Chat App was built as a design concept taking advantage of web sockets to send, receive and broadcast messages between the user and a Node server. The app provides different rooms you can enter by typing the name of the room and a custom username.",
+        "tools_used": ["Node.js", "Socket.io", "Express.js", "Mocha", "Nodemon", "Giphy API", "Javascript", "Google Maps API", "CSS3"],
         "url": "https://web-app-chat.herokuapp.com",
         "github_repo_name": "node-chat-app",
         "share_description": "Check out my Chat Web App!",
@@ -34,7 +36,8 @@
     {
         "title": "Under Construction",
         "subtitle": "A friendly message for websites under construction",
-        "description": "lorem ipsum allo kas mdert oeto portia",
+        "description": "The goal was to create a small template for using on websites currently under construction. It has a user friendly animation to prompt the user that the website is still under construction.",
+        "tools_used": ["SVG", "CSS Animations", "No JavaScript"],
         "url": "https://charistheo.github.io/under-construction/",
         "github_repo_name": "under-construction",
         "share_description": "Check out my repository Under Construction!",
@@ -49,11 +52,12 @@
     },
     {
         "title": "Animath",
-        "subtitle": "Learn thorugh Animated Mathematics",
-        "description": "lorem ipsum allo kas mdert oeto portia",
+        "subtitle": "Learn Mathematics by scrolling",
+        "description": "The goal was to create an interactive interface by which the user can scroll to go to the next explanation of a mathematical model. The interface uses complex animations to achieve easy understanding of mathematical concepts, in an attempt to simplify the complexity of mathematics!",
+        "tools_used": ["SVG", "JavaScript", "ScrollMagic.js", "GSAP"],
         "url": "https://animath.herokuapp.com/",
         "github_repo_name": "animath",
-        "share_description": "Check out Animath!",
+        "share_description": "Check out Animath. Learn mathematics through animations by scrolling!",
         "images": [
             {
                 "src": "/screenshots/animath.png"
@@ -65,14 +69,32 @@
     },
     {
         "title": "Bubble Sort",
-        "subtitle": "A Bubble Sort Algorithm on JavaScript",
-        "description": "lorem ipsum allo kas mdert oeto portia",
+        "subtitle": "A JavaScript Bubble Sort Algorithm",
+        "description": "A bubble sort interface where input of different numbers is possible which can be sorted in an Ascending and Descending order with the push of a button.",
+        "tools_used": ["JavaScript"],
         "url": "https://charistheo.github.io/bubble-sort",
         "github_repo_name": "bubble-sort",
         "share_description": "Check out my repository Bubble Sort Algorithm!",
         "images": [
             {
                 "src": "/screenshots/Bubble-Sort.png"
+            },
+            {
+                "src": "" 
+            }
+        ] 
+    },
+    {
+        "title": "French Bot",
+        "subtitle": "A Bot for learning French vocabulary",
+        "description": "The French Bot was created as a friendly interface which shows random french words on the screen and expects the translation in English. The French word is then translated using the Yandex translation API which returns the word in English. It is then compared to the user's input word and saves the result. The game repeats over a number of times and when the game finishes it outputs the progress of the user with the correct translation to each wrong answer.",
+        "tools_used": ["Yandex API", "JavaScript", "d3", "csv"],
+        "url": "https://charistheo.github.io/french-bot",
+        "github_repo_name": "french-bot",
+        "share_description": "Check out my repository French Bot for learning some French vocabulary!",
+        "images": [
+            {
+                "src": "/screenshots/French-Bot.png"
             },
             {
                 "src": "" 

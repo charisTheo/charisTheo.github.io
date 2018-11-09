@@ -3,7 +3,7 @@
 
     angular
         .module('Portfolio')
-        .controller('PortfolioCtrl', function($scope, $http, $window, PerspectiveHoverEffect, $mdSidenav, $mdMedia) {
+        .controller('PortfolioCtrl', function($scope, $http, $window, $mdSidenav, $mdMedia, PerspectiveHoverEffect) {
             $http.get('/projects-data.json').then(function(response) {
                 $scope.projects = response.data;
             });
@@ -21,19 +21,23 @@
             }
 
             $scope.cardToggle = false;
+            $scope.selectedCardIndex = undefined;
             $scope.selectedCard = undefined;
 
             $scope.selectCard = function(index) {
-                if ($scope.selectedCard != index) {
-                    $scope.selectedCard = index;
+                if ($scope.selectedCardIndex != index) {
+                    $scope.selectedCard = $scope.projects[index];
+                    $scope.selectedCardIndex = index;
                 } else {
+                    $scope.selectedCardIndex = undefined;
                     $scope.selectedCard = undefined;
                 }
             }
-            
+ 
             $scope.toggleSideNav = function() {
                 $mdSidenav('left').toggle();
             }
+            
         });
 
 })();

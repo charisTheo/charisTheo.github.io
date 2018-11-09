@@ -24,7 +24,6 @@
   <!-- Screenshot Grabber -->
   <script src="https://cdn.jsdelivr.net/gh/GrabzIt/grabzit@js-3.2.9.8/javascript/grabzit.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
-  <script async defer src="https://buttons.github.io/buttons.js"></script>
 
   <!-- Particles.js -->
   <script src="./particles/particles.js"></script>
@@ -171,7 +170,7 @@
           ng-click="selectCard($index)"
           flex-gt-xs="30"
         >
-          <md-button ng-show="$index == selectedCard" class="md-icon-button card-toggle">
+          <md-button ng-show="$index == selectedCardIndex" class="md-icon-button card-toggle">
             <i class="material-icons" md-colors="{color: 'accent'}">close</i>
           </md-button>
 
@@ -183,15 +182,24 @@
               <span class="md-subhead">{{ project.subtitle }}</span>
             </md-card-title-text>
             </md-card-title>
-            <md-card-content ng-show="$index == selectedCard">{{ project.description }}</md-card-content>
-            <md-card-actions layout="column">
-                <a class="github-button" ng-href="https://github.com/charisTheo/{{ project.github_repo_name }}" data-icon="octicon-star"
-                  data-show-count="true" aria-label="Star charisTheo/myrepo on GitHub">Star</a>
-                <a class="github-button" ng-href="https://github.com/charisTheo/{{ project.github_repo_name }}/subscription"
-                  data-icon="octicon-eye" data-show-count="true" aria-label="Watch charisTheo/myrepo on GitHub">Watch</a>
-                <a class="github-button" ng-href="https://github.com/charisTheo/{{ project.github_repo_name }}/fork"
-                  data-icon="octicon-repo-forked" data-show-count="true" aria-label="Fork charisTheo/myrepo on GitHub">Fork</a>
-  
+            <md-card-content ng-show="$index == selectedCardIndex">{{ project.description }}</md-card-content>
+            <md-card-actions layout="row" layout-align="center center">
+              <div ng-show="$index == selectedCardIndex">
+                  <!-- Add Github Buttons here -->
+                  <md-button class="md-icon-button" ng-href="https://github.com/charisTheo/{{ project.github_repo_name }}">
+                    <i class="material-icons" aria-label="Star {{ project.github_repo_name }} on GitHub">star_border</i>
+                    <div class="icon-label"> Star {{ project.github_repo_name }} on GitHub </div>
+                  </md-button>
+                  <md-button class="md-icon-button" ng-href="https://github.com/charisTheo/{{ project.github_repo_name }}/subscription">
+                    <i class="material-icons" aria-label="Watch {{ project.github_repo_name }} on GitHub">remove_red_eye</i>
+                    <div class="icon-label"> Watch {{ project.github_repo_name }} on GitHub </div>
+                  </md-button>
+                  <md-button class="md-icon-button" ng-href="https://github.com/charisTheo/{{ project.github_repo_name }}/fork">
+                    <i class="material-icons" aria-label="Fork {{ project.github_repo_name }} on GitHub">call_split</i>
+                    <div class="icon-label"> Fork {{ project.github_repo_name }} on GitHub </div>
+                  </md-button>
+                </div>
+                  
                 <md-button class="md-icon-button">
                   <!-- TODO: make it full if pressed <i class="material-icons">favorite</i> -->
                   <i class="material-icons">favorite_border</i>
@@ -218,6 +226,7 @@
   <script src="./js/app.js"></script>
   <script src="./components/card.ctr.js"></script>
   <script src="./components/perspective-hover.fac.js"></script>
+  <!-- <script src="./components/setLabelsPosition.fac.js"></script> -->
 
   <script src="./js/share.js"></script>
 

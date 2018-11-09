@@ -3,12 +3,15 @@
 
     angular
         .module('Portfolio')
-        .controller('PortfolioCtrl', function($scope, $http, $window, $mdSidenav, $mdMedia, PerspectiveHoverEffect) {
+        .controller('PortfolioCtrl', function($scope, $http, $window, $mdSidenav, $mdMedia, PerspectiveHoverEffect, ShareListener) {
             $http.get('/projects-data.json').then(function(response) {
                 $scope.projects = response.data;
             });
 
             $scope.$mdMedia = $mdMedia;
+
+            $scope.shareButtonListener = ShareListener.listener;
+            $scope.copyToClipboard = ShareListener.copyToClipboard;
 
             let handlers; PerspectiveHoverEffect.getHandlers();
             const screenWidth = $window.innerWidth;

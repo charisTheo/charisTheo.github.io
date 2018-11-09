@@ -204,7 +204,7 @@
                   <!-- TODO: make it full if pressed <i class="material-icons">favorite</i> -->
                   <i class="material-icons">favorite_border</i>
                 </md-button>
-                <md-button class="md-icon-button share-button" ng-href="{{ project.url }}">
+                <md-button class="md-icon-button share-button" ng-click="shareButtonListener($event)" ng-href="{{ project.url }}">
                     <span class="share-button-text" hidden>
                       {{ project.share_description }}
                     </span>
@@ -226,9 +226,9 @@
   <script src="./js/app.js"></script>
   <script src="./components/card.ctr.js"></script>
   <script src="./components/perspective-hover.fac.js"></script>
+  <script src="./components/share-listener.fac.js"></script>
   <!-- <script src="./components/setLabelsPosition.fac.js"></script> -->
 
-  <script src="./js/share.js"></script>
 
 </body>
 

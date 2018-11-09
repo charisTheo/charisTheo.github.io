@@ -68,9 +68,10 @@ hr {
 .icon-label {
   transition: opacity 0.35s;
   position: absolute;
+  display: none;
   opacity: 0;
+  z-index: 99;
   bottom: 40px;
-  z-index: -1;
   text-transform: initial;
   background-color: #03dac5;
   color: black;
@@ -84,7 +85,7 @@ hr {
 }
 i.material-icons:hover + .icon-label {
   opacity: 1;
-  z-index: 99;
+  display: block;
 }
 /* THEME */
 /* .background-primary {

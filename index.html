@@ -168,8 +168,10 @@
           ng-mouseleave="MouseLeaveHandler($event)" 
           ng-repeat="project in projects | filter: searchFilter"
           ng-click="selectCard($index)"
+          ng-class="'expanded': $index == selectedCardIndex"
           flex-gt-xs="30"
-        >
+          >
+          <!-- TODO: add class on expanded-->
           <md-button ng-show="$index == selectedCardIndex" class="md-icon-button card-toggle">
             <i class="material-icons" md-colors="{color: 'accent'}">close</i>
           </md-button>
@@ -200,21 +202,19 @@
             </md-card-content>
 
             <md-card-actions layout="row" layout-align="center center">
-              <div ng-show="$index == selectedCardIndex">
-                  <!-- Add Github Buttons here -->
-                  <md-button class="md-icon-button" ng-href="https://github.com/charisTheo/{{ project.github_repo_name }}">
-                    <i class="material-icons" aria-label="Star {{ project.github_repo_name }} on GitHub">star_border</i>
-                    <div class="icon-label"> Star {{ project.github_repo_name }} on GitHub </div>
-                  </md-button>
-                  <md-button class="md-icon-button" ng-href="https://github.com/charisTheo/{{ project.github_repo_name }}/subscription">
-                    <i class="material-icons" aria-label="Watch {{ project.github_repo_name }} on GitHub">remove_red_eye</i>
-                    <div class="icon-label"> Watch {{ project.github_repo_name }} on GitHub </div>
-                  </md-button>
-                  <md-button class="md-icon-button" ng-href="https://github.com/charisTheo/{{ project.github_repo_name }}/fork">
-                    <i class="material-icons" aria-label="Fork {{ project.github_repo_name }} on GitHub">call_split</i>
-                    <div class="icon-label"> Fork {{ project.github_repo_name }} on GitHub </div>
-                  </md-button>
-                </div>
+                <!-- Github Buttons -->
+                <md-button ng-show="$index == selectedCardIndex" class="md-icon-button" ng-href="https://github.com/charisTheo/{{ project.github_repo_name }}">
+                  <i class="material-icons" aria-label="Star {{ project.github_repo_name }} on GitHub">star_border</i>
+                  <div class="icon-label"> Star {{ project.github_repo_name }} on GitHub </div>
+                </md-button>
+                <md-button ng-show="$index == selectedCardIndex" class="md-icon-button" ng-href="https://github.com/charisTheo/{{ project.github_repo_name }}/subscription">
+                  <i class="material-icons" aria-label="Watch {{ project.github_repo_name }} on GitHub">remove_red_eye</i>
+                  <div class="icon-label"> Watch {{ project.github_repo_name }} on GitHub </div>
+                </md-button>
+                <md-button ng-show="$index == selectedCardIndex" class="md-icon-button" ng-href="https://github.com/charisTheo/{{ project.github_repo_name }}/fork">
+                  <i class="material-icons" aria-label="Fork {{ project.github_repo_name }} on GitHub">call_split</i>
+                  <div class="icon-label"> Fork {{ project.github_repo_name }} on GitHub </div>
+                </md-button>
                   
                 <md-button class="md-icon-button">
                   <!-- TODO: make it full if pressed <i class="material-icons">favorite</i> -->

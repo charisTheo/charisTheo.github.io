@@ -182,7 +182,23 @@
               <span class="md-subhead">{{ project.subtitle }}</span>
             </md-card-title-text>
             </md-card-title>
-            <md-card-content ng-show="$index == selectedCardIndex">{{ project.description }}</md-card-content>
+            <md-card-content ng-show="$index == selectedCardIndex">
+              {{ project.description }}
+            </md-card-content>
+
+            <md-card-content ng-show="$index == selectedCardIndex">
+                <md-content class="md-padding">
+                  <md-subheader class="md-no-sticky">Tools used</md-subheader>
+                      <md-chips ng-model="project.tools_used" readonly='true'>
+                          <md-chip-template>
+                              <span>
+                                <strong>{{ $chip }}</strong>
+                              </span>
+                            </md-chip-template>
+                      </md-chips>
+                </md-content>
+            </md-card-content>
+
             <md-card-actions layout="row" layout-align="center center">
               <div ng-show="$index == selectedCardIndex">
                   <!-- Add Github Buttons here -->

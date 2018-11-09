@@ -171,6 +171,7 @@ main #projects {
   justify-content: center;
   align-items: center;
   background-color: transparent;
+  overflow-x: hidden;
 }
 
 .perspective-parent {
@@ -249,7 +250,12 @@ button.md-button.top-nav-search-btn {
   transition: 0.4s all;
   opacity: 0;
 }
-
+main .md-chips md-chip {
+  background: #03dac545;
+}
+main #projects md-chips md-chips-wrap.md-chips {
+  box-shadow: none;
+}
 
 /***************************
 ****************************

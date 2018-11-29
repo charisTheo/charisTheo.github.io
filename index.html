@@ -34,7 +34,6 @@
 
   <link rel="stylesheet" href="./styles/scrollBar.css" type="text/css">
   <link rel="stylesheet" href="./styles/styles.css" type="text/css">
-  <!-- <link rel="stylesheet" href="./styles/card.css" type="text/css"> -->
   <link rel="stylesheet" href="./styles/media.css" type="text/css">
 
   <link rel="stylesheet" href="/node_modules/angular-material/angular-material.css" type="text/css">
@@ -153,7 +152,7 @@
 
       <md-content 
         id="projects" 
-        class="md-padding perspective-parent"
+        class="md-padding"
         layout-wrap
         layout="row"
         layout-xs="column"
@@ -162,33 +161,41 @@
         <md-card 
           md-theme="{{'default'}}" 
           md-theme-watch
-          class="card perspective-item"
+          class="card perspective-parent md-padding"
           ng-mousemove="MouseMoveHandler($event)"
           ng-mouseenter="MouseEnterHandler($event)" 
           ng-mouseleave="MouseLeaveHandler($event)" 
           ng-repeat="project in projects | filter: searchFilter"
           ng-click="selectCard($index)"
-          ng-class="'expanded': $index == selectedCardIndex"
-          flex-gt-xs="30"
-          >
+          ng-class="{'expanded': $index == selectedCardIndex || $mdMedia('min-width: 600px')}"
+          layout="column"
+          layout-gt-xs="row"
+        >
           <!-- TODO: add class on expanded-->
-          <md-button ng-show="$index == selectedCardIndex" class="md-icon-button card-toggle">
+          <md-button ng-show="$index == selectedCardIndex && $mdMedia('max-width: 600px')" class="md-icon-button card-toggle">
             <i class="material-icons" md-colors="{color: 'accent'}">close</i>
           </md-button>
 
-          <img ng-src="{{ project.images[0].src }}" class="md-card-image" alt="Projects image/screenshot">
-          
-          <md-card-title>
-            <md-card-title-text>
-              <span class="md-headline">{{ project.title }}</span>
-              <span class="md-subhead">{{ project.subtitle }}</span>
-            </md-card-title-text>
+            <img ng-src="{{ project.images[0].src }}" flex-gt-xs='40' class="md-card-image perspective-item" alt="Projects image/screenshot">
+            
+            <md-card-title layout='column' flex-gt-xs='60'>
+              <md-card-title-text>
+                <span class="md-headline">{{ project.title }}</span>
+                <span class="md-subhead">{{ project.subtitle }}</span>
+              </md-card-title-text>
+              
+              <md-divider></md-divider>
+              
+              <md-card-title-text class="md-margin" ng-show="$index == selectedCardIndex || $mdMedia('min-width: 600px')">
+                {{ project.description }}
+              </md-card-title-text>
             </md-card-title>
-            <md-card-content ng-show="$index == selectedCardIndex">
-              {{ project.description }}
-            </md-card-content>
 
-            <md-card-content ng-show="$index == selectedCardIndex">
+      <!-- <md-card-content flex-gt-xs='60' ng-show="$index == selectedCardIndex || $mdMedia('min-width: 600px')">
+              {{ project.description }}
+            </md-card-content> -->
+            
+            <md-card-content flex-gt-xs='100' ng-show="$index == selectedCardIndex || $mdMedia('min-width: 600px')">
                 <md-content class="md-padding">
                   <md-subheader class="md-no-sticky">Tools used</md-subheader>
                       <md-chips ng-model="project.tools_used" readonly='true'>
@@ -203,15 +210,15 @@
 
             <md-card-actions layout="row" layout-align="center center">
                 <!-- Github Buttons -->
-                <md-button ng-show="$index == selectedCardIndex" class="md-icon-button" ng-href="https://github.com/charisTheo/{{ project.github_repo_name }}">
+                <md-button ng-show="$index == selectedCardIndex || $mdMedia('min-width: 600px')" class="md-icon-button" ng-href="https://github.com/charisTheo/{{ project.github_repo_name }}">
                   <i class="material-icons" aria-label="Star {{ project.github_repo_name }} on GitHub">star_border</i>
                   <div class="icon-label"> Star {{ project.github_repo_name }} on GitHub </div>
                 </md-button>
-                <md-button ng-show="$index == selectedCardIndex" class="md-icon-button" ng-href="https://github.com/charisTheo/{{ project.github_repo_name }}/subscription">
+                <md-button ng-show="$index == selectedCardIndex || $mdMedia('min-width: 600px')" class="md-icon-button" ng-href="https://github.com/charisTheo/{{ project.github_repo_name }}/subscription">
                   <i class="material-icons" aria-label="Watch {{ project.github_repo_name }} on GitHub">remove_red_eye</i>
                   <div class="icon-label"> Watch {{ project.github_repo_name }} on GitHub </div>
                 </md-button>
-                <md-button ng-show="$index == selectedCardIndex" class="md-icon-button" ng-href="https://github.com/charisTheo/{{ project.github_repo_name }}/fork">
+                <md-button ng-show="$index == selectedCardIndex || $mdMedia('min-width: 600px')" class="md-icon-button" ng-href="https://github.com/charisTheo/{{ project.github_repo_name }}/fork">
                   <i class="material-icons" aria-label="Fork {{ project.github_repo_name }} on GitHub">call_split</i>
                   <div class="icon-label"> Fork {{ project.github_repo_name }} on GitHub </div>
                 </md-button>

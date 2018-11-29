@@ -8,10 +8,30 @@
 
     } */
 }
-@media only screen and (min-width: 767px) {
+@media only screen and (min-width: 600px) {
     .container  {
         /* max-width: 70vw; */
         margin: 0 auto;
+    }
+    .card.expanded {
+      flex-flow: wrap;
+      height: 90vh;
+      align-items: center;
+      justify-content: center;
+    }
+    .card.expanded > img {
+      order: 4;
+      height: 40%;
+      align-self: center;
+    }
+    .card.expanded > md-card-title {
+      order: 3;
+    }
+    .card.expanded > md-card-content {
+      order: 4;
+    }
+    .card.expanded > md-card-actions {
+      order: 5;
     }
 }
 @media only screen and (min-width: 959px) {

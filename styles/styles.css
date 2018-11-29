@@ -173,6 +173,7 @@ main #projects {
   align-items: center;
   background-color: transparent;
   overflow-x: hidden;
+  overflow-y: hidden;
 }
 
 .perspective-parent {

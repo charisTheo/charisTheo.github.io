@@ -84,7 +84,7 @@
       </side-nav-list>
     
       <md-button class="top-nav-search-btn" ng-click="showFilters = !showFilters" aria-label="search the website">
-        <md-icon class="mdi mdi-magnify" md-colors="{color: 'accent'}"></md-icon> 
+        <i md-colors="{color: 'accent'}" class="material-icons">search</i>
       </md-button>   
     </div>
   </md-toolbar>    
@@ -152,7 +152,6 @@
 
       <md-content 
         id="projects" 
-        class="md-padding"
         layout-wrap
         layout="row"
         layout-xs="column"
@@ -171,13 +170,13 @@
           layout="column"
           layout-gt-xs="row"
         >
-          <!-- TODO: add class on expanded-->
           <md-button ng-show="$index == selectedCardIndex && $mdMedia('max-width: 600px')" class="md-icon-button card-toggle">
             <i class="material-icons" md-colors="{color: 'accent'}">close</i>
           </md-button>
 
-            <img ng-src="{{ project.images[0].src }}" flex-gt-xs='40' class="md-card-image perspective-item" alt="Projects image/screenshot">
+          <img ng-src="{{ project.images[0].src }}" flex-gt-xs='40' class="md-card-image perspective-item" alt="Projects image/screenshot">
             
+          <md-card-content>
             <md-card-title layout='column' flex-gt-xs='60'>
               <md-card-title-text>
                 <span class="md-headline">{{ project.title }}  <a ng-href="{{ project.url }}"><i class="material-icons">link</i></a> </span>
@@ -190,10 +189,6 @@
                 {{ project.description }}
               </md-card-title-text>
             </md-card-title>
-
-      <!-- <md-card-content flex-gt-xs='60' ng-show="$index == selectedCardIndex || $mdMedia('min-width: 600px')">
-              {{ project.description }}
-            </md-card-content> -->
             
             <md-card-content flex-gt-xs='100' ng-show="$index == selectedCardIndex || $mdMedia('min-width: 600px')">
                 <md-content class="md-padding">
@@ -234,6 +229,8 @@
                     <i class="material-icons">share</i>
                 </md-button>
               </md-card-actions>
+              
+            </md-card-content>
           </md-card>
 
 

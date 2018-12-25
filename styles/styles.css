@@ -33,11 +33,11 @@ main {
     position: relative;
 }
 .container {
-    padding-right: 15px;
-    padding-left: 15px;
+    /* padding-right: 15px; */
+    /* padding-left: 15px; */
     margin-right: auto;
     margin-left: auto;  /*when adding left and right padding with the max-width = 1200px,*/
-    max-width: 1170px;  /* which is our large device breakpoint.*/
+    /* max-width: 1170px;  which is our large device breakpoint. */
 }
 .row {
   margin-left: -15px;
@@ -203,7 +203,18 @@ md-toolbar {
 md-card {
   position: relative;
 }
-md-card .card-toggle{
+md-card.expanded {
+  margin: 0;
+  position: fixed;
+  z-index: 99999;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  min-height: 100vh;
+  overflow-y: scroll;
+  overflow-x: hidden;  
+}
+md-card .card-toggle {
   position: absolute;
   top: 0;
   right: 0;

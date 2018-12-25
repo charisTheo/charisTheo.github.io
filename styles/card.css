@@ -13,12 +13,18 @@
     position: relative;
     overflow: hidden;
 }
-/* .card:nth-child(odd) {
-    height: 180px;
+/*expand and capture full screen */
+.card.expanded {
+    margin: 0;
+    position: fixed;
+    z-index: 99999;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    /* min-height: 100vh; */
+    overflow-y: scroll;
+    overflow-x: hidden;
 }
-.card:nth-child(even) {
-    height: 300px;
-} */
 .card::after {
     content: "";
     display: block;
@@ -79,8 +85,7 @@
 }
 
 
-/* CARD TOGGLE */
-/*expand and capture full screen */
+/* CARD TOGGLE BUTTON*/
 main .card.toggle {
     transform-origin: top center;
     top: 0;

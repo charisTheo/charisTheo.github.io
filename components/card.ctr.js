@@ -27,14 +27,17 @@
             $scope.selectedCardIndex = undefined;
             $scope.selectedCard = undefined;
 
-            $scope.selectCard = function(index) {
-                if ($scope.selectedCardIndex != index) {
-                    $scope.selectedCard = $scope.projects[index];
-                    $scope.selectedCardIndex = index;
+            $scope.selectCard = function($event, $index) {
+                if ($scope.selectedCardIndex != $index) {
+                    // select card
+                    $scope.selectedCard = $scope.projects[$index];
+                    $scope.selectedCardIndex = $index;
                 } else {
+                    // unselect card
                     $scope.selectedCardIndex = undefined;
                     $scope.selectedCard = undefined;
                 }
+                $event.cancelBubble = true; // prevent from firing again
             }
  
             $scope.toggleSideNav = function() {

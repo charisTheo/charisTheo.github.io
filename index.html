@@ -165,14 +165,27 @@
           ng-mouseenter="MouseEnterHandler($event)" 
           ng-mouseleave="MouseLeaveHandler($event)" 
           ng-repeat="project in projects | filter: searchFilter"
-          ng-click="selectCard($index)"
+          ng-click="($index !== selectedCardIndex) && selectCard($event, $index)"
           ng-class="{'expanded': $index == selectedCardIndex || $mdMedia('min-width: 600px')}"
           layout="column"
           layout-gt-xs="row"
         >
-          <md-button ng-show="$index == selectedCardIndex && $mdMedia('max-width: 600px')" class="md-icon-button card-toggle">
+          <!---------- TOP BAR MENU ----------->
+          <md-toolbar ng-if="$mdMedia('max-width: 600px') && ($index == selectedCardIndex)">
+            <div class="md-toolbar-tools" md-colors="{color: 'accent'}">
+              <md-button 
+                ng-click="selectCard($event, $index)" 
+                class="md-icon-button" 
+                aria-label="Go back to main menu"
+              >
+                <i class="material-icons">arrow_back</i>
+              </md-button>
+            </div>
+          </md-toolbar> 
+
+          <!-- <md-button ng-show="$index == selectedCardIndex && $mdMedia('max-width: 600px')" class="md-icon-button card-toggle">
             <i class="material-icons" md-colors="{color: 'accent'}">close</i>
-          </md-button>
+          </md-button> -->
 
           <img ng-src="{{ project.images[0].src }}" flex-gt-xs='40' class="md-card-image perspective-item" alt="Projects image/screenshot">
             <md-card-content>

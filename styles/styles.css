@@ -213,6 +213,7 @@ md-card.expanded {
   min-height: 100vh;
   overflow-y: scroll;
   overflow-x: hidden;
+  padding: 0;
 }
 md-card .card-toggle {
   position: absolute;
@@ -222,7 +223,10 @@ md-card .card-toggle {
   height: 100%;
   z-index: 11;
 }
-md-card .image-container::after {
+md-card.card img.md-card-image {
+  border-radius: initial;
+}
+/* md-card .image-container::after {
   content: "";
   display: block;
   position: absolute;
@@ -235,7 +239,7 @@ md-card .image-container::after {
   background-image:     -ms-linear-gradient(180deg, rgba(0,0,0,0) 10%, rgba(0,0,0,0.5) 75%); 
   background-image:      -o-linear-gradient(180deg, rgba(0,0,0,0) 10%, rgba(0,0,0,0.5) 75%); 
   background-image:         linear-gradient(180deg, rgba(0,0,0,0) 10%, rgba(0,0,0,0.5) 75%);
-}
+} */
 md-sidenav md-list-item .md-secondary-container {
   margin-right: auto;
   margin-left: 0;

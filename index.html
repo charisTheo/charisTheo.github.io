@@ -175,8 +175,7 @@
           </md-button>
 
           <img ng-src="{{ project.images[0].src }}" flex-gt-xs='40' class="md-card-image perspective-item" alt="Projects image/screenshot">
-            
-          <md-card-content>
+            <md-card-content>
             <md-card-title layout='column' flex-gt-xs='60'>
               <md-card-title-text>
                 <span class="md-headline">{{ project.title }}  <a ng-href="{{ project.url }}"><i class="material-icons">link</i></a> </span>
@@ -189,7 +188,7 @@
                 {{ project.description }}
               </md-card-title-text>
             </md-card-title>
-            
+          </md-card-content>
             <md-card-content flex-gt-xs='100' ng-show="$index == selectedCardIndex || $mdMedia('min-width: 600px')">
                 <md-content class="md-padding">
                   <md-subheader class="md-no-sticky">Tools used</md-subheader>
@@ -230,7 +229,6 @@
                 </md-button>
               </md-card-actions>
               
-            </md-card-content>
           </md-card>
 
 

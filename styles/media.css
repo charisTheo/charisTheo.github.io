@@ -14,10 +14,13 @@
         margin: 0 auto;
     }
     .card.expanded {
+      position: initial;
+      overflow: initial;
+      min-height: initial;
       flex-flow: wrap;
-      height: 90vh;
       align-items: center;
       justify-content: center;
+      margin: 5vh 0;
     }
     .card.expanded > img {
       order: 4;

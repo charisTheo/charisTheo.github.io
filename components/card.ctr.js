@@ -39,6 +39,19 @@
                 }
                 $event.cancelBubble = true; // prevent from firing again
             }
+
+            $scope.onFavouriteClick = function($event) {
+                // TODO: Add animation transition
+                let _this = $event.currentTarget;
+                let iconContent = _this.children[0].textContent;
+                console.log(iconContent);
+                if (iconContent == 'favorite') {
+                    _this.children[0].textContent = 'favorite_border';
+                } else {
+                    _this.children[0].textContent = 'favorite';
+                }
+                $event.cancelBubble = true; // prevent the card from toggling
+            }
  
             $scope.toggleSideNav = function() {
                 $mdSidenav('left').toggle();

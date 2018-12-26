@@ -71,3 +71,17 @@
   }
 }
 
+@media (max-width: 959px) {
+  body.ng-scope md-toast .md-toast-content {
+    background-color: #03dac5;
+    color: #000;  
+  }
+  body.ng-scope md-toast {
+    margin: 0 auto;
+    text-align: center;
+    width: 80vw;
+    bottom: 10vw; 
+    position: fixed;
+    background-color: #03dac5;
+  }
+}

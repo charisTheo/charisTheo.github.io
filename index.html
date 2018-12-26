@@ -195,7 +195,7 @@
                   <div class="icon-label"> Fork {{ project.github_repo_name }} on GitHub </div>
                 </md-button>
                   
-                <md-button class="md-icon-button">
+                <md-button ng-click="onFavouriteClick($event)" class="md-icon-button">
                   <!-- TODO: make it full if pressed <i class="material-icons">favorite</i> -->
                   <i class="material-icons">favorite_border</i>
                 </md-button>

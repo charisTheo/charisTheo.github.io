@@ -93,9 +93,17 @@
   <!---------- end of TOP BAR MENU ----------->
 
   <div ng-class="{'show': showProfilePhoto}" id="profile-photo-container">
-     <button ng-click="showProfilePhoto = false">
+    
+    <div id="follow-me-container">
+      <button ng-click="showProfilePhoto = false">
         <i class="material-icons">close</i>
       </button>
+      <p>Hi there!</p>
+      <p>
+        if you like the content follow me on <a class="github-button" href="https://github.com/charisTheo" data-show-count="true" aria-label="Follow @charisTheo on GitHub">Github</a>
+      </p>
+    </div>
+
     <img id="profile-photo" src="./img/profile_photo.png" alt="My profile picture">
   </div>
 
@@ -116,10 +124,6 @@
         </md-input-container>
       </div>
     <!---------- end of SEARCH FILTERS INPUT ----------->
-
-    <div class="follow-me-button">
-      <a class="github-button" href="https://github.com/charisTheo" data-show-count="true" aria-label="Follow @charisTheo on GitHub">Follow me on Github</a>
-    </div>
 
       <md-content 
         id="projects" 

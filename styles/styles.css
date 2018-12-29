@@ -127,21 +127,25 @@ i.material-icons:hover + .icon-label {
 ***************************/
 #profile-photo-container {
   position: fixed;
-  width: 35vw;
+  width: auto;
   bottom: 0;
   right: 0;
   height: 200px;
   z-index: 999;
-  opacity: 0;
   transform: translateY(200px);
-  transition: transform .5s ease-out;
-  transition-delay: 1s;
+  opacity: 0;
+  transition: all .5s ease-out;
+  transition-delay: 0s;
 }
 #profile-photo-container button {
   position: absolute;
-  right: 20px;
-  top: 20px;
+  right: -10px;
+  top: -10px;
   cursor: pointer;
+  background-color: white;
+  border-radius: 50%;
+  padding: 2px;
+  box-shadow: 0px 3px 6px rgba(0,0,0,0.5);
 }
 #profile-photo-container button:hover i,
 #profile-photo-container button:active i,
@@ -150,16 +154,32 @@ i.material-icons:hover + .icon-label {
 }
 #profile-photo-container button i {
   color: red;
+  margin: 2px;
 }
 #profile-photo-container #profile-photo {
   width: auto;
   height: 200px;
 }
 #profile-photo-container.show {
-/* TODO: Transition hiding */
   transform: translateY(0px);
+  transition-delay: 1s;
   opacity: 1;
 }
+#profile-photo-container #follow-me-container {
+  box-shadow: 0px 3px 6px rgba(0,0,0,0.5);
+  background-color: white;
+  border-radius: 2px;
+  padding: 6px 12px;
+  right: 108px;
+  top: 20px;
+  position: absolute;
+  width: 200px;;
+}
+#profile-photo-container #follow-me-container p {
+  display: inline-block;
+  margin: 0;
+}
+
 main #title {
     text-decoration: none;
     text-align: center;

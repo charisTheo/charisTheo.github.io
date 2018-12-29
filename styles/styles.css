@@ -125,6 +125,41 @@ i.material-icons:hover + .icon-label {
         CUSTOM STYLES
 ****************************
 ***************************/
+#profile-photo-container {
+  position: fixed;
+  width: 35vw;
+  bottom: 0;
+  right: 0;
+  height: 200px;
+  z-index: 999;
+  opacity: 0;
+  transform: translateY(200px);
+  transition: transform .5s ease-out;
+  transition-delay: 1s;
+}
+#profile-photo-container button {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  cursor: pointer;
+}
+#profile-photo-container button:hover i,
+#profile-photo-container button:active i,
+#profile-photo-container button:focus i {
+  color: rgb(177, 2, 2);
+}
+#profile-photo-container button i {
+  color: red;
+}
+#profile-photo-container #profile-photo {
+  width: auto;
+  height: 200px;
+}
+#profile-photo-container.show {
+/* TODO: Transition hiding */
+  transform: translateY(0px);
+  opacity: 1;
+}
 main #title {
     text-decoration: none;
     text-align: center;

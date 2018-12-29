@@ -23,9 +23,14 @@
                 $scope.MouseEnterHandler = handlers.MouseEnterHandler;
             }
 
+            $scope.showProfilePhoto = false;
             $scope.cardToggle = false;
             $scope.selectedCardIndex = undefined;
             $scope.selectedCard = undefined;
+
+            angular.element(document).ready(function () {
+                $scope.showProfilePhoto = true;               
+            });
 
             $scope.selectCard = function($event, $index) {
                 if ($scope.selectedCardIndex != $index) {

@@ -9,7 +9,7 @@
         "share_description": "Check out my repository Cooksurfing web-app!",
         "images": [
             {
-                "src": "/screenshots/Cooksurfing.png"
+                "src": "/img/screenshots/Cooksurfing.png"
             },
             {
                 "src": "" 
@@ -26,7 +26,7 @@
         "share_description": "Check out my Chat Web App!",
         "images": [
             {
-                "src": "/screenshots/ChatApp.png"
+                "src": "/img/screenshots/ChatApp.png"
             },
             {
                 "src": "" 
@@ -43,7 +43,7 @@
         "share_description": "Check out my repository Under Construction!",
         "images": [
             {
-                "src": "/screenshots/Under-Construction.png"
+                "src": "/img/screenshots/Under-Construction.png"
             },
             {
                 "src": "" 
@@ -60,7 +60,7 @@
         "share_description": "Check out Animath. Learn mathematics through animations by scrolling!",
         "images": [
             {
-                "src": "/screenshots/animath.png"
+                "src": "/img/screenshots/animath.png"
             },
             {
                 "src": "" 
@@ -77,7 +77,7 @@
         "share_description": "Check out my repository Bubble Sort Algorithm!",
         "images": [
             {
-                "src": "/screenshots/Bubble-Sort.png"
+                "src": "/img/screenshots/Bubble-Sort.png"
             },
             {
                 "src": "" 
@@ -94,7 +94,7 @@
         "share_description": "Check out my repository French Bot for learning some French vocabulary!",
         "images": [
             {
-                "src": "/screenshots/French-Bot.png"
+                "src": "/img/screenshots/French-Bot.png"
             },
             {
                 "src": "" 

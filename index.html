@@ -92,6 +92,12 @@
   </md-toolbar>    
   <!---------- end of TOP BAR MENU ----------->
 
+  <div ng-class="{'show': showProfilePhoto}" id="profile-photo-container">
+     <button ng-click="showProfilePhoto = false">
+        <i class="material-icons">close</i>
+      </button>
+    <img id="profile-photo" src="./img/profile_photo.png" alt="My profile picture">
+  </div>
 
   <main>
     <div class="container">
@@ -220,10 +226,11 @@
   <script src="./vendor/angular-messages.js"></script>
   <script src="./vendor/angular-material.js"></script>
   <script src="./js/app.js"></script>
-  <script src="./components/card.ctr.js"></script>
-  <script src="./components/perspective-hover.fac.js"></script>
-  <script src="./components/share-listener.fac.js"></script>
-  <!-- <script src="./components/setLabelsPosition.fac.js"></script> -->
+  <!-- <script src="./js/components/portfolio.ctr.js"></script> -->
+  <script src="./js/components/card.ctr.js"></script>
+  <script src="./js/components/perspective-hover.fac.js"></script>
+  <script src="./js/components/share-listener.fac.js"></script>
+  <!-- <script src="./js/components/setLabelsPosition.fac.js"></script> -->
 
 
 </body>

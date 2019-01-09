@@ -93,6 +93,9 @@
   <!---------- end of TOP BAR MENU ----------->
 
   <div ng-class="{'show': showProfilePhoto}" id="profile-photo-container">
+
+    <div class="eye"><div class="iris"></div></div>
+    <div class="eye"><div class="iris"></div></div>
     
     <div id="follow-me-container">
       <button ng-click="showProfilePhoto = false">
@@ -103,7 +106,6 @@
         if you like the content follow me on <a class="github-button" href="https://github.com/charisTheo" data-show-count="true" aria-label="Follow @charisTheo on GitHub">Github</a>
       </p>
     </div>
-
     <img id="profile-photo" src="./img/profile_photo.png" alt="My profile picture">
   </div>
 
@@ -236,6 +238,8 @@
   <script src="./js/components/share-listener.fac.js"></script>
   <!-- <script src="./js/components/setLabelsPosition.fac.js"></script> -->
 
+  <!-- TODO: make it async -->
+  <script src="./js/accelerometer.js"></script>
 
 </body>
 

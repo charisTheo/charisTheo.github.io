@@ -179,6 +179,43 @@ i.material-icons:hover + .icon-label {
   display: inline-block;
   margin: 0;
 }
+#profile-photo-container .eye:nth-child(1) {
+  left: 61px;
+}
+#profile-photo-container .eye:nth-child(2) {
+  left: 84px;
+}
+#profile-photo-container .eye {
+  border-radius: 50%;
+  margin: 0;
+  padding: 3px;
+  width: 10px;
+  height: 6px;
+  background-color: white;
+  position: absolute;
+  content: "";
+  top: 91px;
+}
+#profile-photo-container .eye .iris {
+  background-color: black;
+  border-radius: 50%;
+  width: 5px;
+  height: 5px;
+  display: block;
+  margin: 0;
+  content: "";
+  position: absolute;
+}
+/* #profile-photo-container .eye span {
+  background-color: black;
+  border-radius: 50%;
+  padding: 5px;
+  width: 5px;
+  height: 5px;
+  display: inline-block;
+  margin: 0;
+  content: "";
+} */
 
 main #title {
     text-decoration: none;

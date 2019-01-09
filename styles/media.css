@@ -1,17 +1,15 @@
-@media only screen and (min-width: 319px) {
-    /* .container  {
-
-    } */
+/* @media only screen and (min-width: 319px) {
+    
 }
 @media only screen and (min-width: 479px) {
-    /* .container  {
-
-    } */
-}
+    
+} */
 @media only screen and (min-width: 600px) {
     .container  {
-        /* max-width: 70vw; */
         margin: 0 auto;
+    }
+    #page-loader svg {
+      width: 25%; 
     }
     .card.expanded {
       position: initial;
@@ -40,15 +38,14 @@
     }
 }
 @media only screen and (min-width: 959px) {
-    .container  {
-        /* max-width: 50vw; */
+    #page-loader svg {
+      width: 15%; 
     }
 }
-@media only screen and (min-width: 1439px) {
-    /* .container  {
 
-    } */
-}
+/* @media only screen and (min-width: 1439px) {
+    
+} */
 
 @media (min-width: 48em) {    /* media query that will target small devices and above */
   [class*="col-"] {

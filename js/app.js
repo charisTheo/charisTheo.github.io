@@ -13,4 +13,10 @@ app
         scope: false,
         templateUrl: '/partials/sidenavList.html'
     }
+})
+.directive('pageLoader', function() {
+    return {
+        scope: false,
+        templateUrl: '/partials/page-loader.html'
+    }
 });

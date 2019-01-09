@@ -32,6 +32,7 @@
   <script async defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TweenMax.min.js"></script>
 
 
+  <link rel="stylesheet" href="./styles/page-loader.css" type="text/css">
   <link rel="stylesheet" href="./styles/scrollBar.css" type="text/css">
   <link rel="stylesheet" href="./styles/styles.css" type="text/css">
   <link rel="stylesheet" href="./styles/media.css" type="text/css">
@@ -41,6 +42,8 @@
 </head>
 
 <body ng-app="Portfolio" ng-controller="PortfolioCtrl">
+
+  <page-loader id="page-loader" ng-class="{'hide': documentLoaded}"></page-loader>
   
   <!---------- SIDE NAV ----------->
   <md-sidenav 
@@ -232,8 +235,7 @@
   <script src="./vendor/angular-messages.js"></script>
   <script src="./vendor/angular-material.js"></script>
   <script src="./js/app.js"></script>
-  <!-- <script src="./js/components/portfolio.ctr.js"></script> -->
-  <script src="./js/components/card.ctr.js"></script>
+  <script src="./js/components/portfolio.ctr.js"></script>
   <script src="./js/components/perspective-hover.fac.js"></script>
   <script src="./js/components/share-listener.fac.js"></script>
   <!-- <script src="./js/components/setLabelsPosition.fac.js"></script> -->

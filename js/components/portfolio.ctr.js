@@ -22,6 +22,7 @@
                 $scope.MouseEnterHandler = handlers.MouseEnterHandler;
             }
 
+            $scope.nightMode = false;
             $scope.documentLoaded = false;
             $scope.showProfilePhoto = false;
             $scope.cardToggle = false;

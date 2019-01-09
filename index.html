@@ -41,7 +41,7 @@
   <link rel="stylesheet" href="./vendor/styles/materialdesignicons.css" type="text/css">
 </head>
 
-<body ng-app="Portfolio" ng-controller="PortfolioCtrl">
+<body ng-app="Portfolio" ng-controller="PortfolioCtrl" ng-class="{'night-mode': nightMode}">
 
   <page-loader id="page-loader" ng-class="{'hide': documentLoaded}"></page-loader>
   
@@ -80,7 +80,7 @@
           <i class="material-icons">menu</i>
       </md-button>
       <!-- TODO: Add a personal logo -->
-      <p><strong>Logo</strong></p>
+      <div class="logo">Logo</div>
 
       <side-nav-list 
         ng-if="$mdMedia('min-width: 959px')"
@@ -88,8 +88,19 @@
       </side-nav-list>  
 
       <!-- TOP NAV SEARCH BUTTON -->
-      <md-button class="top-nav-search-btn" ng-click="showFilters = !showFilters" aria-label="search the website">
+      <md-button 
+        class="top-nav-btn md-fab md-primary" 
+        ng-click="showFilters = !showFilters" 
+        aria-label="search the website"
+      >
         <i md-colors="{color: 'accent'}" class="material-icons">search</i>
+      </md-button>
+      <md-button  
+        ng-click="nightMode = !nightMode" 
+        class="top-nav-btn md-fab md-primary"
+        aria-label="Night Mode Toggle"
+      >
+        <i md-colors="{color: 'accent'}" class="material-icons">invert_colors</i>
       </md-button> 
     </div>
   </md-toolbar>    
@@ -100,7 +111,7 @@
     <div class="eye"><div class="iris"></div></div>
     <div class="eye"><div class="iris"></div></div>
     
-    <div id="follow-me-container">
+    <div id="follow-me-container" ng-class="{'night-mode-darker': nightMode}">
       <button ng-click="showProfilePhoto = false">
         <i class="material-icons">close</i>
       </button>
@@ -146,7 +157,7 @@
           ng-mouseleave="MouseLeaveHandler($event)" 
           ng-repeat="project in projects | filter: searchFilter"
           ng-click="($index !== selectedCardIndex) && selectCard($event, $index)"
-          ng-class="{'expanded': $index == selectedCardIndex || $mdMedia('min-width: 600px')}"
+          ng-class="{'expanded': $index == selectedCardIndex || $mdMedia('min-width: 600px'), 'night-mode-dark': nightMode}"
           layout="column"
           layout-gt-xs="row"
         >
@@ -183,7 +194,7 @@
             </md-card-title>
           </md-card-content>
             <md-card-content flex-gt-xs='100' ng-show="$index == selectedCardIndex || $mdMedia('min-width: 600px')">
-                <md-content class="md-padding">
+                <md-content class="md-padding" ng-class="{'night-mode-darker': nightMode}">
                   <md-subheader class="md-no-sticky">Tools used</md-subheader>
                       <md-chips ng-model="project.tools_used" readonly='true'>
                           <md-chip-template>

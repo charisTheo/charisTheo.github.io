@@ -119,12 +119,26 @@ i.material-icons:hover + .icon-label {
   img::-moz-selection {
     background: transparent; }
 
-
+.night-mode {
+  background-color: #424242 !important;
+  color: rgb(105, 240, 174) !important;
+}
+.night-mode-dark {
+  background-color: #222222 !important;
+  color: rgb(105, 240, 174) !important;
+}
+.night-mode-darker {
+  background-color: #151515 !important;
+  color: rgb(105, 240, 174) !important;
+}
 /***************************
 ****************************
         CUSTOM STYLES
 ****************************
 ***************************/
+.logo {
+  margin-right: auto;
+}
 #profile-photo-container {
   position: fixed;
   width: auto;
@@ -206,16 +220,6 @@ i.material-icons:hover + .icon-label {
   content: "";
   position: absolute;
 }
-/* #profile-photo-container .eye span {
-  background-color: black;
-  border-radius: 50%;
-  padding: 5px;
-  width: 5px;
-  height: 5px;
-  display: inline-block;
-  margin: 0;
-  content: "";
-} */
 
 main #title {
     text-decoration: none;
@@ -355,11 +359,10 @@ md-card.card img.md-card-image {
 .filters {
   align-items: flex-start;
 }
-button.md-button.top-nav-search-btn {
-  min-width: initial;
-  margin: 0 10px;
-  padding: 10px;
-  margin-left: auto;
+button.md-button.top-nav-btn {
+  height: 40px;
+  width: 40px;
+  
 }
 
 .card.ng-enter,

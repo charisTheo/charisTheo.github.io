@@ -33,6 +33,7 @@
             //     $scope.showProfilePhoto = true;               
             //     $scope.documentLoaded = true;
             // });
+            
             $scope.$watch('$viewContentLoaded', function(){
                 $scope.showProfilePhoto = true;               
                 $scope.documentLoaded = true;

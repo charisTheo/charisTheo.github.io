@@ -79,8 +79,10 @@
       >
           <i class="material-icons">menu</i>
       </md-button>
-      <!-- TODO: Add a personal logo -->
-      <div class="logo">Logo</div>
+
+      <md-button id="logo" class="md-fab" aria-label="Home button">
+        <svg-logo></svg-logo>
+      </md-button>
 
       <side-nav-list 
         ng-if="$mdMedia('min-width: 959px')"

@@ -136,8 +136,18 @@ i.material-icons:hover + .icon-label {
         CUSTOM STYLES
 ****************************
 ***************************/
-.logo {
+#logo {
   margin-right: auto;
+  width: 40px;
+  max-height: 40px;
+  background-color: white;
+  padding: 0;
+  min-width: 40px;
+}
+#logo svg {
+  width: 35px;
+  height: 35px;
+  vertical-align: sub;
 }
 #profile-photo-container {
   position: fixed;

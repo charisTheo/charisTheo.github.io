@@ -4,7 +4,7 @@
         "subtitle": "Dinner Hosting platform",
         "description": "Cooksurfing is a web app dinner hosting platform based on the sharing economy concept",
         "tools_used": ["Node.js", "Express.js", "MongoDB", "Mongoose.js", "GridFS", "Handlebars.js", "Bootstrap 4", "JWT", "Passport", "Service Workers", "Require AMD", "Gulp", "Nodemon", "Javascript", "Google Maps API", "CSS3", "SASS"],
-        "url": "https://www.cooksurfing.eu",
+        "url": "https://www.cooksurfing.eu/profile/mona",
         "github_repo_name": "cooksurfing",
         "share_description": "Check out my repository Cooksurfing web-app!",
         "images": [

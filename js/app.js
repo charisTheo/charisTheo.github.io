@@ -11,12 +11,21 @@ app
 .directive('sideNavList', function() {
     return {
         scope: false,
+        restrict: 'E',
         templateUrl: '/partials/sidenavList.html'
     }
 })
 .directive('pageLoader', function() {
     return {
         scope: false,
+        restrict: 'E',
         templateUrl: '/partials/page-loader.html'
+    }
+})
+.directive('svgLogo', function() {
+    return {
+        scope: false,
+        restrict: 'E',
+        templateUrl: './../partials/svgLogo.html'
     }
 });

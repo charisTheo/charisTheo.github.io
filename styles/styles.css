@@ -32,6 +32,13 @@ main {
     overflow: visible;
     position: relative;
 }
+.md-fab {
+  width: 40px !important;
+  max-height: 40px !important;
+  min-width: 40px !important;
+  height: 40px !important;
+  line-height: initial !important;
+}
 .container {
     /* padding-right: 15px; */
     /* padding-left: 15px; */
@@ -138,11 +145,9 @@ i.material-icons:hover + .icon-label {
 ***************************/
 #logo {
   margin-right: auto;
-  width: 40px;
-  max-height: 40px;
   background-color: white;
   padding: 0;
-  min-width: 40px;
+  margin: 8px;
 }
 #logo svg {
   width: 35px;
@@ -276,21 +281,16 @@ side-nav-list {
   width: 100%;
   text-align: center;
 }
-/* TODO: Align it on the right side of the top nav */
-/* .social-links {
-  float: right;
-} */
-.social-links md-list md-list-item {
-  padding: 0;
+.social-links > md-list md-list-item button {
+
 }
-.social-links button.md-button{
-  min-width: initial;
-  font-size: inherit;
-  margin: 0 10px;
-  padding: 10px;
+.social-links md-list,
+.social-links > md-list md-list-item {
+  padding: 0;
 }
 .social-links a i {
   text-shadow: 2px 2px rgba(0,0,0,0.5);
+  /* vertical-align: middle; */
 }
 .social-links a i:hover,
 .social-links a i:focus {
@@ -301,6 +301,7 @@ md-toolbar {
 }
 md-toolbar side-nav-list md-list.small-padding md-list-item {
   padding: 0px 5px;
+  vertical-align: bottom;
 }
 /* top nav buttons overrides */
 md-toolbar side-nav-list md-list md-list-item button.md-button {
@@ -369,12 +370,9 @@ md-card.card img.md-card-image {
 .filters {
   align-items: flex-start;
 }
-button.md-button.top-nav-btn {
-  height: 40px;
-  width: 40px;
-  
+button.md-button.top-nav-btn i {
+  vertical-align: middle;
 }
-
 .card.ng-enter,
 .card.ng-move {
   transition: 0.4s all;

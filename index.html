@@ -81,7 +81,9 @@
       </md-button>
 
       <md-button id="logo" class="md-fab" aria-label="Home button">
-        <svg-logo></svg-logo>
+        <a href="/">
+          <svg-logo></svg-logo>
+        </a>
       </md-button>
 
       <side-nav-list 
@@ -89,21 +91,28 @@
       >
       </side-nav-list>  
 
-      <!-- TOP NAV SEARCH BUTTON -->
-      <md-button 
-        class="top-nav-btn md-fab md-primary" 
-        ng-click="showFilters = !showFilters" 
-        aria-label="search the website"
-      >
-        <i md-colors="{color: 'accent'}" class="material-icons">search</i>
-      </md-button>
-      <md-button  
-        ng-click="nightMode = !nightMode" 
-        class="top-nav-btn md-fab md-primary"
-        aria-label="Night Mode Toggle"
-      >
-        <i md-colors="{color: 'accent'}" class="material-icons">invert_colors</i>
-      </md-button> 
+      <!-- TOP NAV OPTIONS -->
+      <md-list id="top-nav-options" flex layout="row">
+        <md-list-item layout="row" class="noright">
+          <div flex></div>
+          <md-button 
+          class="top-nav-btn md-fab md-primary" 
+          ng-click="showFilters = !showFilters" 
+          aria-label="search the website"
+          >
+            <i md-colors="{color: 'accent'}" class="material-icons">search</i>
+          </md-button>
+          <md-button  
+          ng-click="nightMode = !nightMode" 
+          class="top-nav-btn md-fab md-primary"
+          aria-label="Night Mode Toggle"
+          >
+            <i md-colors="{color: 'accent'}" class="material-icons">invert_colors</i>
+          </md-button> 
+        </md-list-item>
+        <!-- <md-list-item layout="row">
+        </md-list-item> -->
+      </md-list>
     </div>
   </md-toolbar>    
   <!---------- end of TOP BAR MENU ----------->

@@ -8,12 +8,11 @@
         "github_repo_name": "cooksurfing",
         "share_description": "Check out my repository Cooksurfing web-app!",
         "images": [
-            {
-                "src": "/img/screenshots/Cooksurfing.png"
-            },
-            {
-                "src": "" 
-            }
+            {"src": "/img/screenshots/cooksurfing/Cooksurfing.png"},
+            {"src": "/img/screenshots/cooksurfing/www.cooksurfing.eu_dashboard(iPad).png"},
+            {"src": "/img/screenshots/cooksurfing/www.cooksurfing.eu_dinnerDescription(iPad).png"},
+            {"src": "/img/screenshots/cooksurfing/www.cooksurfing.eu_profile(Pixel2XL)_2.png"},
+            {"src": "/img/screenshots/cooksurfing/www.cooksurfing.eu_profile(Pixel2XL).png"}
         ] 
     },
     {

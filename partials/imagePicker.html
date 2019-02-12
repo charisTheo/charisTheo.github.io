@@ -1,0 +1,11 @@
+<div class="images-container" flex-gt-xs="40">
+  <img
+    ng-class="{'selectedImage': selectedImage == $index}"
+    ng-click="selectImage($index)"
+    ng-repeat="image in images"
+    ng-src="{{ image.src }}"
+    flex-gt-xs="40"
+    class="md-card-image"
+    alt="Projects image/screenshot"
+  />
+</div>

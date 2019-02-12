@@ -1,0 +1,28 @@
+.images-container img.selectedImage {
+    object-fit: contain;
+    height: 100%;
+    flex-basis: 90%;
+    flex-grow: 10;
+    opacity: 1;
+    outline: none;
+}
+.images-container img {
+    transition: all 0.35s;
+    width: 5%;
+    flex-grow: 1;
+    margin: 0 10px;
+    flex-basis: 5%;
+    flex-shrink: 5;
+    opacity: 0.6;
+}
+.images-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-content: space-around;
+    align-items: center;
+    height: 400px;
+    max-height: 400px;
+    width: 100%;
+    padding: 0 10px;
+}

@@ -36,6 +36,7 @@
   <link rel="stylesheet" href="./styles/scrollBar.css" type="text/css">
   <link rel="stylesheet" href="./styles/styles.css" type="text/css">
   <link rel="stylesheet" href="./styles/media.css" type="text/css">
+  <link rel="stylesheet" href="./styles/imagePicker.css" type="text/css">
 
   <link rel="stylesheet" href="./vendor/styles/angular-material.css" type="text/css">
   <link rel="stylesheet" href="./vendor/styles/materialdesignicons.css" type="text/css">
@@ -187,8 +188,10 @@
             <i class="material-icons" md-colors="{color: 'accent'}">close</i>
           </md-button> -->
 
-          <img ng-src="{{ project.images[0].src }}" flex-gt-xs='40' class="md-card-image perspective-item" alt="Projects image/screenshot">
-            <md-card-content>
+          <image-picker images="{{project.images}}"></image-picker>
+          <!-- <img ng-src="{{ project.images[0].src }}" flex-gt-xs='40' class="md-card-image perspective-item" alt="Projects image/screenshot"> -->
+
+          <md-card-content>
             <md-card-title layout='column' flex-gt-xs='60'>
               <md-card-title-text>
                 <span class="md-headline">{{ project.title }}  <a ng-href="{{ project.url }}"><i class="material-icons">link</i></a> </span>

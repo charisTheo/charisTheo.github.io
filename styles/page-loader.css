@@ -22,10 +22,10 @@
     background-image:      -o-linear-gradient(120deg, rgb(103,58,183) 25%, rgb(105, 240, 174) 140%);
     background-image:         linear-gradient(120deg, rgb(103,58,183) 25%, rgb(105, 240, 174) 140%);
   }
-  #page-loader.hide::after {
+  #page-loader.hideLoader::after {
     content: none;
   }
-  #page-loader.hide {
+  #page-loader.hideLoader {
     transition: transform 0.35s;
     transform: scale(0);
     transform-origin: 50% 50%;

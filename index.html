@@ -43,8 +43,6 @@
 
 <body ng-app="Portfolio" ng-controller="PortfolioCtrl" ng-class="{'night-mode': nightMode}">
 
-  <page-loader id="page-loader" ng-class="{'hide': documentLoaded}"></page-loader>
-  
   <!---------- SIDE NAV ----------->
   <md-sidenav 
     md-component-id="left" 
@@ -264,6 +262,8 @@
 
   <!-- TODO: make it async -->
   <script src="./js/accelerometer.js"></script>
+
+  <page-loader id="page-loader" ng-class="{'hideLoader': documentLoaded}"></page-loader>
 
 </body>
 

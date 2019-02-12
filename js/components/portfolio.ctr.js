@@ -35,10 +35,9 @@
             // });
             
             $scope.$watch('$viewContentLoaded', function(){
-                $scope.showProfilePhoto = true;               
+                $scope.showProfilePhoto = true;
                 $scope.documentLoaded = true;
             });
-            
 
             $scope.selectCard = function($event, $index) {
                 if ($scope.selectedCardIndex != $index) {

@@ -128,9 +128,9 @@ main .card.toggle {
 .card.toggle .headings {
     position: relative;
 }
-.card.toggle .headings .card-title {
-    /* color: #6200ea; */
-}
+/* .card.toggle .headings .card-title {
+    color: #6200ea;
+} */
 .card.toggle .headings .card-subtitle,
 .card.toggle .card-bottom-buttons i {
     color: #000;

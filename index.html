@@ -523,7 +523,7 @@
     ng-if="!$mdMedia('min-width: 959px')"
   >
     <md-content>
-      <md-toolbar layout-align="center right">
+      <md-toolbar layout="row" layout-align="end center">
           <md-button 
             md-colors="{color: 'accent'}" 
             ng-click="toggleSideNav()" 
@@ -540,7 +540,7 @@
   <!---------- end of SIDE NAV ----------->
 
   <!---------- TOP BAR MENU ----------->
-  <md-toolbar>
+  <md-toolbar layout="row" layout-align="space-between center">
     <div class="md-toolbar-tools" md-colors="{color: 'accent'}">
       <md-button 
         ng-click="toggleSideNav()" 

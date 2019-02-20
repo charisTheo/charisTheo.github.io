@@ -286,11 +286,15 @@ side-nav-list {
   text-shadow: initial;
 }
 md-toolbar {
-  position: relative;
+  position: sticky;
+  top: 0;
 }
 md-toolbar side-nav-list md-list.small-padding md-list-item {
   padding: 0px 5px;
   vertical-align: bottom;
+}
+md-sidenav {
+  position: fixed;
 }
 /* top nav buttons overrides */
 md-toolbar side-nav-list md-list md-list-item button.md-button {

@@ -270,21 +270,28 @@ side-nav-list {
   width: 100%;
   text-align: center;
 }
-.social-links > md-list md-list-item button {
 
+.social-links a.md-button.md-fab {
+  background-color: white;
+  padding: 9px;
 }
-.social-links md-list,
-.social-links > md-list md-list-item {
-  padding: 0;
+.social-links .md-button:active,
+.social-links .md-button:hover,
+.social-links .md-button:focus {
+  background-color: #eee !important;
 }
-.social-links a i {
+.social-links .md-button:visited i {
+  color: #673AB7;
+}
+.social-links .md-button i {
   text-shadow: 2px 2px rgba(0,0,0,0.5);
-  /* vertical-align: middle; */
+  color: #673AB7;
 }
-.social-links a i:hover,
-.social-links a i:focus {
+.social-links .md-button:hover a i,
+.social-links .md-button:focus a i {
   text-shadow: initial;
 }
+
 md-toolbar {
   position: sticky;
   top: 0;

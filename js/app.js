@@ -15,11 +15,20 @@ app
         templateUrl: './../partials/svgLogo.html'
     }
 })
-.directive('sideNavList', function() {
+.directive('socialLinks', function() {
     return {
         scope: false,
         restrict: 'E',
-        templateUrl: '/partials/sidenavList.html'
+        templateUrl: '/partials/socialLinks.html'
+    }
+})
+.directive('sideNavList', function() {
+    return {
+        scope: {
+            onContactClick: '&'
+        },
+        restrict: 'E',
+        templateUrl: '/partials/sidenavList.html',
     }
 })
 .directive('pageLoader', function() {

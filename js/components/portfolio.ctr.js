@@ -18,6 +18,13 @@
             $scope.cardToggle = false;
             $scope.selectedCardIndex = undefined;
             $scope.selectedCard = undefined;
+            $scope.toggleSocialLinks = function() {
+                $scope.showSocialLinks = !$scope.showSocialLinks;
+                // close side nav if open
+                if ($mdSidenav('left').isOpen) {
+                    $mdSidenav('left').toggle();
+                }
+            };
 
             // angular.element(document).ready(function () {
             //     $scope.showProfilePhoto = true;

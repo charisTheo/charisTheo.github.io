@@ -533,8 +533,10 @@
             <i class="material-icons">close</i>
           </md-button>
       </md-toolbar>
+      
       <!-- Partial template -->
-      <side-nav-list></side-nav-list>
+      <side-nav-list on-contact-click="toggleSocialLinks()"></side-nav-list>
+
     </md-content>
   </md-sidenav>
   <!---------- end of SIDE NAV ----------->
@@ -559,8 +561,8 @@
 
       <side-nav-list 
         ng-if="$mdMedia('min-width: 959px')"
-      >
-      </side-nav-list>  
+        on-contact-click="toggleSocialLinks()"
+      ></side-nav-list>  
 
       <!-- TOP NAV OPTIONS -->
       <md-list id="top-nav-options" flex layout="row">
@@ -581,13 +583,12 @@
             <i md-colors="{color: 'accent'}" class="material-icons">invert_colors</i>
           </md-button> 
         </md-list-item>
-        <!-- <md-list-item layout="row">
-        </md-list-item> -->
       </md-list>
     </div>
   </md-toolbar>    
   <!---------- end of TOP BAR MENU ----------->
 
+  <!---------- Profile photo and Twitter follow ---------->
   <div ng-class="{'show': showProfilePhoto}" id="profile-photo-container">
 
     <div class="eye"><div class="iris"></div></div>
@@ -599,7 +600,7 @@
       </button>
       <p>Hi there!</p>
       <p>
-        if you like the content follow me on <a class="github-button" href="https://github.com/charisTheo" data-show-count="true" aria-label="Follow @charisTheo on GitHub">Github</a>
+        if you like the content follow me on <a href="https://twitter.com/charisTheo_dev" aria-label="Follow @charisTheo_dev on Twitter">Twitter</a>
       </p>
     </div>
     <img id="profile-photo" src="./img/profile_photo.png" alt="My profile picture">
@@ -622,6 +623,9 @@
         </md-input-container>
       </div>
     <!---------- end of SEARCH FILTERS INPUT ----------->
+
+    <!------- Social links toggle list --------->
+    <social-links ng-show="showSocialLinks"></social-links>
 
       <md-content 
         id="projects" 

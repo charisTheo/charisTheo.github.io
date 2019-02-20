@@ -3,7 +3,7 @@
 
     angular
         .module('Portfolio')
-        .controller('PortfolioCtrl', function($scope, $http, $window, $mdSidenav, $mdMedia, PerspectiveHoverEffect, ShareListener) {
+        .controller('PortfolioCtrl', function($scope, $http, $window, $mdSidenav, $mdMedia, ShareListener) {
             $http.get('/projects.data.json').then(function(response) {
                 $scope.projects = response.data;
             });
@@ -11,16 +11,6 @@
 
             $scope.shareButtonListener = ShareListener.listener;
             $scope.copyToClipboard = ShareListener.copyToClipboard;
-
-            let handlers; PerspectiveHoverEffect.getHandlers();
-            const screenWidth = $window.innerWidth;
-            // add mouse listeners only on desktops 
-            if (screenWidth > 969) {
-                handlers = PerspectiveHoverEffect.getHandlers();
-                $scope.MouseLeaveHandler = handlers.MouseLeaveHandler;
-                $scope.MouseMoveHandler = handlers.MouseMoveHandler;
-                $scope.MouseEnterHandler = handlers.MouseEnterHandler;
-            }
 
             $scope.nightMode = false;
             $scope.documentLoaded = false;

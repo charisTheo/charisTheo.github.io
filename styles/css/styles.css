@@ -265,17 +265,6 @@ main #projects {
   overflow-y: hidden;
 }
 
-.perspective-parent {
-  perspective: 70px;
-}
-.perspective-item {
-  box-shadow: 2px 2px 50px rgba(0, 0, 0, 0.2);
-  transition: transform 0.5s;
-  -webkit-transition: transform 0.5s;
-  -moz-transition: transform 0.5s;
-  -o-transition: transform 0.5s;
-}
-
 /* TOP NAV BAR */
 side-nav-list {
   width: 100%;

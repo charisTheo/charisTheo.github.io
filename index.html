@@ -633,10 +633,7 @@
         <md-card 
           md-theme="{{'default'}}" 
           md-theme-watch
-          class="card perspective-parent md-padding"
-          ng-mousemove="MouseMoveHandler($event)"
-          ng-mouseenter="MouseEnterHandler($event)" 
-          ng-mouseleave="MouseLeaveHandler($event)" 
+          class="card md-padding"
           ng-repeat="project in projects | filter: searchFilter"
           ng-click="($index !== selectedCardIndex) && selectCard($event, $index)"
           ng-class="{'expanded': $index == selectedCardIndex || $mdMedia('min-width: 600px'), 'night-mode-dark': nightMode}"
@@ -661,7 +658,6 @@
           </md-button> -->
 
           <image-picker images="{{project.images}}"></image-picker>
-          <!-- <img ng-src="{{ project.images[0].src }}" flex-gt-xs='40' class="md-card-image perspective-item" alt="Projects image/screenshot"> -->
 
           <md-card-content>
             <md-card-title layout='column' flex-gt-xs='60'>
@@ -727,12 +723,7 @@
   <script src="./js/app.js"></script>
   <script src="./js/components/portfolio.ctr.js"></script>
   <script src="./js/components/share-listener.fac.js"></script>
-  <script src="./js/accelerometer.js"></script>   
-  <!-- TODO: remove perspective-hover -->
-  <script src="./js/components/perspective-hover.fac.js"></script> 
-  
-
-
+  <script src="./js/accelerometer.js"></script>
 
 </body>
 

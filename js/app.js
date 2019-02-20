@@ -39,7 +39,6 @@ app
             scope.selectedImage = 0;
             scope.selectImage = function(index) {
                 scope.selectedImage = index;
-                console.log(index);
             }
         }
     }

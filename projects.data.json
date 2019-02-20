@@ -32,23 +32,7 @@
             }
         ] 
     },
-    {
-        "title": "Under Construction",
-        "subtitle": "A friendly message for websites under construction",
-        "description": "The goal was to create a small template for using on websites currently under construction. It has a user friendly animation to prompt the user that the website is still under construction.",
-        "tools_used": ["SVG", "CSS Animations", "No JavaScript"],
-        "url": "https://charistheo.github.io/under-construction/",
-        "github_repo_name": "under-construction",
-        "share_description": "Check out my repository Under Construction!",
-        "images": [
-            {
-                "src": "/img/screenshots/Under-Construction.png"
-            },
-            {
-                "src": "" 
-            }
-        ] 
-    },
+    
     {
         "title": "Animath",
         "subtitle": "Learn Mathematics by scrolling",
@@ -60,23 +44,6 @@
         "images": [
             {
                 "src": "/img/screenshots/animath.png"
-            },
-            {
-                "src": "" 
-            }
-        ] 
-    },
-    {
-        "title": "Bubble Sort",
-        "subtitle": "A JavaScript Bubble Sort Algorithm",
-        "description": "A bubble sort interface where input of different numbers is possible which can be sorted in an Ascending and Descending order with the push of a button.",
-        "tools_used": ["JavaScript"],
-        "url": "https://charistheo.github.io/bubble-sort",
-        "github_repo_name": "bubble-sort",
-        "share_description": "Check out my repository Bubble Sort Algorithm!",
-        "images": [
-            {
-                "src": "/img/screenshots/Bubble-Sort.png"
             },
             {
                 "src": "" 

@@ -157,9 +157,17 @@
   <link rel="stylesheet" href="./vendor/styles/angular-material.css" type="text/css">
   <link rel="stylesheet" href="./vendor/styles/materialdesignicons.css" type="text/css">
     
-  <link rel="stylesheet" href="./styles/styles.min.css" media="none" onload="if(media!='all')media='all'">
-  <noscript><link rel="stylesheet" href="./styles/styles.min.css"></noscript>
+  <link rel="stylesheet" href="./styles/css/compressed/styles.min.css" media="none" onload="if(media!='all')media='all'">
+  <noscript><link rel="stylesheet" href="./styles/css/compressed/styles.min.css"></noscript>
 
+
+  <!-- Angular -->
+  <!-- TODO: use minified version of angular -->
+  <script src="./vendor/angular.js"></script>
+  <script src="./vendor/angular-animate.js"></script>
+  <script src="./vendor/angular-aria.js"></script>
+  <script src="./vendor/angular-messages.js"></script>
+  <script src="./vendor/angular-material.js"></script>
 </head>
 
 <body ng-app="Portfolio" ng-controller="PortfolioCtrl" ng-class="{'night-mode': nightMode}">
@@ -715,20 +723,15 @@
       </md-content>
   </main>
 
-  <!-- Angular -->
-  <script src="./vendor/angular.js"></script>
-  <script src="./vendor/angular-animate.js"></script>
-  <script src="./vendor/angular-aria.js"></script>
-  <script src="./vendor/angular-messages.js"></script>
-  <script src="./vendor/angular-material.js"></script>
-  <!-- TODO: make scripts not needed on load async -->
+  
   <script src="./js/app.js"></script>
   <script src="./js/components/portfolio.ctr.js"></script>
-  <script src="./js/components/perspective-hover.fac.js"></script>
   <script src="./js/components/share-listener.fac.js"></script>
-  <!-- <script src="./js/components/setLabelsPosition.fac.js"></script> -->
+  <script src="./js/accelerometer.js"></script>   
+  <!-- TODO: remove perspective-hover -->
+  <script src="./js/components/perspective-hover.fac.js"></script> 
+  
 
-  <script async defer src="./js/accelerometer.js"></script>
 
 
 </body>

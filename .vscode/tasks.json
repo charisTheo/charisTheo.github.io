@@ -2,10 +2,10 @@
     "version": "2.0.0",
     "tasks": [
         {
-            "label": "watch",
+            "label": "browserSync",
             "command": "gulp",
             "args": [
-                "watch"
+                "browserSync"
             ],
             "group": {
                 "kind": "build",

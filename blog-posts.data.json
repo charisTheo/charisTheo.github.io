@@ -1,0 +1,36 @@
+[
+    {
+        "title": "Under Construction",
+        "subtitle": "A friendly message for websites under construction",
+        "description": "The goal was to create a small template prompting users that the website is currently under construction, animating SVGs with CSS animations.",
+        "tools_used": ["SVG", "CSS Animations", "No JavaScript"],
+        "url": "https://charistheo.github.io/under-construction/",
+        "github_repo_name": "under-construction",
+        "share_description": "Check out my repository Under Construction!",
+        "images": [
+            {
+                "src": "/img/screenshots/Under-Construction.png"
+            },
+            {
+                "src": "" 
+            }
+        ] 
+    },
+    {
+        "title": "React.js Calculator",
+        "subtitle": "",
+        "description": "",
+        "tools_used": ["React.js", "JavaScript", "Bootrstap 4"],
+        "url": "",
+        "github_repo_name": "",
+        "share_description": "",
+        "images": [
+            {
+                "src": "/img/screenshots/react-calculator.png"
+            },
+            {
+                "src": "" 
+            }
+        ] 
+    }
+]

@@ -4,7 +4,7 @@
     angular
         .module('Portfolio')
         .controller('PortfolioCtrl', function($scope, $http, $window, $mdSidenav, $mdMedia, PerspectiveHoverEffect, ShareListener) {
-            $http.get('/projects-data.json').then(function(response) {
+            $http.get('/projects.data.json').then(function(response) {
                 $scope.projects = response.data;
             });
             $scope.$mdMedia = $mdMedia;

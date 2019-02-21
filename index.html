@@ -568,7 +568,18 @@
       <!-- TOP NAV OPTIONS -->
       <md-list id="top-nav-options" flex layout="row">
         <md-list-item layout="row" class="noright">
+          <!-- Back button  -->
+          <md-button 
+            ng-if="selectedCardIndex !== undefined"
+            ng-click="selectCard($event, selectedCardIndex)" 
+            class="md-icon-button back-button md-fab md-primary" 
+            aria-label="Go back to all projects"
+            md-colors="{color: 'accent'}"
+          >
+            <i class="material-icons">arrow_back</i>
+          </md-button>
           <div flex></div>
+          <!-- Search button -->
           <md-button 
           class="top-nav-btn md-fab md-primary" 
           ng-click="showFilters = !showFilters" 
@@ -576,6 +587,7 @@
           >
             <i md-colors="{color: 'accent'}" class="material-icons">search</i>
           </md-button>
+          <!-- Night mode toggle button -->
           <md-button  
           ng-click="nightMode = !nightMode" 
           class="top-nav-btn md-fab md-primary"
@@ -643,28 +655,23 @@
           class="card md-padding"
           ng-repeat="project in projects | filter: searchFilter"
           ng-click="($index !== selectedCardIndex) && selectCard($event, $index)"
-          ng-class="{'expanded': $index == selectedCardIndex || $mdMedia('min-width: 600px'), 'night-mode-dark': nightMode}"
+          ng-class="{'expanded': $index == selectedCardIndex, 'night-mode-dark': nightMode}"
           layout="column"
           layout-gt-xs="row"
         >
-          <!---------- TOP BAR MENU ----------->
-          <md-toolbar ng-if="$mdMedia('max-width: 600px') && ($index == selectedCardIndex)">
-            <div class="md-toolbar-tools" md-colors="{color: 'accent'}">
-              <md-button 
-                ng-click="selectCard($event, $index)" 
-                class="md-icon-button" 
-                aria-label="Go back to main menu"
-              >
-                <i class="material-icons">arrow_back</i>
-              </md-button>
-            </div>
-          </md-toolbar> 
 
-          <!-- <md-button ng-show="$index == selectedCardIndex && $mdMedia('max-width: 600px')" class="md-icon-button card-toggle">
-            <i class="material-icons" md-colors="{color: 'accent'}">close</i>
-          </md-button> -->
+          <!-- Project banner show only if card is not expanded -->
+          <img 
+            ng-show="$index != selectedCardIndex" 
+            ng-src="{{ project.bannerImage }}" 
+            class="md-card-image banner-image"
+            alt="Project banner image"
+          >
 
-          <image-picker images="{{project.images}}"></image-picker>
+          <image-picker  
+            ng-show="$index == selectedCardIndex" 
+            images="{{project.images}}"
+          ></image-picker>
 
           <md-card-content>
             <md-card-title layout='column' flex-gt-xs='60'>
@@ -675,12 +682,12 @@
               
               <md-divider></md-divider>
               
-              <md-card-title-text class="md-margin" ng-show="$index == selectedCardIndex || $mdMedia('min-width: 600px')">
+              <md-card-title-text class="md-margin" ng-show="$index == selectedCardIndex">
                 {{ project.description }}
               </md-card-title-text>
             </md-card-title>
           </md-card-content>
-            <md-card-content flex-gt-xs='100' ng-show="$index == selectedCardIndex || $mdMedia('min-width: 600px')">
+            <md-card-content flex-gt-xs='100' ng-show="$index == selectedCardIndex">
                 <md-content class="md-padding" ng-class="{'night-mode-darker': nightMode}">
                   <md-subheader class="md-no-sticky">Tools used</md-subheader>
                       <md-chips ng-model="project.tools_used" readonly='true'>

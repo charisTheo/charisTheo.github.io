@@ -138,13 +138,17 @@ i.material-icons:hover + .icon-label {
   margin-right: auto;
   background-color: white;
   padding: 0;
-  margin: 8px;
+  margin: 10px;
 }
 #logo svg {
   width: 35px;
   height: 35px;
   vertical-align: sub;
 }
+/* button.md-button.back-button {
+  margin-bottom: 3px;
+  margin-left: 15px;
+} */
 #profile-photo-container {
   position: fixed;
   width: auto;
@@ -340,23 +344,14 @@ md-card .card-toggle {
   height: 100%;
   z-index: 11;
 }
-md-card.card img.md-card-image {
-  border-radius: initial;
-}
-/* md-card .image-container::after {
-  content: "";
-  display: block;
+md-card.card > img.banner-image {
+  /* border-radius: initial; */
+  opacity: 0.5;
   position: absolute;
-  width: 100%;
+  width: auto;
   height: 100%;
-  top: 0;
-  left: 0;
-  background-image: -webkit-linear-gradient(180deg, rgba(0,0,0,0) 10%, rgba(0,0,0,0.5) 75%); 
-  background-image:    -moz-linear-gradient(180deg, rgba(0,0,0,0) 10%, rgba(0,0,0,0.5) 75%); 
-  background-image:     -ms-linear-gradient(180deg, rgba(0,0,0,0) 10%, rgba(0,0,0,0.5) 75%); 
-  background-image:      -o-linear-gradient(180deg, rgba(0,0,0,0) 10%, rgba(0,0,0,0.5) 75%); 
-  background-image:         linear-gradient(180deg, rgba(0,0,0,0) 10%, rgba(0,0,0,0.5) 75%);
-} */
+  padding: 15px;
+}
 
 .filters {
   align-items: flex-start;

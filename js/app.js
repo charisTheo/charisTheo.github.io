@@ -1,4 +1,4 @@
-let app = angular.module('Portfolio', ['ngMaterial']);
+let app = angular.module('Portfolio', ['ngMaterial', 'ngCookies']);
     
 app
 .config(function($mdThemingProvider) {

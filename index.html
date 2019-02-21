@@ -165,6 +165,9 @@
   <script src="./vendor/angular-aria.js"></script>
   <script src="./vendor/angular-messages.js"></script>
   <script src="./vendor/angular-material.js"></script>
+  <!-- // ngCookies have to be the same version as angular -->
+  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.7.5/angular-cookies.js"></script>
+  
 </head>
 
 <body ng-app="Portfolio" ng-controller="PortfolioCtrl" ng-class="{'night-mode': nightMode}">
@@ -608,12 +611,12 @@
     <div class="eye"><div class="iris"></div></div>
     
     <div id="follow-me-container" ng-class="{'night-mode-darker': nightMode}">
-      <button ng-click="showProfilePhoto = false">
+      <button ng-click="onCloseProfileClick()">
         <i class="material-icons">close</i>
       </button>
       <p>Hi there!</p>
       <p>
-        if you like the content follow me on <a href="https://twitter.com/charisTheo_dev" aria-label="Follow @charisTheo_dev on Twitter">Twitter</a>
+        if you like the content follow me on <a ng-click="onFollowMeClick($event)" ng-href="https://twitter.com/charisTheo_dev" aria-label="Follow @charisTheo_dev on Twitter">Twitter</a>
       </p>
     </div>
     <img id="profile-photo" src="./img/profile_photo.png" alt="My profile picture">

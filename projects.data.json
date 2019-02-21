@@ -9,11 +9,10 @@
         "share_description": "Check out my repository Cooksurfing web-app!",
         "bannerImage": "/img/screenshots/cooksurfing/logo-512.png",
         "images": [
-            {"src": "/img/screenshots/cooksurfing/responsive_cooksurfing.gif"},
-            {"src": "/img/screenshots/cooksurfing/www.cooksurfing.eu_dashboard(iPad).png"},
-            {"src": "/img/screenshots/cooksurfing/www.cooksurfing.eu_dinnerDescription(iPad).png"},
-            {"src": "/img/screenshots/cooksurfing/www.cooksurfing.eu_profile(Pixel2XL)_2.png"},
-            {"src": "/img/screenshots/cooksurfing/www.cooksurfing.eu_profile(Pixel2XL).png"}
+            {"src": "/img/screenshots/cooksurfing/www.cooksurfing.eu_dashboard_2.png"},
+            {"src": "/img/screenshots/cooksurfing/www.cooksurfing.eu_dashboard.png"},
+            {"src": "/img/screenshots/cooksurfing/www.cooksurfing.eu_searchResults.png"},
+            {"src": "/img/screenshots/cooksurfing/www.cooksurfing.eu.png"}
         ] 
     },
     {

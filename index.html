@@ -24,8 +24,8 @@
   
   <title>charisTheo 👨‍💻🇨🇾</title>
 
-  <!-- Add as inline -->
   <!-- <link rel="stylesheet" href="./styles/page-loader.css" type="text/css"> -->
+  <!-- Add as inline -->
   <style>
     #page-loader {
       position: fixed;
@@ -82,11 +82,11 @@
     }
     #page-loader #page-loader-logo {
       background-color: white;
-      -webkit-box-shadow: 0px 3px 10px 3px black;
-      -moz-box-shadow: 0px 3px 10px 3px black;
-      -ms-box-shadow: 0px 3px 10px 3px black;
-      -o-box-shadow: 0px 3px 10px 3px black;
-      box-shadow: 0px 3px 10px 3px black;
+      box-shadow: 0 3px 16px 0 rgba(0,0,0,1);
+      -o-box-shadow: 0 3px 16px 0 rgba(0,0,0,1);
+      -ms-box-shadow: 0 3px 16px 0 rgba(0,0,0,1);
+      -moz-box-shadow: 0 3px 16px 0 rgba(0,0,0,1);
+      -webkit-box-shadow: 0 3px 16px 0 rgba(0,0,0,1);
       position: fixed; 
       width: 200px;
       height: 200px;
@@ -701,7 +701,7 @@
                       </md-chips>
                 </md-content>
             </md-card-content>
-
+          <md-card-content>
             <md-card-actions layout="row" layout-align="center center">
                 <!-- Github Buttons -->
                 <md-button ng-show="$index == selectedCardIndex || $mdMedia('min-width: 600px')" class="md-icon-button" ng-href="https://github.com/charisTheo/{{ project.github_repo_name }}">
@@ -728,9 +728,8 @@
                     <i class="material-icons">share</i>
                 </md-button>
               </md-card-actions>
-              
+          </md-card-content>              
           </md-card>
-
 
       </md-content>
   </main>

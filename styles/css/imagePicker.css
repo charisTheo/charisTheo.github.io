@@ -1,10 +1,15 @@
 .images-container img.selectedImage {
     object-fit: contain;
-    height: 100%;
+    /* height: 100%; */
     flex-basis: 90%;
     flex-grow: 10;
     opacity: 1;
     outline: none;
+    box-shadow: 0 3px 16px 0 rgba(0,0,0,.6);
+    -o-box-shadow: 0 3px 16px 0 rgba(0,0,0,.6);
+    -ms-box-shadow: 0 3px 16px 0 rgba(0,0,0,.6);
+    -moz-box-shadow: 0 3px 16px 0 rgba(0,0,0,.6);
+    -webkit-box-shadow: 0 3px 16px 0 rgba(0,0,0,.6);
 }
 .images-container img {
     transition: all 0.35s;
@@ -25,5 +30,5 @@
     height: 400px;
     max-height: 400px;
     width: 100%;
-    padding: 0 10px;
+    padding: 10px 30px;
 }

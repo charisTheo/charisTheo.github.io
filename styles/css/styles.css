@@ -78,6 +78,11 @@ hr {
   padding: 10px 20px;
   border-radius: 2px;
   box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2), 0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 2px 1px -1px rgba(0, 0, 0, 0.12);
+  -o-box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2), 0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 2px 1px -1px rgba(0, 0, 0, 0.12);
+  -ms-box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2), 0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 2px 1px -1px rgba(0, 0, 0, 0.12);
+  -moz-box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2), 0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 2px 1px -1px rgba(0, 0, 0, 0.12);
+  -webkit-box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2), 0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 2px 1px -1px rgba(0, 0, 0, 0.12);
+
 }
 .md-icon-button.md-button {
   overflow: initial;
@@ -166,7 +171,11 @@ i.material-icons:hover + .icon-label {
   background-color: white;
   border-radius: 50%;
   padding: 2px;
-  box-shadow: 0px 3px 6px rgba(0,0,0,0.5);
+  box-shadow: -5px 5px 18px -7px rgba(0,0,0,.5);
+  -o-box-shadow: -5px 5px 18px -7px rgba(0,0,0,.5);
+  -ms-box-shadow: -5px 5px 18px -7px rgba(0,0,0,.5);
+  -moz-box-shadow: -5px 5px 18px -7px rgba(0,0,0,.5);
+  -webkit-box-shadow: -5px 5px 18px -7px rgba(0,0,0,.5);
 }
 #profile-photo-container button:hover i,
 #profile-photo-container button:active i,
@@ -187,7 +196,11 @@ i.material-icons:hover + .icon-label {
   opacity: 1;
 }
 #profile-photo-container #follow-me-container {
-  box-shadow: 0px 3px 6px rgba(0,0,0,0.5);
+  box-shadow: 0 3px 16px 0 rgba(0,0,0,.6);
+  -o-box-shadow: 0 3px 16px 0 rgba(0,0,0,.6);
+  -ms-box-shadow: 0 3px 16px 0 rgba(0,0,0,.6);
+  -moz-box-shadow: 0 3px 16px 0 rgba(0,0,0,.6);
+  -webkit-box-shadow: 0 3px 16px 0 rgba(0,0,0,.6);
   background-color: white;
   border-radius: 2px;
   padding: 6px 12px;
@@ -333,6 +346,9 @@ md-card.expanded {
   padding: 0;
   border-radius: initial;
 }
+md-card.expanded md-card-actions {
+  margin-bottom: 10vh;
+}
 md-card .card-toggle {
   position: absolute;
   top: 0;
@@ -375,6 +391,10 @@ main .md-chips md-chip {
 }
 main #projects md-chips md-chips-wrap.md-chips {
   box-shadow: none;
+  -o-box-shadow: none;
+  -ms-box-shadow: none;
+  -moz-box-shadow: none;
+  -webkit-box-shadow: none;
 }
 
 /***************************

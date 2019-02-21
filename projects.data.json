@@ -9,6 +9,7 @@
         "share_description": "Check out my repository Cooksurfing web-app!",
         "bannerImage": "/img/screenshots/cooksurfing/logo-512.png",
         "images": [
+            {"src": "/img/screenshots/cooksurfing/responsive_cooksurfing.gif"},
             {"src": "/img/screenshots/cooksurfing/www.cooksurfing.eu_dashboard(iPad).png"},
             {"src": "/img/screenshots/cooksurfing/www.cooksurfing.eu_dinnerDescription(iPad).png"},
             {"src": "/img/screenshots/cooksurfing/www.cooksurfing.eu_profile(Pixel2XL)_2.png"},
@@ -23,13 +24,12 @@
         "url": "https://web-app-chat.herokuapp.com",
         "github_repo_name": "node-chat-app",
         "share_description": "Check out my Chat Web App!",
+        "bannerImage": "/img/screenshots/node-chat-app/socket-io.svg",
         "images": [
-            {
-                "src": "/img/screenshots/ChatApp.png"
-            },
-            {
-                "src": "" 
-            }
+            {"src": "/img/screenshots/node-chat-app/web-app-chat.gif"},
+            {"src": "/img/screenshots/node-chat-app/web-app-chat.herokuapp.com_chat_2.png"},
+            {"src": "/img/screenshots/node-chat-app/web-app-chat.herokuapp.com_chat.png"},
+            {"src": "/img/screenshots/node-chat-app/web-app-chat.herokuapp.com.png"}
         ] 
     },
     

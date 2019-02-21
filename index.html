@@ -148,9 +148,6 @@
 
   <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script> -->
 
-  <!-- Particles.js -->
-  <script async defer src="./particles/particles.js"></script>
-
   <!-- TweenLite -->
   <script async defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TweenMax.min.js"></script>
 
@@ -535,7 +532,10 @@
       </md-toolbar>
       
       <!-- Partial template -->
-      <side-nav-list on-contact-click="toggleSocialLinks()"></side-nav-list>
+      <side-nav-list 
+        on-contact-click="toggleSocialLinks()"
+        on-hire-me-click="togglePeoplePerHourWidget()"
+      ></side-nav-list>
 
     </md-content>
   </md-sidenav>
@@ -562,6 +562,7 @@
       <side-nav-list 
         ng-if="$mdMedia('min-width: 959px')"
         on-contact-click="toggleSocialLinks()"
+        on-hire-me-click="togglePeoplePerHourWidget()"
       ></side-nav-list>  
 
       <!-- TOP NAV OPTIONS -->
@@ -608,7 +609,6 @@
 
   <main>
     <div class="container">
-      <div id="particles-js"></div>
 
     <!---------- SEARCH FILTERS INPUT ----------->
       <div ng-show="showFilters" layout="row" class="filters" layout-align="center center">
@@ -623,6 +623,9 @@
         </md-input-container>
       </div>
     <!---------- end of SEARCH FILTERS INPUT ----------->
+
+    <!------- PeoplePerHour Profile Widget ------->
+    <div style="text-align: center;" ng-show="showPeoplePerHourWidget" id="pph-hireme"></div>
 
     <!------- Social links toggle list --------->
     <social-links ng-show="showSocialLinks"></social-links>
@@ -728,6 +731,17 @@
   <script src="./js/components/portfolio.ctr.js"></script>
   <script src="./js/components/share-listener.fac.js"></script>
   <script src="./js/accelerometer.js"></script>
+  
+  <!-- PeoplePerHour Profile Widget -->
+  <script type="text/javascript">
+    (function(d, s) {
+        var useSSL = 'https:' == document.location.protocol;
+        var js, where = d.getElementsByTagName(s)[0],
+        js = d.createElement(s);
+        js.src = (useSSL ? 'https:' : 'http:') +  '//www.peopleperhour.com/hire/1866524758/1523363.js?width=336&height=142&orientation=vertical&theme=dark&rnd='+parseInt(Math.random()*10000, 10);
+        try { where.parentNode.insertBefore(js, where); } catch (e) { if (typeof console !== 'undefined' && console.log && e.stack) { console.log(e.stack); } }
+    }(document, 'script'));
+  </script>
 
 </body>
 

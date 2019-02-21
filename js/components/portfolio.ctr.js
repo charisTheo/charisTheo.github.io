@@ -18,6 +18,7 @@
             $scope.cardToggle = false;
             $scope.selectedCardIndex = undefined;
             $scope.selectedCard = undefined;
+
             $scope.toggleSocialLinks = function() {
                 $scope.showSocialLinks = !$scope.showSocialLinks;
                 // close side nav if open
@@ -25,12 +26,18 @@
                     $mdSidenav('left').toggle();
                 }
             };
-
+            $scope.togglePeoplePerHourWidget = function() {
+                $scope.showPeoplePerHourWidget = !$scope.showPeoplePerHourWidget;
+                // close side nav if open
+                if ($mdSidenav('left').isOpen) {
+                    $mdSidenav('left').toggle();
+                }
+            }
+            
             // angular.element(document).ready(function () {
             //     $scope.showProfilePhoto = true;
             //     $scope.documentLoaded = true;
             // });
-            
             $scope.$watch('$viewContentLoaded', function(){
                 $scope.showProfilePhoto = true;
                 $scope.documentLoaded = true;

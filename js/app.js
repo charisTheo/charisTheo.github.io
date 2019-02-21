@@ -1,5 +1,3 @@
-particlesJS.load('particles-js', './particles/particles-config.json');
-
 let app = angular.module('Portfolio', ['ngMaterial']);
     
 app
@@ -25,7 +23,8 @@ app
 .directive('sideNavList', function() {
     return {
         scope: {
-            onContactClick: '&'
+            onContactClick: '&',
+            onHireMeClick: '&'
         },
         restrict: 'E',
         templateUrl: '/partials/sidenavList.html',

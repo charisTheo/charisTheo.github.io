@@ -63,15 +63,6 @@ main {
 hr {
   border-style: solid;
 }
-#particles-js {
-  position: absolute;
-  top: 0;
-  left: 0;
-  top: 0;
-  right: 0;
-  width: 100%;
-  height: auto;
-}
 .icon-label {
   transition: opacity 0.35s;
   position: absolute;

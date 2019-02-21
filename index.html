@@ -675,19 +675,27 @@
             images="{{project.images}}"
           ></image-picker>
 
-          <md-card-content style="z-index: 10">
-            <md-card-title layout='column' flex-gt-xs='60'>
-              <md-card-title-text>
+          <md-card-content layout-gt-sm="row" style="z-index: 10">
+            <md-card-title layout='column' flex-gt-xs='1'>
+              <md-card-title-text layout-align-gt-sm="center start">
                 <span class="md-headline">{{ project.title }}  <a ng-href="{{ project.url }}"><i class="material-icons">link</i></a> </span>
                 <span class="md-subhead">{{ project.subtitle }}</span>
               </md-card-title-text>
-              
               <md-divider></md-divider>
-              
               <md-card-title-text class="md-margin" ng-show="$index == selectedCardIndex">
                 {{ project.description }}
               </md-card-title-text>
+              <md-divider></md-divider>
             </md-card-title>
+              <md-card-content style="text-align: center;">
+                  <!-- GIF example animation -->
+                  <img 
+                    ng-show="$index == selectedCardIndex" 
+                    ng-src="{{ project.animation }}" 
+                    class="md-card-image"
+                    alt="Project navigation example image"
+                  >
+              </md-card-content>
           </md-card-content>
             <md-card-content flex-gt-xs='100' ng-show="$index == selectedCardIndex">
                 <md-content class="md-padding" ng-class="{'night-mode-darker': nightMode}">

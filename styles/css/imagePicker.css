@@ -1,6 +1,5 @@
 .images-container img.selectedImage {
     object-fit: contain;
-    /* height: 100%; */
     flex-basis: 90%;
     flex-grow: 10;
     opacity: 1;
@@ -13,7 +12,7 @@
 }
 .images-container img {
     transition: all 0.35s;
-    width: 5%;
+    width: 7%;
     flex-grow: 1;
     margin: 0 10px;
     flex-basis: 5%;

@@ -657,7 +657,6 @@
           ng-click="($index !== selectedCardIndex) && selectCard($event, $index)"
           ng-class="{'expanded': $index == selectedCardIndex, 'night-mode-dark': nightMode}"
           layout="column"
-          layout-gt-xs="row"
         >
 
           <!-- Project banner show only if card is not expanded -->
@@ -673,7 +672,7 @@
             images="{{project.images}}"
           ></image-picker>
 
-          <md-card-content>
+          <md-card-content style="z-index: 99">
             <md-card-title layout='column' flex-gt-xs='60'>
               <md-card-title-text>
                 <span class="md-headline">{{ project.title }}  <a ng-href="{{ project.url }}"><i class="material-icons">link</i></a> </span>

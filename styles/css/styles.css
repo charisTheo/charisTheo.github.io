@@ -145,10 +145,6 @@ i.material-icons:hover + .icon-label {
   height: 35px;
   vertical-align: sub;
 }
-/* button.md-button.back-button {
-  margin-bottom: 3px;
-  margin-left: 15px;
-} */
 #profile-photo-container {
   position: fixed;
   width: auto;
@@ -345,7 +341,7 @@ md-card .card-toggle {
   z-index: 11;
 }
 md-card.card > img.banner-image {
-  /* border-radius: initial; */
+  top: 0;
   opacity: 0.5;
   position: absolute;
   width: auto;

@@ -17,6 +17,11 @@
       justify-content: center;
       margin: 5vh 10px;
       border-radius: 2px;
+      box-shadow: 0 3px 16px 0 rgba(0,0,0,.6);
+      -o-box-shadow: 0 3px 16px 0 rgba(0,0,0,.6);
+      -ms-box-shadow: 0 3px 16px 0 rgba(0,0,0,.6);
+      -moz-box-shadow: 0 3px 16px 0 rgba(0,0,0,.6);
+      -webkit-box-shadow: 0 3px 16px 0 rgba(0,0,0,.6);
     }
 }
 /* @media only screen and (min-width: 959px) {

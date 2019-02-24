@@ -22,6 +22,7 @@ body.ng-scope {
     font-family: 'Michroma', sans-serif;
     margin: 0;
     -webkit-tap-highlight-color: #03dac58f;
+    background-color: #eee;
 }
 main {
     width: 100%;
@@ -31,7 +32,6 @@ main {
     padding: 10px;
     overflow: visible;
     position: relative;
-    background-color: #eee;
 }
 .md-fab {
   width: 40px !important;
@@ -273,9 +273,11 @@ main #projects {
 /* TOP NAV BAR */
 side-nav-list {
   width: 100%;
-  text-align: center;
+  text-align: left;
 }
-
+.social-links > md-list-item {
+  padding: 0;
+}
 .social-links a.md-button.md-fab {
   background-color: white;
   padding: 9px;
@@ -289,11 +291,11 @@ side-nav-list {
   color: #673AB7;
 }
 .social-links .md-button i {
-  text-shadow: 2px 2px rgba(0,0,0,0.5);
+  text-shadow: 2px 2px 2px rgba(0,0,0,0.35);
   color: #673AB7;
 }
-.social-links .md-button:hover a i,
-.social-links .md-button:focus a i {
+.social-links a.md-button:hover i,
+.social-links a.md-button:focus i {
   text-shadow: initial;
 }
 

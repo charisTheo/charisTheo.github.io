@@ -7,13 +7,13 @@
         "url": "https://www.cooksurfing.eu/profile/mona",
         "github_repo_name": "cooksurfing",
         "share_description": "Check out my repository Cooksurfing web-app!",
-        "bannerImage": "/img/screenshots/cooksurfing/logo-512.png",
+        "bannerImage": "/img/screenshots/cooksurfing/logo.webp",
         "animation": "/img/screenshots/cooksurfing/requesting.gif",
         "images": [
-            {"src": "/img/screenshots/cooksurfing/www.cooksurfing.eu_dashboard_2.png"},
-            {"src": "/img/screenshots/cooksurfing/www.cooksurfing.eu_dashboard.png"},
-            {"src": "/img/screenshots/cooksurfing/www.cooksurfing.eu_searchResults.png"},
-            {"src": "/img/screenshots/cooksurfing/www.cooksurfing.eu.png"}
+            {"src": "/img/screenshots/cooksurfing/cooksurfing.webp"},
+            {"src": "/img/screenshots/cooksurfing/dashboard.webp"},
+            {"src": "/img/screenshots/cooksurfing/dashboard_2.webp"},
+            {"src": "/img/screenshots/cooksurfing/searchResults.webp"}
         ] 
     },
     {
@@ -27,9 +27,9 @@
         "bannerImage": "/img/screenshots/node-chat-app/socket-io.svg",
         "animation": "/img/screenshots/node-chat-app/web-app-chat.gif",
         "images": [
-            {"src": "/img/screenshots/node-chat-app/web-app-chat.herokuapp.com_chat_2.png"},
-            {"src": "/img/screenshots/node-chat-app/web-app-chat.herokuapp.com_chat.png"},
-            {"src": "/img/screenshots/node-chat-app/web-app-chat.herokuapp.com.png"}
+            {"src": "/img/screenshots/node-chat-app/chat_2.webp"},
+            {"src": "/img/screenshots/node-chat-app/chat.webp"},
+            {"src": "/img/screenshots/node-chat-app/webapp.webp"}
         ] 
     },
     

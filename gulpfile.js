@@ -2,6 +2,7 @@ let gulp = require('gulp');
 let del = require('del');
 let minifyCSS = require('gulp-minify-css');
 let concat = require('gulp-concat');
+let rename = require('gulp-rename');
 let minifyJS = require('gulp-babel-minify');
 let browserSync = require('browser-sync');
 let server = browserSync.create();
@@ -20,20 +21,22 @@ function serve(done) {
     done();
 }
 
-const clean = () => del(['styles/css/compressed']);
+const clean = () => del(['styles/css/compressed', 'js/compressed']);
 
 // TODO: Angular loading error when using bundle js file
-// gulp.task('minify-js', function(clean) {
-//     gulp.src([
-//         'js/components/*.js',
-//         'js/*.js',
-//     ])
-//     .pipe(concat('bundle.min.js'))
-//     .pipe(minifyJS())
-//     .pipe(gulp.dest('js/compressed/'));
+gulp.task('minify-js', function(clean) {
+    gulp.src([
+        'js/components/portfolio.ctr.js',
+        'js/components/share-listener.fac.js',
+        'js/accelerometer.js',
+        'js/app.js',
+    ])
+    .pipe(minifyJS())
+    .pipe(rename({suffix: '.min'}))
+    .pipe(gulp.dest('js/compressed/'));
     
-//     return clean();
-// });
+    return clean();
+});
 
 gulp.task('minify-css', function(clean) {
     gulp.src('styles/css/*.css')
@@ -49,31 +52,6 @@ const watch = () => gulp.watch([
     'js/components/*.js',
     'js/*.js',
     'styles/css/*.css'
-], gulp.series('minify-css', reload));
+], gulp.series('minify-css', 'minify-js', reload));
 
-gulp.task('browserSync', gulp.series(clean, 'minify-css', serve, watch));
-
-
-
-// gulp.task('watch', function(clean) {
-//     gulp.watch(
-//         [
-//             './*.html',
-//             './styles/css/*.css',
-//             './js/components/*.js',
-//             './js/*.js',
-//         ], gulp.series('minify-css', 'minify-js'), browserSync.reload);
-//     return clean();
-// });
-
-
-// gulp.task('browserSync', gulp.series('server', 'watch'));
-
-// gulp.task('server', function() {
-//     browserSync.init({
-//         server: {
-//           baseDir: './'
-//         }
-//     });
-//     gulp.watch("*.html").on("change", browserSync.reload);
-// });
+gulp.task('browserSync', gulp.series(clean, 'minify-css', 'minify-js', serve, watch));

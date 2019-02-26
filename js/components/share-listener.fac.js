@@ -3,7 +3,7 @@
 
     angular
         .module('Portfolio')
-        .factory('ShareListener', function($mdToast) {
+        .factory('ShareListener', ["$mdToast", function($mdToast) {
             const copyToClipboard = function(str) {
                 const el = document.createElement('textarea');
                 el.value = str;
@@ -43,8 +43,5 @@
                 listener: listener,
                 copyToClipboard: copyToClipboard
             }
-        });
-
-    
-
+        }]);
 }());

@@ -3,7 +3,7 @@
 
     angular
         .module('Portfolio')
-        .controller('PortfolioCtrl', function($scope, $http, $mdSidenav, $mdMedia, ShareListener, $cookies) {
+        .controller('PortfolioCtrl', ["$scope", "$http", "$mdSidenav", "$mdMedia", "ShareListener", "$cookies", function($scope, $http, $mdSidenav, $mdMedia, ShareListener, $cookies) {
             $http.get('/projects.data.json').then(function(response) {
                 $scope.projects = response.data;
             });
@@ -92,6 +92,6 @@
                 $mdSidenav('left').toggle();
             }
             
-        });
+        }]);
 
 })();

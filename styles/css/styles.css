@@ -124,15 +124,15 @@ i.material-icons:hover + .icon-label {
     background: transparent; }
 
 .night-mode {
-  background-color: #424242 !important;
+  background-color: rgb(51,51,61) !important;
   color: rgb(105, 240, 174) !important;
 }
 .night-mode-dark {
-  background-color: #222222 !important;
+  background-color: #424242 !important;
   color: rgb(105, 240, 174) !important;
 }
 .night-mode-darker {
-  background-color: #151515 !important;
+  background-color: #222222 !important;
   color: rgb(105, 240, 174) !important;
 }
 /***************************
@@ -280,23 +280,41 @@ side-nav-list {
 }
 .social-links a.md-button.md-fab {
   background-color: white;
-  padding: 9px;
+  padding: 6px;
+}
+body.night-mode .social-links a.md-button.md-fab {
+  background-color: #69F0AE;
 }
 .social-links .md-button:active,
 .social-links .md-button:hover,
 .social-links .md-button:focus {
   background-color: #eee !important;
 }
-.social-links .md-button:visited i {
-  color: #673AB7;
+.social-links .md-button span {
+  background-size: contain;
+  width: 100%;
+  height: 100%;
+  display: inline-block;
 }
-.social-links .md-button i {
-  text-shadow: 2px 2px 2px rgba(0,0,0,0.35);
-  color: #673AB7;
+.social-links .md-button .github-icon {
+  background-image: url("../../../img/social-links/github-circle.svg");
 }
-.social-links a.md-button:hover i,
-.social-links a.md-button:focus i {
-  text-shadow: initial;
+.social-links .md-button .telegram-icon {
+  background-image: url("../../../img/social-links/telegram.svg");
+}
+.social-links .md-button .twitter-icon {
+  background-image: url("../../../img/social-links/twitter.svg");
+}
+.social-links .md-button .stack-overflow-icon {
+  background-image: url("../../../img/social-links/stack-overflow.svg");
+}
+.social-links .md-button .linkedin-icon {
+  background-image: url("../../../img/social-links/linkedin.svg");
+}
+.social-links a.md-button:hover,
+.social-links a.md-button:focus {
+  box-shadow: none;
+  -webkit-box-shadow: none;
 }
 
 md-toolbar {

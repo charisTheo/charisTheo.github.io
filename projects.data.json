@@ -37,17 +37,16 @@
         "title": "Animath",
         "subtitle": "Learn Mathematics by scrolling",
         "description": "The goal was to create an interactive interface by which the user can scroll to go to the next explanation of a mathematical model. The interface uses complex animations to achieve easy understanding of mathematical concepts, in an attempt to simplify the complexity of mathematics!",
-        "tools_used": ["SVG", "JavaScript", "ScrollMagic.js", "GSAP"],
+        "tools_used": ["SVG", "JavaScript", "jQuery", "ScrollMagic.js", "GSAP", "TweenMax.js"],
         "url": "https://animath.herokuapp.com/",
         "github_repo_name": "animath",
         "share_description": "Check out Animath. Learn mathematics through animations by scrolling!",
+        "bannerImage": "/img/screenshots/animath/demo_tophat.webp",
+        "animation": "/img/screenshots/animath/limits_demo.gif",
         "images": [
-            {
-                "src": "/img/screenshots/animath.png"
-            },
-            {
-                "src": "" 
-            }
+            {"src": "/img/screenshots/animath/sequences_demo.gif"},
+            {"src": "/img/screenshots/animath/limits.webp"},
+            {"src": "/img/screenshots/animath/sequences.webp"}
         ] 
     },
     {
@@ -58,13 +57,13 @@
         "url": "https://charistheo.github.io/french-bot",
         "github_repo_name": "french-bot",
         "share_description": "Check out my repository French Bot for learning some French vocabulary!",
+        "bannerImage": "/img/screenshots/french-bot/yandex_logo.webp",
+        "animation": "/img/screenshots/french-bot/french_bot_demo.gif",
         "images": [
-            {
-                "src": "/img/screenshots/French-Bot.png"
-            },
-            {
-                "src": "" 
-            }
+            {"src": "/img/screenshots/french-bot/french_bot.webp"},
+            {"src": "/img/screenshots/french-bot/french_bot_correct.webp"},
+            {"src": "/img/screenshots/french-bot/french_bot_wrong.webp"},
+            {"src": "/img/screenshots/french-bot/french_bot_results.webp"}
         ] 
     }
 ]

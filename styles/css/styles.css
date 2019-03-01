@@ -124,17 +124,17 @@ i.material-icons:hover + .icon-label {
     background: transparent; }
 
 .night-mode {
-  background-color: rgb(51,51,61) !important;
-  color: rgb(105, 240, 174) !important;
+  background-color: #303030 !important;
+  color: #fff !important;
 }
 .night-mode-dark {
   background-color: #424242 !important;
-  color: rgb(105, 240, 174) !important;
+  color: #fff !important;
 }
-.night-mode-darker {
+/* .night-mode-darker {
   background-color: #222222 !important;
-  color: rgb(105, 240, 174) !important;
-}
+  color: #fff !important;
+} */
 /***************************
 ****************************
         CUSTOM STYLES

@@ -406,9 +406,6 @@ button.md-button.top-nav-btn i {
   transition: 0.4s all;
   opacity: 0;
 }
-main .md-chips md-chip {
-  background: #03dac545;
-}
 main #projects md-chips md-chips-wrap.md-chips {
   box-shadow: none;
   -o-box-shadow: none;

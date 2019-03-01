@@ -691,12 +691,12 @@
               </md-card-content>
           </md-card-content>
             <md-card-content flex-gt-xs='100' ng-show="$index == selectedCardIndex">
-                <md-content class="md-padding" ng-class="{'night-mode-darker': nightMode}">
+                <md-content class="md-padding">
                   <md-subheader class="md-no-sticky">Tools used</md-subheader>
                       <md-chips ng-model="project.tools_used" readonly='true'>
                           <md-chip-template>
                               <span>
-                                <strong>{{ $chip }}</strong>
+                                <strong md-colors="{color: 'primary'}" >{{ $chip }}</strong>
                               </span>
                             </md-chip-template>
                       </md-chips>

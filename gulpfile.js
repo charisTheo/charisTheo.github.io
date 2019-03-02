@@ -2,8 +2,7 @@ let gulp = require('gulp');
 let del = require('del');
 let minifyCSS = require('gulp-minify-css');
 let concat = require('gulp-concat');
-let rename = require('gulp-rename');
-let minifyJS = require('gulp-babel-minify');
+let minifyJS = require('gulp-ng-annotate');
 let browserSync = require('browser-sync');
 let server = browserSync.create();
 
@@ -26,13 +25,13 @@ const clean = () => del(['styles/css/compressed', 'js/compressed']);
 // TODO: Angular loading error when using bundle js file
 gulp.task('minify-js', function(clean) {
     gulp.src([
+        'js/app.js',
         'js/components/portfolio.ctr.js',
         'js/components/share-listener.fac.js',
         'js/accelerometer.js',
-        'js/app.js',
     ])
-    .pipe(minifyJS())
-    .pipe(rename({suffix: '.min'}))
+    .pipe(concat('app.min.js'))
+    .pipe(minifyJS({add: true}))
     .pipe(gulp.dest('js/compressed/'));
     
     return clean();

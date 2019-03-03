@@ -649,6 +649,7 @@
         <md-card 
           md-theme="{{'default'}}" 
           md-theme-watch
+          md-swipe-right="($index === selectedCardIndex) && selectCard($event, $index)"
           class="card md-padding"
           ng-attr-id="{{'project' + $index}}"
           ng-repeat="project in projects | filter: searchFilter"

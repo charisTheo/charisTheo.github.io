@@ -672,7 +672,9 @@
           <md-card-content layout-gt-sm="row" style="z-index: 10">
             <md-card-title layout='column' flex-gt-xs='1'>
               <md-card-title-text layout-align-gt-sm="center start">
-                <span class="md-headline">{{ project.title }}  <a ng-href="{{ project.url }}"><i class="material-icons">link</i></a> </span>
+                <span class="md-headline">
+                  <a md-colors="{color: 'accent'}" ng-href="{{ project.url }}">{{ project.title }}</a>
+                </span>
                 <span class="md-subhead" ng-style="nightMode && {'color': '#fff'}">{{ project.subtitle }}</span>
               </md-card-title-text>
               <md-card-title-text class="md-margin" ng-show="$index == selectedCardIndex">

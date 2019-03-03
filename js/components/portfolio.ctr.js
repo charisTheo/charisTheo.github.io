@@ -5,23 +5,22 @@
         .module('Portfolio')
         .controller('PortfolioCtrl', PortfolioCtrl);
 
-    PortfolioCtrl.$inject = ["$scope", "$http", "$mdSidenav", "$mdMedia", "ShareListener", "$cookies"];
+    PortfolioCtrl.$inject = ["$scope", "$http", "$mdSidenav", "$mdMedia", "ShareListener", "$cookies", '$location', "$anchorScroll"];
 
-    function PortfolioCtrl($scope, $http, $mdSidenav, $mdMedia, ShareListener, $cookies) {
+    function PortfolioCtrl($scope, $http, $mdSidenav, $mdMedia, ShareListener, $cookies, $location, $anchorScroll) {
         $http.get('/projects.data.json').then(function(response) {
             $scope.projects = response.data;
         });
         $scope.$mdMedia = $mdMedia;
-
         $scope.shareButtonListener = ShareListener.listener;
         $scope.copyToClipboard = ShareListener.copyToClipboard;
-
         $scope.nightMode = false;
         $scope.documentLoaded = false;
         $scope.showProfilePhoto = false;
         $scope.cardToggle = false;
         $scope.selectedCardIndex = undefined;
         $scope.selectedCard = undefined;
+        $anchorScroll.yOffset = 50;
 
         $scope.toggleSocialLinks = function() {
             $scope.showSocialLinks = !$scope.showSocialLinks;
@@ -57,6 +56,9 @@
                 // select card
                 $scope.selectedCard = $scope.projects[$index];
                 $scope.selectedCardIndex = $index;
+                // scroll to top of card
+                $location.hash("project" + $index);
+                $anchorScroll();
             } else {
                 // unselect card
                 $scope.selectedCardIndex = undefined;

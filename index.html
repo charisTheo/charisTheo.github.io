@@ -650,6 +650,7 @@
           md-theme="{{'default'}}" 
           md-theme-watch
           class="card md-padding"
+          ng-attr-id="{{'project' + $index}}"
           ng-repeat="project in projects | filter: searchFilter"
           ng-click="($index !== selectedCardIndex) && selectCard($event, $index)"
           ng-class="{'expanded': $index == selectedCardIndex, 'night-mode-dark': nightMode}"

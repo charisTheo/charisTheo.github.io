@@ -66,6 +66,10 @@ hr {
 }
 .icon-label {
   transition: opacity 0.35s;
+  -o-transition: opacity 0.35s;
+  -ms-transition: opacity 0.35s;
+  -moz-transition: opacity 0.35s;
+  -webkit-transition: opacity 0.35s;
   position: absolute;
   display: none;
   opacity: 0;
@@ -161,7 +165,15 @@ i.material-icons:hover + .icon-label {
   transform: translateY(200px);
   opacity: 0;
   transition: all .5s ease-out;
+  -o-transition: all .5s ease-out;
+  -ms-transition: all .5s ease-out;
+  -moz-transition: all .5s ease-out;
+  -webkit-transition: all .5s ease-out;
   transition-delay: 0s;
+  -o-transition-delay: 0s;
+  -ms-transition-delay: 0s;
+  -moz-transition-delay: 0s;
+  -webkit-transition-delay: 0s;
 }
 #profile-photo-container button {
   position: absolute;
@@ -193,6 +205,10 @@ i.material-icons:hover + .icon-label {
 #profile-photo-container.show {
   transform: translateY(0px);
   transition-delay: 1s;
+  -o-transition-delay: 1s;
+  -ms-transition-delay: 1s;
+  -moz-transition-delay: 1s;
+  -webkit-transition-delay: 1s;
   opacity: 1;
 }
 #profile-photo-container #follow-me-container {
@@ -390,22 +406,23 @@ md-card.card > img.banner-image {
 .filters {
   align-items: flex-start;
 }
+body.night-mode .search-term input {
+  border-color: rgba(255, 255, 255, 0.7);
+}
+body.night-mode .search-term label {
+  color: rgba(255, 255, 255, 0.7);
+}
 button.md-button.top-nav-btn i {
   vertical-align: middle;
 }
-.card.ng-enter,
-.card.ng-move {
-  transition: 0.4s all;
-  opacity: 1;
+.card.ng-animate {
+  transition: all .5s;
+  -o-transition: all .5s;
+  -ms-transition: all .5s;
+  -moz-transition: all .5s;
+  -webkit-transition: all .5s;
 }
-.card.ng-enter.ng-enter-active, 
-.card.ng-move.ng-move-active { 
-  opacity: 1;
-}
-.card.ng-leave { 
-  transition: 0.4s all;
-  opacity: 0;
-}
+
 main #projects md-chips md-chips-wrap.md-chips {
   box-shadow: none;
   -o-box-shadow: none;

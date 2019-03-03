@@ -1,4 +1,4 @@
-let app = angular.module('Portfolio', ['ngMaterial', 'ngCookies']);
+var app = angular.module('Portfolio', ['ngMaterial', 'ngCookies']);
     
 app
 .config(["$mdThemingProvider", function($mdThemingProvider) {
@@ -100,6 +100,9 @@ app
             if (!$cookies.get("IS_FOLLOWING") && !$cookies.get("HIDE_FOLLOWING_PROMPT")) {
                 $scope.showProfilePhoto = true;
             }
+            if ($cookies.get("NIGHT_MODE") === 'on') {
+                $scope.nightMode = true;
+            }
             $scope.documentLoaded = true;
         });
 
@@ -150,6 +153,16 @@ app
             $mdSidenav('left').toggle();
         }
         
+        $scope.toggleNightMode = function() {
+            // toggle
+            $scope.nightMode = !$scope.nightMode;
+            // store cookie
+            if ($scope.nightMode) {
+                $cookies.put("NIGHT_MODE", "on");
+            } else {
+                $cookies.put("NIGHT_MODE", "off");
+            }
+        }
     }
 
 })();

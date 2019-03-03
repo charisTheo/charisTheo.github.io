@@ -46,6 +46,9 @@
             if (!$cookies.get("IS_FOLLOWING") && !$cookies.get("HIDE_FOLLOWING_PROMPT")) {
                 $scope.showProfilePhoto = true;
             }
+            if ($cookies.get("NIGHT_MODE") === 'on') {
+                $scope.nightMode = true;
+            }
             $scope.documentLoaded = true;
         });
 
@@ -96,6 +99,16 @@
             $mdSidenav('left').toggle();
         }
         
+        $scope.toggleNightMode = function() {
+            // toggle
+            $scope.nightMode = !$scope.nightMode;
+            // store cookie
+            if ($scope.nightMode) {
+                $cookies.put("NIGHT_MODE", "on");
+            } else {
+                $cookies.put("NIGHT_MODE", "off");
+            }
+        }
     }
 
 })();

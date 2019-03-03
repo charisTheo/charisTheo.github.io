@@ -18,6 +18,20 @@
             "args": [
                 "minify-css"
             ]
+        },
+        {
+            "label": "bundle-js",
+            "command": "gulp",
+            "args": [
+                "bundle-js"
+            ]
+        },
+        {
+            "label": "minify-js",
+            "command": "gulp",
+            "args": [
+                "minify-js"
+            ]
         }
     ]
 }

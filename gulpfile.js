@@ -2,13 +2,15 @@ let gulp = require('gulp');
 let del = require('del');
 let minifyCSS = require('gulp-minify-css');
 let concat = require('gulp-concat');
-let minifyJS = require('gulp-ng-annotate');
+let ngAnnotate = require('gulp-ng-annotate');
+    // TODO: replace with babel-plugin-angularjs-annotate 
+let uglify = require('gulp-uglify');
 let browserSync = require('browser-sync');
 let server = browserSync.create();
 
 function reload(done) {
     server.reload();
-    done();
+    return done();
 }
   
 function serve(done) {
@@ -17,32 +19,41 @@ function serve(done) {
         baseDir: './'
       }
     });
-    done();
+    return done();
 }
 
-const clean = () => del(['styles/css/compressed', 'js/compressed']);
+const clean = () => del(['styles/css/compressed/*', 'js/bundle/*']);
 
-// TODO: Angular loading error when using bundle js file
-gulp.task('minify-js', function(clean) {
+gulp.task('bundle-js', function(done) {
     gulp.src([
         'js/app.js',
         'js/components/portfolio.ctr.js',
         'js/components/share-listener.fac.js',
         'js/accelerometer.js',
     ])
-    .pipe(concat('app.min.js'))
-    .pipe(minifyJS({add: true}))
-    .pipe(gulp.dest('js/compressed/'));
+    .pipe(concat('bundle.js'))
+    .pipe(ngAnnotate({add: true}))
+    .pipe(gulp.dest('js/bundle/'));
     
-    return clean();
+    return done();
+});
+gulp.task('minify-js', function(done) {
+    gulp.src('js/bundle/bundle.js')
+    .pipe(concat('bundle.min.js'))
+    .pipe(gulp.dest('js/bundle/'))
+    .pipe(uglify())
+    .on('error', (error) => console.log(error))
+    .pipe(gulp.dest('js/bundle/'));
+    
+    return done();
 });
 
-gulp.task('minify-css', function(clean) {
+gulp.task('minify-css', function(done) {
     gulp.src('styles/css/*.css')
         .pipe(minifyCSS())
         .pipe(concat('styles.min.css'))
         .pipe(gulp.dest('styles/css/compressed'));
-    return clean();
+    return done();
 });
 
 const watch = () => gulp.watch([
@@ -51,6 +62,6 @@ const watch = () => gulp.watch([
     'js/components/*.js',
     'js/*.js',
     'styles/css/*.css'
-], gulp.series('minify-css', 'minify-js', reload));
+], gulp.series('minify-css', 'bundle-js', 'minify-js', reload));
 
-gulp.task('browserSync', gulp.series(clean, 'minify-css', 'minify-js', serve, watch));
+gulp.task('browserSync', gulp.series( 'minify-css', 'bundle-js', 'minify-js', serve, watch));

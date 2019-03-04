@@ -671,7 +671,7 @@
             images="{{project.images}}"
           ></image-picker>
 
-          <md-card-content layout-gt-sm="row" style="z-index: 10">
+          <md-card-content layout-gt-sm="row" style="z-index: 10; padding: 0;">
             <md-card-title layout='column' flex-gt-xs='1'>
               <md-card-title-text layout-align-gt-sm="center start">
                 <span class="md-headline">
@@ -687,7 +687,7 @@
                   <!-- Video example animation -->
                   <video 
                     ng-show="$index == selectedCardIndex" 
-                    class="md-card-image"
+                    class="md-card-video"
                     loop 
                     muted 
                     autoplay

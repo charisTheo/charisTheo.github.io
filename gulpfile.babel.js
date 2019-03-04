@@ -1,9 +1,10 @@
 let gulp = require('gulp');
+let babel = require('gulp-babel');
 let del = require('del');
 let minifyCSS = require('gulp-minify-css');
 let concat = require('gulp-concat');
 let ngAnnotate = require('gulp-ng-annotate');
-    // TODO: replace with babel-plugin-angularjs-annotate 
+// let ngAnnotate = require('babel-plugin-angularjs-annotate');
 let uglify = require('gulp-uglify');
 let browserSync = require('browser-sync');
 let server = browserSync.create();
@@ -32,7 +33,8 @@ gulp.task('bundle-js', function(done) {
         'js/accelerometer.js',
     ])
     .pipe(concat('bundle.js'))
-    .pipe(ngAnnotate({add: true}))
+    .pipe(ngAnnotate())
+    .pipe(babel())
     .pipe(gulp.dest('js/bundle/'));
     
     return done();
@@ -64,4 +66,4 @@ const watch = () => gulp.watch([
     'styles/css/*.css'
 ], gulp.series('minify-css', 'bundle-js', 'minify-js', reload));
 
-gulp.task('browserSync', gulp.series( 'minify-css', 'bundle-js', 'minify-js', serve, watch));
+gulp.task('browserSync', gulp.series('minify-css', 'bundle-js', 'minify-js', serve, watch));

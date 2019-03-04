@@ -36,6 +36,7 @@ app.config(["$mdThemingProvider", function ($mdThemingProvider) {
     restrict: 'E',
     templateUrl: '/partials/imagePicker.html',
     link: function link(scope, elm, attrs) {
+      if (!attrs.images) return;
       scope.images = JSON.parse(attrs.images);
       scope.selectedImage = 0;
 
@@ -81,11 +82,7 @@ app.config(["$mdThemingProvider", function ($mdThemingProvider) {
       if ($mdSidenav('left').isOpen) {
         $mdSidenav('left').toggle();
       }
-    }; // angular.element(document).ready(function () {
-    //     $scope.showProfilePhoto = true;
-    //     $scope.documentLoaded = true;
-    // });
-
+    };
 
     $scope.$watch('$viewContentLoaded', function () {
       if (!$cookies.get("IS_FOLLOWING") && !$cookies.get("HIDE_FOLLOWING_PROMPT")) {

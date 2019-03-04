@@ -36,11 +36,7 @@
                 $mdSidenav('left').toggle();
             }
         }
-        
-        // angular.element(document).ready(function () {
-        //     $scope.showProfilePhoto = true;
-        //     $scope.documentLoaded = true;
-        // });
+
         $scope.$watch('$viewContentLoaded', function(){
             if (!$cookies.get("IS_FOLLOWING") && !$cookies.get("HIDE_FOLLOWING_PROMPT")) {
                 $scope.showProfilePhoto = true;

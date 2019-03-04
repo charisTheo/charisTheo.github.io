@@ -667,7 +667,7 @@
           >
 
           <image-picker  
-            ng-show="$index == selectedCardIndex" 
+            ng-if="$index == selectedCardIndex" 
             images="{{project.images}}"
           ></image-picker>
 
@@ -686,7 +686,7 @@
               <md-card-content style="text-align: center;">
                   <!-- Video example animation -->
                   <video 
-                    ng-show="$index == selectedCardIndex" 
+                    ng-if="$index == selectedCardIndex" 
                     class="md-card-video"
                     loop 
                     muted 
@@ -713,15 +713,15 @@
           <md-card-content>
             <md-card-actions layout="row" layout-align="center center">
                 <!-- Github Buttons -->
-                <md-button ng-show="$index == selectedCardIndex || $mdMedia('min-width: 600px')" class="md-icon-button" ng-href="https://github.com/charisTheo/{{ project.github_repo_name }}">
+                <md-button ng-if="$index == selectedCardIndex || $mdMedia('min-width: 600px')" class="md-icon-button" ng-href="https://github.com/charisTheo/{{ project.github_repo_name }}">
                   <i class="material-icons" aria-label="Star {{ project.github_repo_name }} on GitHub">star_border</i>
                   <div class="icon-label"> Star {{ project.github_repo_name }} on GitHub </div>
                 </md-button>
-                <md-button ng-show="$index == selectedCardIndex || $mdMedia('min-width: 600px')" class="md-icon-button" ng-href="https://github.com/charisTheo/{{ project.github_repo_name }}/subscription">
+                <md-button ng-if="$index == selectedCardIndex || $mdMedia('min-width: 600px')" class="md-icon-button" ng-href="https://github.com/charisTheo/{{ project.github_repo_name }}/subscription">
                   <i class="material-icons" aria-label="Watch {{ project.github_repo_name }} on GitHub">remove_red_eye</i>
                   <div class="icon-label"> Watch {{ project.github_repo_name }} on GitHub </div>
                 </md-button>
-                <md-button ng-show="$index == selectedCardIndex || $mdMedia('min-width: 600px')" class="md-icon-button" ng-href="https://github.com/charisTheo/{{ project.github_repo_name }}/fork">
+                <md-button ng-if="$index == selectedCardIndex || $mdMedia('min-width: 600px')" class="md-icon-button" ng-href="https://github.com/charisTheo/{{ project.github_repo_name }}/fork">
                   <i class="material-icons" aria-label="Fork {{ project.github_repo_name }} on GitHub">call_split</i>
                   <div class="icon-label"> Fork {{ project.github_repo_name }} on GitHub </div>
                 </md-button>

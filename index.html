@@ -684,13 +684,18 @@
               </md-card-title-text>
             </md-card-title>
               <md-card-content style="text-align: center;">
-                  <!-- GIF example animation -->
-                  <img 
+                  <!-- Video example animation -->
+                  <video 
                     ng-show="$index == selectedCardIndex" 
-                    ng-src="{{ project.animation }}" 
                     class="md-card-image"
-                    alt="Project navigation example image"
+                    loop 
+                    muted 
+                    autoplay
+                    playsinline
                   >
+                    <source ng-src="{{ project.animation.webm }}" type="video/webm">
+                    <source ng-src="{{ project.animation.mp4 }}"  type="video/mp4">
+                  </video>
               </md-card-content>
           </md-card-content>
             <md-card-content flex-gt-xs='100' ng-show="$index == selectedCardIndex">

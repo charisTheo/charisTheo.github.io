@@ -294,17 +294,33 @@ side-nav-list {
 .social-links > md-list-item {
   padding: 0;
 }
-.social-links a.md-button.md-fab {
-  background-color: white;
+
+body.night-mode .social-links a.md-fab.md-primary.md-button span {
+  filter: invert(1);
+}
+body.night-mode .social-links a.md-fab.md-primary.md-button:hover,
+body.night-mode .social-links a.md-fab.md-primary.md-button:focus,
+body.night-mode .social-links a.md-fab.md-primary.md-button {
+  background-color: #424242;
+  color: white;
+}
+body.night-mode .social-links a.md-fab.md-primary.md-button:active,
+body.night-mode .social-links a.md-fab.md-primary.md-button:hover {
+  box-shadow: none;
+}
+
+.social-links a.md-fab.md-primary.md-button:hover,
+.social-links a.md-fab.md-primary.md-button:focus,
+.social-links a.md-fab.md-primary.md-button {
+  background-color: #fff;
   padding: 6px;
 }
-body.night-mode .social-links a.md-button.md-fab {
-  background-color: #69F0AE;
+.social-links a.md-fab.md-primary.md-button:active,
+.social-links a.md-fab.md-primary.md-button:hover {
+  box-shadow: none;
 }
-.social-links .md-button:active,
-.social-links .md-button:hover,
-.social-links .md-button:focus {
-  background-color: #eee !important;
+.social-links a.md-fab.md-primary.md-button:active {
+  background-color: transparent;
 }
 .social-links .md-button span {
   background-size: contain;

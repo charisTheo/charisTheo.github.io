@@ -61,6 +61,7 @@ gulp.task('minify-css', function(done) {
 const watch = () => gulp.watch([
     'partials/*.html', 
     'index.html',
+    '404.html',
     'js/components/*.js',
     'js/*.js',
     'styles/css/*.css'

@@ -62,7 +62,6 @@ app.config(["$mdThemingProvider", function ($mdThemingProvider) {
     $scope.copyToClipboard = ShareListener.copyToClipboard;
     $scope.nightMode = false;
     $scope.documentLoaded = false;
-    $scope.showProfilePhoto = false;
     $scope.cardToggle = false;
     $scope.selectedCardIndex = undefined;
     $scope.selectedCard = undefined;
@@ -85,10 +84,6 @@ app.config(["$mdThemingProvider", function ($mdThemingProvider) {
     };
 
     $scope.$watch('$viewContentLoaded', function () {
-      if (!$cookies.get("IS_FOLLOWING") && !$cookies.get("HIDE_FOLLOWING_PROMPT")) {
-        $scope.showProfilePhoto = true;
-      }
-
       if ($cookies.get("NIGHT_MODE") === 'on') {
         $scope.nightMode = true;
       }
@@ -126,24 +121,6 @@ app.config(["$mdThemingProvider", function ($mdThemingProvider) {
       }
 
       $event.cancelBubble = true; // prevent the card from toggling
-    };
-
-    $scope.onFollowMeClick = function ($event) {
-      // store cookie
-      $cookies.put("IS_FOLLOWING", "true"); // hide picture
-
-      $scope.showProfilePhoto = false; // event redirects to href link
-    };
-
-    $scope.onCloseProfileClick = function () {
-      var currentDate = new Date(); // set cookie for 1 week
-
-      currentDate.setDate(currentDate.getDate() + 7);
-      $cookies.put("HIDE_FOLLOWING_PROMPT", "true", {
-        expires: currentDate
-      }); // hide following prompt
-
-      $scope.showProfilePhoto = false;
     };
 
     $scope.toggleSideNav = function () {
@@ -190,7 +167,7 @@ app.config(["$mdThemingProvider", function ($mdThemingProvider) {
           url: _this.href
         }).then(function () {
           return console.log('Successful share');
-        }).catch(function (error) {
+        })["catch"](function (error) {
           return console.log('Error sharing', error);
         });
       } else {

@@ -598,24 +598,6 @@
   </md-toolbar>    
   <!---------- end of TOP BAR MENU ----------->
 
-  <!---------- Profile photo and Twitter follow ---------->
-  <div ng-class="{'show': showProfilePhoto}" id="profile-photo-container">
-
-    <div class="eye"><div class="iris"></div></div>
-    <div class="eye"><div class="iris"></div></div>
-    
-    <div id="follow-me-container" ng-class="{'night-mode': nightMode}">
-      <button ng-click="onCloseProfileClick()">
-        <i class="material-icons">close</i>
-      </button>
-      <p>Hi there!</p>
-      <p>
-        if you like the content follow me on <a ng-click="onFollowMeClick($event)" ng-href="https://twitter.com/charisTheo_dev" aria-label="Follow @charisTheo_dev on Twitter">Twitter</a>
-      </p>
-    </div>
-    <img id="profile-photo" src="./img/profile_photo.webp" alt="My profile picture">
-  </div>
-
   <main>
     <div class="container">
 

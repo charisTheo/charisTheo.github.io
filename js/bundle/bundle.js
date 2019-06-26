@@ -177,7 +177,7 @@ app.config(["$mdThemingProvider", function ($mdThemingProvider) {
           url: _this.href
         }).then(function () {
           return console.log('Successful share');
-        })["catch"](function (error) {
+        }).catch(function (error) {
           return console.log('Error sharing', error);
         });
       } else {

@@ -64,7 +64,8 @@ const watch = () => gulp.watch([
     '404.html',
     'js/components/*.js',
     'js/*.js',
-    'styles/css/*.css'
+    'styles/css/*.css',
+    'img/logos/*.svg'
 ], gulp.series('minify-css', 'bundle-js', 'minify-js', reload));
 
 gulp.task('browserSync', gulp.series('minify-css', 'bundle-js', 'minify-js', serve, watch));

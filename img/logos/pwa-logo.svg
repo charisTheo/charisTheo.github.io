@@ -5,15 +5,10 @@
   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
   xmlns:svg="http://www.w3.org/2000/svg"
   xmlns="http://www.w3.org/2000/svg"
-  xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
-  xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
   version="1.1"
-  height="440"
-  width="800"
-  viewBox="-360 -250 1100 650"
-  enable-background="new 0 0 1952.00 734.93"
-  xml:space="preserve"
-  inkscape:version="0.48.4 r9939"
+  height="100%"
+  width="100%"
+  viewBox="-70 -320 500 750"
 >
   <g transform="translate(0,-294.93)">
     <path

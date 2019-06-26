@@ -149,6 +149,8 @@ i.material-icons:hover + .icon-label {
   background-color: white;
   padding: 0;
   margin: 10px;
+  /* TODO: hide the logo for now */
+  display: none; 
 }
 #logo svg {
   width: 35px;
@@ -287,6 +289,25 @@ main #projects {
 }
 
 /* TOP NAV BAR */
+md-list#top-nav-options > md-list-item {
+  padding-right: 0px;
+}
+@media screen and (min-width: 767px) {
+  #top-bar-menu > .md-toolbar-tools {
+    height: 55px;
+    max-height: 55px;
+  }
+}
+@media screen and (min-width: 959px) {
+  #top-bar-menu > .md-toolbar-tools .back-button {
+    margin-bottom: 10px;
+  }
+  #top-nav-options .twitter-follow-button {
+    margin-top: 6px;
+    margin-right: 15px;
+  }
+}
+
 side-nav-list {
   width: 100%;
   text-align: left;
@@ -360,7 +381,7 @@ md-toolbar side-nav-list md-list.small-padding md-list-item {
 md-sidenav {
   position: fixed;
 }
-/* top nav buttons overrides */
+/* side nav buttons overrides */
 md-toolbar side-nav-list md-list md-list-item button.md-button {
   margin: 3px 4px;
 }
@@ -371,7 +392,7 @@ md-sidenav md-list-item .md-secondary-container {
 md-sidenav md-list-item .md-secondary-container .md-button {
   text-align: left;
 }
-@media only screen and (min-width: 959px) {
+@media screen and (min-width: 959px) {
   md-toolbar .md-toolbar-tools {
     align-items: flex-end !important;
   }
@@ -384,6 +405,7 @@ md-sidenav md-list-item .md-secondary-container .md-button {
 /* CARD */
 md-card {
   position: relative;
+  width: 100%;
 }
 md-card.expanded {
   margin: 0;
@@ -439,6 +461,11 @@ md-card.card .card-bottom-action-buttons {
 body.night-mode md-card.card frameworks-images::before {
   background-color: #424242 !important;
   opacity: 0.65;
+}
+@media screen and (min-width: 767px) {
+  md-card:not(.expanded) {
+    width: 40%;
+  }
 }
 
 .filters {

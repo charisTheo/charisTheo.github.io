@@ -538,15 +538,26 @@
   <!---------- end of SIDE NAV ----------->
 
   <!---------- TOP BAR MENU ----------->
-  <md-toolbar style="z-index: 14" layout="row" layout-align="space-between center">
+  <md-toolbar id="top-bar-menu" style="z-index: 14" layout="row" layout-align="space-between center">
     <div class="md-toolbar-tools" md-colors="{color: 'accent'}">
+      <!-- Menu button  -->
       <md-button 
         ng-click="toggleSideNav()" 
         class="md-icon-button" 
         aria-label="Show side menu"
-        ng-if="!$mdMedia('min-width: 959px')"
+        ng-if="!$mdMedia('min-width: 959px') && selectedCardIndex === undefined"
       >
           <i class="material-icons">menu</i>
+      </md-button>
+      <!-- Back button  -->
+      <md-button 
+        ng-if="selectedCardIndex !== undefined"
+        ng-click="selectCard($event, selectedCardIndex)" 
+        class="md-icon-button back-button md-fab md-primary" 
+        aria-label="Go back to all projects"
+        md-colors="{color: 'accent'}"
+      >
+        <i class="material-icons">arrow_back</i>
       </md-button>
 
       <md-button id="logo" class="md-fab" aria-label="Home button">
@@ -564,16 +575,11 @@
       <!-- TOP NAV OPTIONS -->
       <md-list id="top-nav-options" flex layout="row">
         <md-list-item layout="row" class="noright">
-          <!-- Back button  -->
-          <md-button 
-            ng-if="selectedCardIndex !== undefined"
-            ng-click="selectCard($event, selectedCardIndex)" 
-            class="md-icon-button back-button md-fab md-primary" 
-            aria-label="Go back to all projects"
-            md-colors="{color: 'accent'}"
-          >
-            <i class="material-icons">arrow_back</i>
-          </md-button>
+          <a href="https://twitter.com/charisTheo_dev?ref_src=twsrc%5Etfw" class="twitter-follow-button" data-show-count="false">
+            Follow @charisTheo_dev
+          </a>
+          <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+      
           <div flex></div>
           <!-- Search button -->
           <md-button 
@@ -632,7 +638,7 @@
           md-theme="{{'default'}}" 
           md-theme-watch
           md-swipe-right="($index === selectedCardIndex) && selectCard($event, $index)"
-          class="card md-padding"
+          class="card"
           ng-attr-id="{{'project' + $index}}"
           ng-repeat="project in projects | filter: searchFilter"
           ng-click="($index !== selectedCardIndex) && selectCard($event, $index)"
@@ -655,7 +661,7 @@
             <md-card-title layout='column' flex-gt-xs='1'>
               <md-card-title-text layout-align-gt-sm="center start">
                 <span class="md-headline">
-                  <a md-colors="{color: 'accent'}" ng-href="{{ project.url }}">{{ project.title }}</a>
+                  <a md-colors="{color: 'primary'}" ng-href="{{ project.url }}">{{ project.title }}</a>
                 </span>
                 <span class="md-subhead" ng-style="nightMode && {'color': '#fff'}">{{ project.subtitle }}</span>
               </md-card-title-text>

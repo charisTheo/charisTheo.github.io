@@ -294,17 +294,33 @@ side-nav-list {
 .social-links > md-list-item {
   padding: 0;
 }
-.social-links a.md-button.md-fab {
-  background-color: white;
+
+body.night-mode .social-links a.md-fab.md-primary.md-button span {
+  filter: invert(1);
+}
+body.night-mode .social-links a.md-fab.md-primary.md-button:hover,
+body.night-mode .social-links a.md-fab.md-primary.md-button:focus,
+body.night-mode .social-links a.md-fab.md-primary.md-button {
+  background-color: #424242;
+  color: white;
+}
+body.night-mode .social-links a.md-fab.md-primary.md-button:active,
+body.night-mode .social-links a.md-fab.md-primary.md-button:hover {
+  box-shadow: none;
+}
+
+.social-links a.md-fab.md-primary.md-button:hover,
+.social-links a.md-fab.md-primary.md-button:focus,
+.social-links a.md-fab.md-primary.md-button {
+  background-color: #fff;
   padding: 6px;
 }
-body.night-mode .social-links a.md-button.md-fab {
-  background-color: #69F0AE;
+.social-links a.md-fab.md-primary.md-button:active,
+.social-links a.md-fab.md-primary.md-button:hover {
+  box-shadow: none;
 }
-.social-links .md-button:active,
-.social-links .md-button:hover,
-.social-links .md-button:focus {
-  background-color: #eee !important;
+.social-links a.md-fab.md-primary.md-button:active {
+  background-color: transparent;
 }
 .social-links .md-button span {
   background-size: contain;
@@ -393,18 +409,36 @@ md-card .card-toggle {
   height: 100%;
   z-index: 11;
 }
-md-card.card > img.banner-image {
+md-card.card frameworks-images::before {
+  content: "";
+  background-color: #ffffff;
+  position: absolute;
+  width: 100%;
+  height: 100%;
   top: 0;
-  opacity: 0.35;
+  left: 0;
+  z-index: 1;
+  opacity: 0.5;
+}
+md-card.card frameworks-images img.banner-image {
+  top: 0;
   position: absolute;
   width: auto;
   max-height: 100%;
   padding: 15px;
-  align-self: center;
+  left: 0;
+  max-width: 100%
 }
 md-card.card .md-card-video {
   width: 100%;
   max-width: 300px;
+}
+md-card.card .card-bottom-action-buttons {
+  z-index: 1;
+}
+body.night-mode md-card.card frameworks-images::before {
+  background-color: #424242 !important;
+  opacity: 0.65;
 }
 
 .filters {

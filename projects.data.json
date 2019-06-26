@@ -7,7 +7,10 @@
         "url": "https://www.cooksurfing.eu/profile/mona",
         "github_repo_name": "cooksurfing",
         "share_description": "Check out my repository Cooksurfing web-app!",
-        "bannerImage": "/img/screenshots/cooksurfing/logo.webp",
+        "frameworksImages": [
+            {"src": "/img/logos/node-logo.svg"},            
+            {"src": "/img/logos/pwa-logo.svg"}            
+        ],
         "animation": {
             "webm" : "/img/screenshots/cooksurfing/requesting.webm",
             "mp4" : "/img/screenshots/cooksurfing/requesting.mp4"
@@ -27,7 +30,10 @@
         "url": "https://web-app-chat.herokuapp.com",
         "github_repo_name": "node-chat-app",
         "share_description": "Check out my Chat Web App!",
-        "bannerImage": "/img/screenshots/node-chat-app/socket-io.svg",
+        "frameworksImages": [
+            {"src": "/img/logos/node-logo.svg"},            
+            {"src": "/img/logos/socket.io-logo.svg"}            
+        ],
         "animation": {
             "webm": "/img/screenshots/node-chat-app/web-app-chat.webm",
             "mp4": "/img/screenshots/node-chat-app/web-app-chat.mp4"
@@ -47,7 +53,10 @@
         "url": "https://animath.herokuapp.com/",
         "github_repo_name": "animath",
         "share_description": "Check out Animath. Learn mathematics through animations by scrolling!",
-        "bannerImage": "/img/screenshots/animath/demo_tophat.webp",
+        "frameworksImages": [
+            {"src": "/img/logos/gsap-logo.svg"},            
+            {"src": "/img/logos/svg-logo.svg"}
+        ],
         "animation": {
             "webm": "/img/screenshots/animath/limits_demo.webm",
             "mp4": "/img/screenshots/animath/limits_demo.mp4"
@@ -62,11 +71,14 @@
         "title": "French Bot",
         "subtitle": "A Bot for learning French vocabulary",
         "description": "The French Bot was created as a friendly interface which shows random french words on the screen and expects the translation in English. The French word is then translated using the Yandex translation API which returns the word in English. It is then compared to the user's input word and saves the result. The game repeats over a number of times and when the game finishes it outputs the progress of the user with the correct translation to each wrong answer.",
-        "tools_used": ["Yandex API", "JavaScript", "d3", "csv"],
+        "tools_used": ["Yandex API", "JavaScript", "csv"],
         "url": "https://charistheo.github.io/french-bot",
         "github_repo_name": "french-bot",
         "share_description": "Check out my repository French Bot for learning some French vocabulary!",
-        "bannerImage": "/img/screenshots/french-bot/yandex_logo.webp",
+        "frameworksImages": [
+            {"src": "/img/logos/js-logo.svg"},            
+            {"src": "/img/logos/css3-logo.svg"}
+        ],
         "animation": {
             "webm": "/img/screenshots/french-bot/french_bot_demo.webm",
             "mp4": "/img/screenshots/french-bot/french_bot_demo.mp4"

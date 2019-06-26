@@ -641,13 +641,11 @@
         >
 
           <!-- Project banner show only if card is not expanded -->
-          <img 
+          <frameworks-images
             ng-show="$index != selectedCardIndex" 
-            ng-src="{{ project.bannerImage }}" 
-            class="md-card-image banner-image"
-            alt="Project banner image"
-          >
-
+            images="{{project.frameworksImages}}"
+          ></frameworks-images>
+          
           <image-picker  
             ng-if="$index == selectedCardIndex" 
             images="{{project.images}}"
@@ -692,7 +690,7 @@
                       </md-chips>
                 </md-content>
             </md-card-content>
-          <md-card-content>
+          <md-card-content class="card-bottom-action-buttons">
             <md-card-actions layout="row" layout-align="center center">
                 <!-- Github Buttons -->
                 <md-button ng-if="$index == selectedCardIndex || $mdMedia('min-width: 600px')" class="md-icon-button" ng-href="https://github.com/charisTheo/{{ project.github_repo_name }}">

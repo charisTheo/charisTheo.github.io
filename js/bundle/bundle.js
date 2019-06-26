@@ -45,6 +45,16 @@ app.config(["$mdThemingProvider", function ($mdThemingProvider) {
       };
     }
   };
+}).directive('frameworksImages', function () {
+  return {
+    scope: false,
+    restrict: 'E',
+    templateUrl: '/partials/frameworksImages.html',
+    link: function link(scope, elm, attrs) {
+      if (!attrs.images) return;
+      scope.images = JSON.parse(attrs.images);
+    }
+  };
 });
 
 (function () {

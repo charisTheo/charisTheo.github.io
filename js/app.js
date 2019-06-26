@@ -51,4 +51,15 @@ app
             }
         }
     }
+})
+.directive('frameworksImages', function() {
+    return {
+        scope: false,
+        restrict: 'E',
+        templateUrl: '/partials/frameworksImages.html',
+        link: function(scope, elm, attrs) {
+            if (!attrs.images) return;
+            scope.images = JSON.parse(attrs.images);
+        }
+    }
 });

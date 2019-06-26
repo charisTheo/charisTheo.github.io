@@ -409,18 +409,36 @@ md-card .card-toggle {
   height: 100%;
   z-index: 11;
 }
-md-card.card > img.banner-image {
+md-card.card frameworks-images::before {
+  content: "";
+  background-color: #ffffff;
+  position: absolute;
+  width: 100%;
+  height: 100%;
   top: 0;
-  opacity: 0.35;
+  left: 0;
+  z-index: 1;
+  opacity: 0.5;
+}
+md-card.card frameworks-images img.banner-image {
+  top: 0;
   position: absolute;
   width: auto;
   max-height: 100%;
   padding: 15px;
-  align-self: center;
+  left: 0;
+  max-width: 100%
 }
 md-card.card .md-card-video {
   width: 100%;
   max-width: 300px;
+}
+md-card.card .card-bottom-action-buttons {
+  z-index: 1;
+}
+body.night-mode md-card.card frameworks-images::before {
+  background-color: #424242 !important;
+  opacity: 0.65;
 }
 
 .filters {

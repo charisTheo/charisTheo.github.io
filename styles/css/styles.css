@@ -417,14 +417,10 @@ md-card.expanded {
   top: 50px;
   left: 0;
   bottom: 0;
-  min-height: 100vh;
   overflow-y: scroll;
   overflow-x: hidden;
   padding: 0;
   border-radius: initial;
-}
-md-card.expanded md-card-actions {
-  margin-bottom: 10vh;
 }
 md-card .card-toggle {
   position: absolute;

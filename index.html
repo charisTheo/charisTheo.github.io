@@ -657,32 +657,48 @@
             images="{{project.images}}"
           ></image-picker>
 
-          <md-card-content layout-gt-sm="row" style="z-index: 10; padding: 0;">
+          <md-card-content layout-gt-sm="row" class="description">
             <md-card-title layout='column' flex-gt-xs='1'>
               <md-card-title-text layout-align-gt-sm="center start">
+                
                 <span class="md-headline">
-                  <a md-colors="{color: 'primary'}" ng-href="{{ project.url }}">{{ project.title }}</a>
+                  <a md-colors="{color: nightMode ? 'accent' : 'primary'}">{{ project.title }}</a>
+                  <md-button 
+                    ng-href="{{ project.url }}" 
+                    target="_blank"
+                    title="Open this project's website in a new window"
+                    aria-label="{{ project.url }}"
+                    class="md-icon-button"
+                  >
+                    <i 
+                      md-colors="{color: 'accent'}" 
+                      ng-show="$index == selectedCardIndex" 
+                      class="material-icons"
+                    >launch</i>
+                  </md-button>
                 </span>
+                
                 <span class="md-subhead" ng-style="nightMode && {'color': '#fff'}">{{ project.subtitle }}</span>
+              
               </md-card-title-text>
               <md-card-title-text class="md-margin" ng-show="$index == selectedCardIndex">
                 {{ project.description }}
               </md-card-title-text>
             </md-card-title>
-              <md-card-content style="text-align: center;">
-                  <!-- Video example animation -->
-                  <video 
-                    ng-if="$index == selectedCardIndex" 
-                    class="md-card-video"
-                    loop 
-                    muted 
-                    autoplay
-                    playsinline
-                  >
-                    <source ng-src="{{ project.animation.webm }}" type="video/webm">
-                    <source ng-src="{{ project.animation.mp4 }}"  type="video/mp4">
-                  </video>
-              </md-card-content>
+            <md-card-content>
+                <!-- Video example animation -->
+                <video 
+                  ng-if="$index == selectedCardIndex" 
+                  class="md-card-video"
+                  loop 
+                  muted 
+                  autoplay
+                  playsinline
+                >
+                  <source ng-src="{{ project.animation.webm }}" type="video/webm">
+                  <source ng-src="{{ project.animation.mp4 }}"  type="video/mp4">
+                </video>
+            </md-card-content>
           </md-card-content>
             <md-card-content flex-gt-xs='100' ng-show="$index == selectedCardIndex">
                 <md-content class="md-padding" ng-class="{'night-mode': nightMode}">

@@ -23,13 +23,36 @@
         ] 
     },
     {
+        "title": "Be Romantic",
+        "subtitle": "Fashion Designer's website",
+        "description": "This statically generated website was built as a result of a freelancing project. The client was a fashion designer and so showing her collections' pictures in high resolution was an important matter. The website is loaded with pictures so I needed to use something more sophisticated in order to compensate for the picture download speed and quality. So I have used Gatbsy and the gatsby sharp plugin in order to server quality adaptive images for low speed networks without losing the quality or damaging the user experience.",
+        "tools_used": ["Gatsby.js", "React.js", "GraphQL", "Prismic", "CMS", "Node.js", "Javascript", "ES6", "CSS3"],
+        "url": "https://beromantic.es",
+        "github_repo_name": "beromantic",
+        "share_description": "Check out this cool fashion designer site built by Gatsby.js!",
+        "frameworksImages": [
+            {"src": "/img/logos/graphql-logo.svg"},
+            {"src": "/img/logos/react-logo.svg"}
+        ],
+        "animation": {
+            "webm": "/img/screenshots/beromantic/beromantic.webm",
+            "mp4": "/img/screenshots/beromantic/beromantic.mp4"
+        },
+        "images": [
+            {"src": "/img/screenshots/beromantic/beromantic-1.webp"},
+            {"src": "/img/screenshots/beromantic/beromantic-2.webp"},
+            {"src": "/img/screenshots/beromantic/beromantic-3.webp"},
+            {"src": "/img/screenshots/beromantic/beromantic-4.webp"}
+        ] 
+    },
+    {
         "title": "Chat App",
-        "subtitle": "A Node.js chat app built on socket.io",
+        "subtitle": "Chat web app built on socket.io",
         "description": "This Chat App was built as a design concept taking advantage of web sockets to send, receive and broadcast messages between the user and a Node server. The app provides different rooms you can enter by typing the name of the room and a custom username.",
         "tools_used": ["Node.js", "Socket.io", "Express.js", "Mocha", "Nodemon", "Giphy API", "Javascript", "Google Maps API", "CSS3"],
         "url": "https://web-app-chat.herokuapp.com",
         "github_repo_name": "node-chat-app",
-        "share_description": "Check out my Chat Web App!",
+        "share_description": "Check out this awesome web Chat App!",
         "frameworksImages": [
             {"src": "/img/logos/node-logo.svg"},            
             {"src": "/img/logos/socket.io-logo.svg"}            
@@ -44,7 +67,6 @@
             {"src": "/img/screenshots/node-chat-app/webapp.webp"}
         ] 
     },
-    
     {
         "title": "Animath",
         "subtitle": "Learn Mathematics by scrolling",
@@ -69,7 +91,7 @@
     },
     {
         "title": "French Bot",
-        "subtitle": "A Bot for learning French vocabulary",
+        "subtitle": "Teaches you French vocabulary",
         "description": "The French Bot was created as a friendly interface which shows random french words on the screen and expects the translation in English. The French word is then translated using the Yandex translation API which returns the word in English. It is then compared to the user's input word and saves the result. The game repeats over a number of times and when the game finishes it outputs the progress of the user with the correct translation to each wrong answer.",
         "tools_used": ["Yandex API", "JavaScript", "csv"],
         "url": "https://charistheo.github.io/french-bot",

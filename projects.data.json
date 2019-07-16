@@ -16,10 +16,22 @@
             "mp4" : "/img/screenshots/cooksurfing/requesting.mp4"
         },
         "images": [
-            {"src": "/img/screenshots/cooksurfing/cooksurfing.webp"},
-            {"src": "/img/screenshots/cooksurfing/dashboard.webp"},
-            {"src": "/img/screenshots/cooksurfing/dashboard_2.webp"},
-            {"src": "/img/screenshots/cooksurfing/searchResults.webp"}
+            {
+                "src": "/img/screenshots/cooksurfing/cooksurfing.webp",
+                "fallback": "/img/screenshots/cooksurfing/cooksurfing.png"
+            },
+            {
+                "src": "/img/screenshots/cooksurfing/dashboard.webp",
+                "fallback": "/img/screenshots/cooksurfing/dashboard.png"
+            },
+            {
+                "src": "/img/screenshots/cooksurfing/dashboard_2.webp",
+                "fallback": "/img/screenshots/cooksurfing/dashboard_2.png"
+            },
+            {
+                "src": "/img/screenshots/cooksurfing/searchResults.webp",
+                "fallback": "/img/screenshots/cooksurfing/searchResults.png"
+            }
         ] 
     },
     {
@@ -39,10 +51,22 @@
             "mp4": "/img/screenshots/beromantic/beromantic.mp4"
         },
         "images": [
-            {"src": "/img/screenshots/beromantic/beromantic-1.webp"},
-            {"src": "/img/screenshots/beromantic/beromantic-2.webp"},
-            {"src": "/img/screenshots/beromantic/beromantic-3.webp"},
-            {"src": "/img/screenshots/beromantic/beromantic-4.webp"}
+            {
+                "src": "/img/screenshots/beromantic/beromantic-1.webp",
+                "fallback": "/img/screenshots/beromantic/beromantic-1.png"
+            },
+            {
+                "src": "/img/screenshots/beromantic/beromantic-2.webp",
+                "fallback": "/img/screenshots/beromantic/beromantic-2.png"
+            },
+            {
+                "src": "/img/screenshots/beromantic/beromantic-3.webp",
+                "fallback": "/img/screenshots/beromantic/beromantic-3.png"
+            },
+            {
+                "src": "/img/screenshots/beromantic/beromantic-4.webp",
+                "fallback": "/img/screenshots/beromantic/beromantic-4.png"
+            }
         ] 
     },
     {
@@ -62,9 +86,18 @@
             "mp4": "/img/screenshots/node-chat-app/web-app-chat.mp4"
         },
         "images": [
-            {"src": "/img/screenshots/node-chat-app/chat_2.webp"},
-            {"src": "/img/screenshots/node-chat-app/chat.webp"},
-            {"src": "/img/screenshots/node-chat-app/webapp.webp"}
+            {
+                "src": "/img/screenshots/node-chat-app/chat_2.webp",
+                "fallback": "/img/screenshots/node-chat-app/chat_2.png"
+            },
+            {
+                "src": "/img/screenshots/node-chat-app/chat.webp",
+                "fallback": "/img/screenshots/node-chat-app/chat.png"
+            },
+            {
+                "src": "/img/screenshots/node-chat-app/webapp.webp",
+                "fallback": "/img/screenshots/node-chat-app/webapp.png"
+            }
         ] 
     },
     {
@@ -84,9 +117,18 @@
             "mp4": "/img/screenshots/animath/limits_demo.mp4"
         },
         "images": [
-            {"src": "/img/screenshots/animath/sequences_demo.gif"},
-            {"src": "/img/screenshots/animath/limits.webp"},
-            {"src": "/img/screenshots/animath/sequences.webp"}
+            {
+                "src": "/img/screenshots/animath/sequences_demo.gif",
+                "fallback": "/img/screenshots/animath/sequences_demo.gif"
+            },
+            {
+                "src": "/img/screenshots/animath/limits.webp",
+                "fallback": "/img/screenshots/animath/limits.png"
+            },
+            {
+                "src": "/img/screenshots/animath/sequences.webp",
+                "fallback": "/img/screenshots/animath/sequences.png"
+            }
         ] 
     },
     {
@@ -106,10 +148,22 @@
             "mp4": "/img/screenshots/french-bot/french_bot_demo.mp4"
         },
         "images": [
-            {"src": "/img/screenshots/french-bot/french_bot.webp"},
-            {"src": "/img/screenshots/french-bot/french_bot_correct.webp"},
-            {"src": "/img/screenshots/french-bot/french_bot_wrong.webp"},
-            {"src": "/img/screenshots/french-bot/french_bot_results.webp"}
+            {
+                "src": "/img/screenshots/french-bot/french_bot.webp",
+                "fallback": "/img/screenshots/french-bot/french_bot.png"
+            },
+            {
+                "src": "/img/screenshots/french-bot/french_bot_correct.webp",
+                "fallback": "/img/screenshots/french-bot/french_bot_correct.png"
+            },
+            {
+                "src": "/img/screenshots/french-bot/french_bot_wrong.webp",
+                "fallback": "/img/screenshots/french-bot/french_bot_wrong.png"
+            },
+            {
+                "src": "/img/screenshots/french-bot/french_bot_results.webp",
+                "fallback": "/img/screenshots/french-bot/french_bot_results.png"
+            }
         ] 
     }
 ]

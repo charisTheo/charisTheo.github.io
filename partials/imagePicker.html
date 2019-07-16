@@ -1,11 +1,13 @@
 <div class="images-container" flex-gt-xs="40">
-  <img
+  <picture 
+    ng-repeat="image in images"
     ng-class="{'selectedImage': selectedImage == $index}"
     ng-click="selectImage($index)"
-    ng-repeat="image in images"
-    ng-src="{{ image.src }}"
+    ng-src="{{ image.fallback }}"
     flex-gt-xs="40"
     class="md-card-image"
-    alt="Projects image/screenshot"
-  />
+  >
+    <source srcset="{{ image.src }}" type="image/webp">
+    <img src="{{ image.fallback }}" alt="Project image/screenshot"/>
+  </picture>
 </div>

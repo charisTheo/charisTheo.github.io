@@ -138,6 +138,29 @@ i.material-icons:hover + .icon-label {
   background-color: #424242 !important;
   color: #fff !important;
 }
+@media (prefers-color-scheme: dark) {
+  body, 
+  md-card-content md-content,
+  md-card-content md-content .md-subheader  {
+    background-color: #303030 !important;
+    color: #fff !important;
+  }
+
+  md-card {
+    background-color: #424242 !important;
+    color: #fff !important;
+  }
+  md-card.card frameworks-images::before {
+    background-color: #424242 !important;
+    opacity: 0.65;
+  }
+  md-card md-card-title md-card-title-text .md-headline > a {
+    color: rgb(105, 240, 174) !important;
+  }
+  md-card md-card-title md-card-title-text .md-subhead {
+    color: #ffffff !important;
+  }
+}
 /* .night-mode-darker {
   background-color: #222222 !important;
   color: #fff !important;

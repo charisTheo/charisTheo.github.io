@@ -664,6 +664,7 @@
                 <span class="md-headline">
                   <a md-colors="{color: nightMode ? 'accent' : 'primary'}">{{ project.title }}</a>
                   <md-button 
+                    ng-show="$index == selectedCardIndex" 
                     ng-href="{{ project.url }}" 
                     target="_blank"
                     title="Open this project's website in a new window"
@@ -672,7 +673,6 @@
                   >
                     <i 
                       md-colors="{color: 'accent'}" 
-                      ng-show="$index == selectedCardIndex" 
                       class="material-icons"
                     >launch</i>
                   </md-button>
@@ -748,7 +748,7 @@
   <script src="js/bundle/bundle.min.js"></script>
   
   <!-- PeoplePerHour Profile Widget -->
-  <script type="text/javascript">
+  <script async defer type="text/javascript">
     (function(d, s) {
         var useSSL = 'https:' == document.location.protocol;
         var js, where = d.getElementsByTagName(s)[0],

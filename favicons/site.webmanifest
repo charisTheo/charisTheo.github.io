@@ -1,5 +1,6 @@
 {
     "name": "charisTheo",
+    "start_url": ".",
     "short_name": "charisTheo",
     "icons": [
         {
@@ -14,6 +15,6 @@
         }
     ],
     "theme_color": "#6200ea",
-    "background_color": "#6200ea",
+    "background_color": "#424242",
     "display": "standalone"
 }

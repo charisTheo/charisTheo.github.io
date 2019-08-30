@@ -10,14 +10,14 @@ app
     return {
         scope: false,
         restrict: 'E',
-        templateUrl: './../partials/svgLogo.html'
+        templateUrl: './../partials/compressed/svgLogo.html'
     }
 })
 .directive('socialLinks', function() {
     return {
         scope: false,
         restrict: 'E',
-        templateUrl: '/partials/socialLinks.html'
+        templateUrl: '/partials/compressed/socialLinks.html'
     }
 })
 .directive('sideNavList', function() {
@@ -27,21 +27,14 @@ app
             onHireMeClick: '&'
         },
         restrict: 'E',
-        templateUrl: '/partials/sidenavList.html',
-    }
-})
-.directive('pageLoader', function() {
-    return {
-        scope: false,
-        restrict: 'E',
-        templateUrl: '/partials/page-loader.html'
+        templateUrl: '/partials/compressed/sidenavList.html',
     }
 })
 .directive('imagePicker', function() {
     return {
         scope: false,
         restrict: 'E',
-        templateUrl: '/partials/imagePicker.html',
+        templateUrl: '/partials/compressed/imagePicker.html',
         link: function(scope, elm, attrs) {
             if (!attrs.images) return;
             scope.images = JSON.parse(attrs.images);
@@ -56,7 +49,7 @@ app
     return {
         scope: false,
         restrict: 'E',
-        templateUrl: '/partials/frameworksImages.html',
+        templateUrl: '/partials/compressed/frameworksImages.html',
         link: function(scope, elm, attrs) {
             if (!attrs.images) return;
             scope.images = JSON.parse(attrs.images);

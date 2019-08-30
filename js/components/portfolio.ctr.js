@@ -37,7 +37,8 @@
         }
 
         $scope.$watch('$viewContentLoaded', function(){
-            if ($cookies.get("NIGHT_MODE") === 'on') {
+            const isNightModePreferred = $mdMedia('(prefers-color-scheme: dark)');
+            if (isNightModePreferred) {
                 $scope.nightMode = true;
             }
             $scope.documentLoaded = true;
@@ -74,17 +75,6 @@
 
         $scope.toggleSideNav = function() {
             $mdSidenav('left').toggle();
-        }
-        
-        $scope.toggleNightMode = function() {
-            // toggle
-            $scope.nightMode = !$scope.nightMode;
-            // store cookie
-            if ($scope.nightMode) {
-                $cookies.put("NIGHT_MODE", "on");
-            } else {
-                $cookies.put("NIGHT_MODE", "off");
-            }
         }
     }
 

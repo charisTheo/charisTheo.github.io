@@ -8,6 +8,7 @@ let ngAnnotate = require('gulp-ng-annotate');
 let uglify = require('gulp-uglify');
 let htmlmin = require('gulp-htmlmin');
 var sourcemaps = require('gulp-sourcemaps');
+let workboxBuild = require('workbox-build');
 let browserSync = require('browser-sync');
 let server = browserSync.create();
 
@@ -30,7 +31,7 @@ function serve(done) {
     return done();
 }
 
-const clean = () => del(['styles/css/compressed/*', 'js/bundle/*', 'partials/compressed/*']);
+const clean = () => del(['styles/css/compressed/*', 'js/bundle/*', 'partials/compressed/*', 'service-worker.js', 'index.html']);
 
 gulp.task('minify-js', function(done) {
     gulp.src([
@@ -106,9 +107,37 @@ gulp.task('minify-html', function(done) {
     return done();
 });
 
-gulp.task('build', gulp.series(clean, 'minify-css', 'minify-js', 'minify-html'));
+gulp.task('service-worker', function(done) {
+    return workboxBuild.injectManifest({
+        swSrc: 'service-worker-src.js',
+        swDest: 'service-worker.js',
+        globDirectory: './',
+        globPatterns: [
+          'styles/css/compressed/*.min.css',
+          'index.html',
+          'partials/compressed/*.html',
+          'js/bundle/*.min.js',
+          'img/**/*.*',
+          'favicon.ico',
+          'manifest.json',
+          'manifest.webmanifest'
+        ]
+    }).then(resources => {
+        console.log(`Injected ${resources.count} resources for precaching, ` +
+        `totaling ${resources.size} bytes.`);
+        return done();
+
+    }).catch(err => {
+        console.log('Uh oh 😬', err);
+        return done();
+
+    });
+});
+
+gulp.task('build', gulp.series(clean, 'service-worker', 'minify-css', 'minify-js', 'minify-html'));
 
 const watch = () => {
+    gulp.watch('./service-worker-src.js', gulp.series('service-worker'));
     gulp.watch('styles/css/*.css', gulp.series('minify-css', stream));
     gulp.watch(['js/components/*.js', 'js/*.js'], gulp.series('minify-js', reload));
     gulp.watch(['partials/*.html', 'index-src.html', '404.html', 'img/logos/*.svg'], gulp.series('minify-html', reload));

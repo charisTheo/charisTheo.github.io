@@ -303,7 +303,7 @@ self.__precacheManifest = [
   },
   {
     "url": "index-src.html",
-    "revision": "60bec3284d2e87133e2e0e1d599d2a2b"
+    "revision": "3b5ae9fef384f53ea95fc9aa50eaeeae"
   },
   {
     "url": "js/accelerometer.notused.js",
@@ -371,7 +371,7 @@ self.__precacheManifest = [
   },
   {
     "url": "styles/css/imagePicker.css",
-    "revision": "ca8083f0835c64a994abdad81130079c"
+    "revision": "e06f16521b92d2b78ac2d099f1c93fbd"
   },
   {
     "url": "styles/css/media.css",
@@ -383,7 +383,7 @@ self.__precacheManifest = [
   },
   {
     "url": "styles/css/styles.css",
-    "revision": "11e1301a52d2bc21ba25206680beb05d"
+    "revision": "8f01e1cae7c27dc8b5a521a184035d0b"
   },
   {
     "url": "vendor/angular-animate.min.js",
@@ -411,7 +411,7 @@ self.__precacheManifest = [
   },
   {
     "url": "vendor/styles/angular-material.css",
-    "revision": "7f046e4ee52d293ec564ead6f9f24729"
+    "revision": "42e9a2eb538f19a2091fc2a4b09ee03a"
   }
 ].concat(self.__precacheManifest || []);
 workbox.precaching.precacheAndRoute(self.__precacheManifest, {});

@@ -69,7 +69,7 @@ gulp.task('minify-css', function(done) {
         'styles/css/media.css',
         'styles/css/scrollBar.css',
         'styles/css/styles.css',
-        'vendor/styles/angular-material.min.css'
+        'vendor/styles/angular-material.css'
     ])
     .pipe(minifyCSS())
     .pipe(concat('styles.min.css'))
@@ -108,33 +108,27 @@ gulp.task('minify-html', function(done) {
 });
 
 gulp.task('service-worker', function(done) {
-    return workboxBuild.injectManifest({
-        swSrc: 'service-worker-src.js',
-        swDest: 'service-worker.js',
-        globDirectory: './',
-        globPatterns: [
-          'styles/css/compressed/*.min.css',
-          'index.html',
-          'partials/compressed/*.html',
-          'js/bundle/*.min.js',
-          'img/**/*.*',
-          'favicon.ico',
-          'manifest.json',
-          'manifest.webmanifest'
-        ]
-    }).then(resources => {
-        console.log(`Injected ${resources.count} resources for precaching, ` +
-        `totaling ${resources.size} bytes.`);
+    return workboxBuild.generateSW({
+        globDirectory: __dirname,
+        globPatterns: ['\*\*/\*.{html,js,css,webp,png,svg,ico,json}'],
+        swDest: __dirname + '/service-worker.js',
+        skipWaiting: true
+    }).then((resources) => {
+        // In case there are any warnings from workbox-build, log them.
+        for (const warning of resources.warnings) {
+          console.log("service-worker: warning", warning);
+        }
+        console.log(`service-worker: Injected ${resources.count} resources for precaching, totaling ${resources.size} bytes.`);
         return done();
 
-    }).catch(err => {
-        console.log('Uh oh 😬', err);
+    }).catch((error) => {
+        console.log('service-worker: Uh oh 😬', error);
         return done();
 
     });
 });
 
-gulp.task('build', gulp.series(clean, 'service-worker', 'minify-css', 'minify-js', 'minify-html'));
+gulp.task('build', gulp.series(clean, 'minify-css', 'minify-js', 'minify-html', 'service-worker'));
 
 const watch = () => {
     gulp.watch('./service-worker-src.js', gulp.series('service-worker'));

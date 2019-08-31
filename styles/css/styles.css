@@ -78,23 +78,6 @@ a {
     margin-left: auto;  /*when adding left and right padding with the max-width = 1200px,*/
     /* max-width: 1170px;  which is our large device breakpoint. */
 }
-.row {
-  margin-left: -15px;
-  margin-right: -15px;
-}
-.row:after { /*:after & :before are determining the are before and after the specific element*/
-  content: "";
-  clear: both;    /* clear any floated elements inside the .row*/
-  display: table;
-}
-[class*='col-'] { /*targets all classes that start with .col-,*/
-  width: 100%;
-  padding-left: 15px;
-  padding-right: 15px;
-}
-hr {
-  border-style: solid;
-}
 .icon-label {
   transition: opacity 0.35s;
   -o-transition: opacity 0.35s;
@@ -163,135 +146,6 @@ i.material-icons:hover + .icon-label {
         CUSTOM STYLES
 ****************************
 ***************************/
-#logo {
-  margin-right: auto;
-  background-color: white;
-  padding: 0;
-  margin: 10px;
-  /* TODO: hide the logo for now */
-  display: none; 
-}
-#logo svg {
-  width: 35px;
-  height: 35px;
-  vertical-align: sub;
-}
-#profile-photo-container {
-  position: fixed;
-  width: auto;
-  bottom: 0;
-  right: 0;
-  height: 200px;
-  z-index: 999;
-  transform: translateY(200px);
-  opacity: 0;
-  transition: all .5s ease-out;
-  -o-transition: all .5s ease-out;
-  -ms-transition: all .5s ease-out;
-  -moz-transition: all .5s ease-out;
-  -webkit-transition: all .5s ease-out;
-  transition-delay: 0s;
-  -o-transition-delay: 0s;
-  -ms-transition-delay: 0s;
-  -moz-transition-delay: 0s;
-  -webkit-transition-delay: 0s;
-}
-#profile-photo-container button {
-  position: absolute;
-  right: -10px;
-  top: -10px;
-  cursor: pointer;
-  background-color: white;
-  border-radius: 50%;
-  padding: 2px;
-  box-shadow: -5px 5px 18px -7px rgba(0,0,0,.5);
-  -o-box-shadow: -5px 5px 18px -7px rgba(0,0,0,.5);
-  -ms-box-shadow: -5px 5px 18px -7px rgba(0,0,0,.5);
-  -moz-box-shadow: -5px 5px 18px -7px rgba(0,0,0,.5);
-  -webkit-box-shadow: -5px 5px 18px -7px rgba(0,0,0,.5);
-}
-#profile-photo-container button:hover i,
-#profile-photo-container button:active i,
-#profile-photo-container button:focus i {
-  color: rgb(177, 2, 2);
-}
-#profile-photo-container button i {
-  color: red;
-  margin: 2px;
-}
-#profile-photo-container #profile-photo {
-  width: auto;
-  height: 200px;
-}
-#profile-photo-container.show {
-  transform: translateY(0px);
-  transition-delay: 1s;
-  -o-transition-delay: 1s;
-  -ms-transition-delay: 1s;
-  -moz-transition-delay: 1s;
-  -webkit-transition-delay: 1s;
-  opacity: 1;
-}
-#profile-photo-container #follow-me-container {
-  box-shadow: 0 3px 16px 0 rgba(0,0,0,.6);
-  -o-box-shadow: 0 3px 16px 0 rgba(0,0,0,.6);
-  -ms-box-shadow: 0 3px 16px 0 rgba(0,0,0,.6);
-  -moz-box-shadow: 0 3px 16px 0 rgba(0,0,0,.6);
-  -webkit-box-shadow: 0 3px 16px 0 rgba(0,0,0,.6);
-  background-color: white;
-  border-radius: 2px;
-  padding: 6px 12px;
-  right: 108px;
-  top: 20px;
-  position: absolute;
-  width: 200px;;
-}
-#profile-photo-container #follow-me-container p {
-  display: inline-block;
-  margin: 0;
-}
-#profile-photo-container .eye:nth-child(1) {
-  left: 61px;
-}
-#profile-photo-container .eye:nth-child(2) {
-  left: 84px;
-}
-#profile-photo-container .eye {
-  border-radius: 50%;
-  margin: 0;
-  padding: 3px;
-  width: 10px;
-  height: 6px;
-  background-color: white;
-  position: absolute;
-  content: "";
-  top: 91px;
-}
-#profile-photo-container .eye .iris {
-  background-color: black;
-  border-radius: 50%;
-  width: 5px;
-  height: 5px;
-  display: block;
-  margin: 0;
-  content: "";
-  position: absolute;
-}
-
-main #title {
-    text-decoration: none;
-    text-align: center;
-    outline: none;
-    word-spacing: 5px;
-    letter-spacing: 1px;
-    margin-top: 15px;
-    margin-bottom: 0;
-    padding: 0px 10px;
-}
-main .project-link-container {
-    margin: 20px;
-    display: block;
-}
 main #projects {
   display: -webkit-flex;
   display: -webkit-box;
@@ -331,8 +185,9 @@ side-nav-list {
   width: 100%;
   text-align: left;
 }
-.social-links > md-list-item {
-  padding: 0;
+md-list.social-links > md-list-item {
+  padding: 0px;
+  margin: 0 5px;
 }
 
 .social-links a.md-fab.md-primary.md-button:hover,
@@ -423,14 +278,6 @@ md-card.expanded {
   overflow-x: hidden;
   padding: 0;
   border-radius: initial;
-}
-md-card .card-toggle {
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 11;
 }
 md-card.card frameworks-images::before {
   content: "";

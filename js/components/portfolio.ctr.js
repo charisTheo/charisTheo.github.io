@@ -8,7 +8,7 @@
     PortfolioCtrl.$inject = ["$scope", "$http", "$mdSidenav", "$mdMedia", "ShareListener", "$cookies", '$location', "$anchorScroll"];
 
     function PortfolioCtrl($scope, $http, $mdSidenav, $mdMedia, ShareListener, $cookies, $location, $anchorScroll) {
-        $http.get('/projects.data.json').then(function(response) {
+        $http.get('projects-data.json').then(function(response) {
             $scope.projects = response.data;
         });
         $scope.$mdMedia = $mdMedia;

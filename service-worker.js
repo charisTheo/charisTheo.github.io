@@ -67,7 +67,7 @@ self.__precacheManifest = [
   },
   {
     "url": "gulpfile.babel.js",
-    "revision": "c2d678a3337083d766e7a582735276fa"
+    "revision": "709345b15eab7034bcc7bb4e7d0f10a9"
   },
   {
     "url": "img/logo-ct.svg",
@@ -303,7 +303,11 @@ self.__precacheManifest = [
   },
   {
     "url": "index-src.html",
-    "revision": "3b5ae9fef384f53ea95fc9aa50eaeeae"
+    "revision": "e75950618d3a2b5576376abc7f012d62"
+  },
+  {
+    "url": "index.html",
+    "revision": "45f1fb4466b929e665a02c76da3fa029"
   },
   {
     "url": "js/accelerometer.notused.js",
@@ -312,6 +316,14 @@ self.__precacheManifest = [
   {
     "url": "js/app.js",
     "revision": "f00654d33580438f32271fc922bbe68f"
+  },
+  {
+    "url": "js/bundle/angular-bundle.min.js",
+    "revision": "1f18e1cec338e56f7a2c7801a8db4b2e"
+  },
+  {
+    "url": "js/bundle/bundle.min.js",
+    "revision": "6f5ab46534d68d472588beeb20e5212e"
   },
   {
     "url": "js/components/portfolio.ctr.js",
@@ -330,12 +342,36 @@ self.__precacheManifest = [
     "revision": "bbe084dff3e730254a6037bc2956ecf2"
   },
   {
+    "url": "manifest.webmanifest",
+    "revision": "bbe084dff3e730254a6037bc2956ecf2"
+  },
+  {
     "url": "package-lock.json",
     "revision": "65d89ddc7b7f494acb67a1d454f26bde"
   },
   {
     "url": "package.json",
     "revision": "4150bef325bfa6357a7f04b96b21a4c1"
+  },
+  {
+    "url": "partials/compressed/frameworksImages.html",
+    "revision": "2123bcf06ff03da0ec5f2cb16d22345b"
+  },
+  {
+    "url": "partials/compressed/imagePicker.html",
+    "revision": "02023f22a27a53395f138bec1a6ccb34"
+  },
+  {
+    "url": "partials/compressed/sidenavList.html",
+    "revision": "13286d4936f24eb30278df91b653dc77"
+  },
+  {
+    "url": "partials/compressed/socialLinks.html",
+    "revision": "5dc04bfd589b4f760753bdea1e2db5ba"
+  },
+  {
+    "url": "partials/compressed/svgLogo.html",
+    "revision": "dd69b1c1454d54cdaf29db5ea30a25b8"
   },
   {
     "url": "partials/frameworksImages.html",
@@ -366,52 +402,12 @@ self.__precacheManifest = [
     "revision": "9d575ae76f89c04150560766b711a596"
   },
   {
-    "url": "styles/css/dark-mode.css",
-    "revision": "8a301cb357e7e3f7b2e9959a3d8ea2d9"
+    "url": "styles/compressed/dark-mode.min.css",
+    "revision": "bdd805059e459622a73d89220c3c4a2b"
   },
   {
-    "url": "styles/css/imagePicker.css",
-    "revision": "e06f16521b92d2b78ac2d099f1c93fbd"
-  },
-  {
-    "url": "styles/css/media.css",
-    "revision": "4855d6bd7c4f14ad70d1bcbfaa740814"
-  },
-  {
-    "url": "styles/css/scrollBar.css",
-    "revision": "01728cf13988d669fb83e61e712edf36"
-  },
-  {
-    "url": "styles/css/styles.css",
-    "revision": "8f01e1cae7c27dc8b5a521a184035d0b"
-  },
-  {
-    "url": "vendor/angular-animate.min.js",
-    "revision": "1d92d2a805ff1878eaa993d55d957ce5"
-  },
-  {
-    "url": "vendor/angular-aria.min.js",
-    "revision": "73239afb95efffb15fd28e593ff613bd"
-  },
-  {
-    "url": "vendor/angular-cookies.min.js",
-    "revision": "eea870bb31afa7f2819eb2a9565df4ae"
-  },
-  {
-    "url": "vendor/angular-material.min.js",
-    "revision": "58d698dae0680946887b1be69abc41a5"
-  },
-  {
-    "url": "vendor/angular-messages.min.js",
-    "revision": "7addd0310496da822c37f9ad8e4a53ab"
-  },
-  {
-    "url": "vendor/angular.min.js",
-    "revision": "45234cafb7d03b5423e8238a3ce59137"
-  },
-  {
-    "url": "vendor/styles/angular-material.css",
-    "revision": "42e9a2eb538f19a2091fc2a4b09ee03a"
+    "url": "styles/compressed/styles.min.css",
+    "revision": "1f7ad7bf969119f3701655c14d04a525"
   }
 ].concat(self.__precacheManifest || []);
 workbox.precaching.precacheAndRoute(self.__precacheManifest, {});

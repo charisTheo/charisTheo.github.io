@@ -73,12 +73,12 @@ gulp.task('minify-css', function(done) {
     ])
     .pipe(minifyCSS())
     .pipe(concat('styles.min.css'))
-    .pipe(gulp.dest('styles/css/compressed'));
+    .pipe(gulp.dest('styles/compressed'));
     
     gulp.src('./styles/css/dark-mode.css')
     .pipe(minifyCSS())
     .pipe(concat('dark-mode.min.css'))
-    .pipe(gulp.dest('styles/css/compressed'));
+    .pipe(gulp.dest('styles/compressed'));
 
     return done();
 });
@@ -108,30 +108,33 @@ gulp.task('minify-html', function(done) {
 });
 
 gulp.task('service-worker', function(done) {
-    return workboxBuild.generateSW({
-        globDirectory: __dirname,
-        globPatterns: ['\*\*/\*.{html,js,css,webp,png,svg,ico,json}'],
-        swDest: __dirname + '/service-worker.js',
-        skipWaiting: true
-    }).then((resources) => {
-        // In case there are any warnings from workbox-build, log them.
-        for (const warning of resources.warnings) {
-          console.log("service-worker: warning", warning);
-        }
-        console.log(`service-worker: Injected ${resources.count} resources for precaching, totaling ${resources.size} bytes.`);
-        return done();
-
-    }).catch((error) => {
-        console.log('service-worker: Uh oh 😬', error);
-        return done();
-
-    });
+    setTimeout(() => {
+        return workboxBuild.generateSW({
+            globDirectory: __dirname,
+            globPatterns: ['\*\*/\*.{html,js,css,webp,png,svg,ico,json,webmanifest}'],
+            globIgnores: ['{vendor,node_modules,styles/css}/\*\*/\*'],
+            swDest: __dirname + '/service-worker.js',
+            skipWaiting: true
+        }).then((resources) => {
+            // In case there are any warnings from workbox-build, log them.
+            for (const warning of resources.warnings) {
+              console.log("service-worker: warning", warning);
+            }
+            console.log(`service-worker: Injected ${resources.count} resources for precaching, totaling ${resources.size} bytes.`);
+            return done();
+    
+        }).catch((error) => {
+            console.log('service-worker: Uh oh 😬', error);
+            return done();
+    
+        });
+    }, 2000);
 });
 
 gulp.task('build', gulp.series(clean, 'minify-css', 'minify-js', 'minify-html', 'service-worker'));
 
 const watch = () => {
-    gulp.watch('./service-worker-src.js', gulp.series('service-worker'));
+    gulp.watch('service-worker-src.js', gulp.series('service-worker'));
     gulp.watch('styles/css/*.css', gulp.series('minify-css', stream));
     gulp.watch(['js/components/*.js', 'js/*.js'], gulp.series('minify-js', reload));
     gulp.watch(['partials/*.html', 'index-src.html', '404.html', 'img/logos/*.svg'], gulp.series('minify-html', reload));

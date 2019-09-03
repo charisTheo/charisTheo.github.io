@@ -39,8 +39,7 @@ gulp.task('minify-js', function(done) {
         'vendor/angular-animate.min.js',
         'vendor/angular-aria.min.js',
         'vendor/angular-messages.min.js',
-        'vendor/angular-material.min.js',
-        'vendor/angular-cookies.min.js'
+        'vendor/angular-material.min.js'
     ])
     .pipe(sourcemaps.init())
     .pipe(concat('angular-bundle.min.js'))

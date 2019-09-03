@@ -5,9 +5,9 @@
         .module('Portfolio')
         .controller('PortfolioCtrl', PortfolioCtrl);
 
-    PortfolioCtrl.$inject = ["$scope", "$http", "$mdSidenav", "$mdMedia", "ShareListener", "$cookies", '$location', "$anchorScroll"];
+    PortfolioCtrl.$inject = ["$scope", "$http", "$mdSidenav", "$mdMedia", "ShareListener", '$location', "$anchorScroll"];
 
-    function PortfolioCtrl($scope, $http, $mdSidenav, $mdMedia, ShareListener, $cookies, $location, $anchorScroll) {
+    function PortfolioCtrl($scope, $http, $mdSidenav, $mdMedia, ShareListener, $location, $anchorScroll) {
         $http.get('projects-data.json').then(function(response) {
             $scope.projects = response.data;
         });

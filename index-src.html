@@ -14,17 +14,7 @@
   <meta property="og:image" content="https://avatars2.githubusercontent.com/u/9759549?s=400&u=421a644722383a6a6c28fa32f016bda079c245e9&v=4" />
   <title>charisTheo 👨‍💻🇨🇾</title>
   
-  <script async defer type="text/javascript">
-    if ('serviceWorker' in navigator) { 
-      navigator.serviceWorker.register('/service-worker.js', {scope: '/'})
-      .then(function(registration) {
-          console.log('Service Worker registration succeeded. Scope is ' + registration.scope);
-          
-      }).catch(function(error) {
-        console.log('Service Worker registration failed with ' + error);
-      });
-    }
-  </script>
+  <link rel="canonical" href="https://charistheo.io">
 
   <link rel="preconnect" href="https://fonts.gstatic.com" />
 
@@ -228,7 +218,7 @@
           <a href="https://twitter.com/charisTheo_dev?ref_src=twsrc%5Etfw" class="twitter-follow-button" data-show-count="false">
             Follow @charisTheo_dev
           </a>
-          <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+          <script async defer src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
       
           <div flex></div>
           <!-- Search button -->
@@ -389,6 +379,18 @@
   <!-- <script src="./js/bundle/angular-bundle.min.js"></script> -->
   <script async defer src="js/bundle/bundle.min.js"></script>
   
+  <script async defer type="text/javascript">
+    if ('serviceWorker' in navigator) { 
+      navigator.serviceWorker.register('/service-worker.js', {scope: '/'})
+      .then(function(registration) {
+          console.log('Service Worker registration succeeded. Scope is ' + registration.scope);
+          
+      }).catch(function(error) {
+        console.log('Service Worker registration failed with ' + error);
+      });
+    }
+  </script>
+
   <!-- PeoplePerHour Profile Widget -->
   <script async defer type="text/javascript">
     (function(d, s) {

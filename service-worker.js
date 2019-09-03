@@ -26,10 +26,6 @@ self.__precacheManifest = [
     "revision": "649bec9101046fe8d11183fdde7a271e"
   },
   {
-    "url": "babel.config.js",
-    "revision": "8a1c238e8873fb8fc8dcce1447b46b50"
-  },
-  {
     "url": "blog-posts.data.json",
     "revision": "403043be541c3769872107f7ca273038"
   },
@@ -64,10 +60,6 @@ self.__precacheManifest = [
   {
     "url": "favicons/safari-pinned-tab.svg",
     "revision": "a9b444198302f1fc81a59357297689e5"
-  },
-  {
-    "url": "gulpfile.babel.js",
-    "revision": "65cb35c6e665ca091aaa3c466caf63d6"
   },
   {
     "url": "img/logo-ct.svg",
@@ -303,11 +295,11 @@ self.__precacheManifest = [
   },
   {
     "url": "index-src.html",
-    "revision": "6ddcacad3346b1f413f026152fa9a320"
+    "revision": "746d28a177c0ebfc3e2d2a219fa1f905"
   },
   {
     "url": "index.html",
-    "revision": "cf2560ebedcfa59c3189a5eacfa00f8d"
+    "revision": "fab37a3b1ea1c106ea63f1df0519e681"
   },
   {
     "url": "js/accelerometer.notused.js",
@@ -315,23 +307,23 @@ self.__precacheManifest = [
   },
   {
     "url": "js/app.js",
-    "revision": "f00654d33580438f32271fc922bbe68f"
+    "revision": "9613d3bedc101fbde56c3ecf753df2e8"
   },
   {
     "url": "js/bundle/angular-bundle.min.js",
-    "revision": "1f18e1cec338e56f7a2c7801a8db4b2e"
+    "revision": "2d5abd18c827a42497f83276ce6621b8"
   },
   {
     "url": "js/bundle/bundle.min.js",
-    "revision": "5d467c0d9020bb798718f96cb56744fc"
+    "revision": "42579d5c3283f6fbbae23b75dbaad176"
   },
   {
     "url": "js/bundle/portfolio-bundle.min.js",
-    "revision": "3675257238a07e8e1feeb7cfa975f614"
+    "revision": "9df9851ffdf8be60327edfe5884ca572"
   },
   {
     "url": "js/components/portfolio.ctr.js",
-    "revision": "1bae012c533cea4d3afa4f058df0c00c"
+    "revision": "2654a8d4d3a0f9c061598c1696c8dddd"
   },
   {
     "url": "js/components/share-listener.fac.js",
@@ -415,5 +407,3 @@ self.__precacheManifest = [
   }
 ].concat(self.__precacheManifest || []);
 workbox.precaching.precacheAndRoute(self.__precacheManifest, {});
-
-workbox.routing.registerRoute(/\*\.{js,css}/, new workbox.strategies.StaleWhileRevalidate({ plugins: [new workbox.cacheableResponse.Plugin({ statuses: [ 0, 200 ] })] }), 'GET');

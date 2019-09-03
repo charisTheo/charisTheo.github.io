@@ -126,7 +126,7 @@ gulp.task('service-worker', function(done) {
         return workboxBuild.generateSW({
             globDirectory: __dirname,
             globPatterns: ['\*\*/\*.{html,js,css,webp,png,svg,ico,json,webmanifest}'],
-            globIgnores: ['{vendor,node_modules,styles/css}/\*\*/\*'],
+            globIgnores: ['{vendor,node_modules,styles/css}/\*\*/\*', 'gulpfile.babel.js', 'babel.config.js'],
             swDest: __dirname + '/service-worker.js',
             skipWaiting: true,
             // TODO cache runtime files from google analytics, twitter and peopleperhour

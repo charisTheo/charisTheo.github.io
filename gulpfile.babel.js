@@ -53,14 +53,29 @@ gulp.task('minify-js', function(done) {
         'js/components/share-listener.fac.js'
     ])
     .pipe(sourcemaps.init())
-    .pipe(concat('bundle.min.js'))
+    .pipe(concat('portfolio-bundle.min.js'))
     .pipe(ngAnnotate())
     .pipe(babel())
     .pipe(uglify())
     .pipe(sourcemaps.write('.'))
     .pipe(gulp.dest('js/bundle/'));
 
-    return done();
+    done();
+});
+
+gulp.task('bundle-js', function(done) {
+    setTimeout(function() {
+        gulp.src([
+            'js/bundle/angular-bundle.min.js',
+            'js/bundle/portfolio-bundle.min.js',
+        ])
+        .pipe(sourcemaps.init())
+        .pipe(concat('bundle.min.js'))
+        .pipe(sourcemaps.write('.'))
+        .pipe(gulp.dest('js/bundle/'));
+
+        done();
+    }, 2000);
 });
 
 gulp.task('minify-css', function(done) {
@@ -114,9 +129,18 @@ gulp.task('service-worker', function(done) {
             globPatterns: ['\*\*/\*.{html,js,css,webp,png,svg,ico,json,webmanifest}'],
             globIgnores: ['{vendor,node_modules,styles/css}/\*\*/\*'],
             swDest: __dirname + '/service-worker.js',
-            skipWaiting: true
+            skipWaiting: true,
+            // TODO cache runtime files from google analytics, twitter and peopleperhour
+            // runtimeCaching: [{
+            //     urlPattern: /\*\.{js,css}/,
+            //     handler: 'StaleWhileRevalidate',
+            //     options: {
+            //         cacheableResponse: {
+            //             statuses: [0, 200]
+            //         }
+            //     }
+            // }]
         }).then((resources) => {
-            // In case there are any warnings from workbox-build, log them.
             for (const warning of resources.warnings) {
               console.log("service-worker: warning", warning);
             }
@@ -131,12 +155,12 @@ gulp.task('service-worker', function(done) {
     }, 2000);
 });
 
-gulp.task('build', gulp.series(clean, 'minify-css', 'minify-js', 'minify-html', 'service-worker'));
+gulp.task('build', gulp.series(clean, 'minify-css', 'minify-js', 'bundle-js', 'minify-html', 'service-worker'));
 
 const watch = () => {
     gulp.watch('service-worker-src.js', gulp.series('service-worker'));
     gulp.watch('styles/css/*.css', gulp.series('minify-css', stream));
-    gulp.watch(['js/components/*.js', 'js/*.js'], gulp.series('minify-js', reload));
+    gulp.watch(['js/components/*.js', 'js/*.js'], gulp.series('minify-js', 'bundle-js', reload));
     gulp.watch(['partials/*.html', 'index-src.html', '404.html', 'img/logos/*.svg'], gulp.series('minify-html', reload));
 }
 

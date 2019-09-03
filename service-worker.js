@@ -67,7 +67,7 @@ self.__precacheManifest = [
   },
   {
     "url": "gulpfile.babel.js",
-    "revision": "709345b15eab7034bcc7bb4e7d0f10a9"
+    "revision": "65cb35c6e665ca091aaa3c466caf63d6"
   },
   {
     "url": "img/logo-ct.svg",
@@ -303,11 +303,11 @@ self.__precacheManifest = [
   },
   {
     "url": "index-src.html",
-    "revision": "e75950618d3a2b5576376abc7f012d62"
+    "revision": "6ddcacad3346b1f413f026152fa9a320"
   },
   {
     "url": "index.html",
-    "revision": "45f1fb4466b929e665a02c76da3fa029"
+    "revision": "cf2560ebedcfa59c3189a5eacfa00f8d"
   },
   {
     "url": "js/accelerometer.notused.js",
@@ -323,7 +323,11 @@ self.__precacheManifest = [
   },
   {
     "url": "js/bundle/bundle.min.js",
-    "revision": "6f5ab46534d68d472588beeb20e5212e"
+    "revision": "5d467c0d9020bb798718f96cb56744fc"
+  },
+  {
+    "url": "js/bundle/portfolio-bundle.min.js",
+    "revision": "3675257238a07e8e1feeb7cfa975f614"
   },
   {
     "url": "js/components/portfolio.ctr.js",
@@ -411,3 +415,5 @@ self.__precacheManifest = [
   }
 ].concat(self.__precacheManifest || []);
 workbox.precaching.precacheAndRoute(self.__precacheManifest, {});
+
+workbox.routing.registerRoute(/\*\.{js,css}/, new workbox.strategies.StaleWhileRevalidate({ plugins: [new workbox.cacheableResponse.Plugin({ statuses: [ 0, 200 ] })] }), 'GET');

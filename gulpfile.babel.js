@@ -79,11 +79,11 @@ gulp.task('bundle-js', function(done) {
 
 gulp.task('minify-css', function(done) {
     gulp.src([
+        'vendor/styles/angular-material.css',
         'styles/css/imagePicker.css',
         'styles/css/media.css',
         'styles/css/scrollBar.css',
-        'styles/css/styles.css',
-        'vendor/styles/angular-material.css'
+        'styles/css/styles.css'
     ])
     .pipe(minifyCSS())
     .pipe(concat('styles.min.css'))

@@ -295,11 +295,11 @@ self.__precacheManifest = [
   },
   {
     "url": "index-src.html",
-    "revision": "746d28a177c0ebfc3e2d2a219fa1f905"
+    "revision": "8ee00f3308b95bf1fce2073f506aec96"
   },
   {
     "url": "index.html",
-    "revision": "fab37a3b1ea1c106ea63f1df0519e681"
+    "revision": "52b4d88a0cb224569f0ce269e08f95c5"
   },
   {
     "url": "js/accelerometer.notused.js",
@@ -403,7 +403,7 @@ self.__precacheManifest = [
   },
   {
     "url": "styles/compressed/styles.min.css",
-    "revision": "e78e0cc55ede12686b33be709f0daeca"
+    "revision": "2918f87a7b7aac21a9700ca1ef150e6a"
   }
 ].concat(self.__precacheManifest || []);
 workbox.precaching.precacheAndRoute(self.__precacheManifest, {});

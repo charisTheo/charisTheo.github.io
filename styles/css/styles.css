@@ -233,7 +233,8 @@ md-list.social-links > md-list-item {
 }
 
 md-toolbar {
-  position: sticky;
+  position: sticky !important;
+  z-index: 14 !important;
   top: 0;
 }
 md-toolbar side-nav-list md-list.small-padding md-list-item {
@@ -241,6 +242,7 @@ md-toolbar side-nav-list md-list.small-padding md-list-item {
   vertical-align: bottom;
 }
 md-sidenav {
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
   position: fixed;
 }
 /* side nav buttons overrides */

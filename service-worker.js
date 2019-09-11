@@ -295,11 +295,11 @@ self.__precacheManifest = [
   },
   {
     "url": "index-src.html",
-    "revision": "8ee00f3308b95bf1fce2073f506aec96"
+    "revision": "5a55fea7b4082a614852ca79dedfd3d1"
   },
   {
     "url": "index.html",
-    "revision": "52b4d88a0cb224569f0ce269e08f95c5"
+    "revision": "2a41b156375401ee004e59ec8e3ca2e3"
   },
   {
     "url": "js/accelerometer.notused.js",
@@ -315,15 +315,15 @@ self.__precacheManifest = [
   },
   {
     "url": "js/bundle/bundle.min.js",
-    "revision": "42579d5c3283f6fbbae23b75dbaad176"
+    "revision": "9386af92145003e959abc02ae1dd0f69"
   },
   {
     "url": "js/bundle/portfolio-bundle.min.js",
-    "revision": "9df9851ffdf8be60327edfe5884ca572"
+    "revision": "ed952e20cebbb0514538e3ccb2770ab2"
   },
   {
     "url": "js/components/portfolio.ctr.js",
-    "revision": "2654a8d4d3a0f9c061598c1696c8dddd"
+    "revision": "916335635b4263ac77aba1b5880ace7f"
   },
   {
     "url": "js/components/share-listener.fac.js",
@@ -347,7 +347,7 @@ self.__precacheManifest = [
   },
   {
     "url": "package.json",
-    "revision": "4150bef325bfa6357a7f04b96b21a4c1"
+    "revision": "ca9850ebb76708efd7bf624ac3510066"
   },
   {
     "url": "partials/compressed/frameworksImages.html",
@@ -359,11 +359,11 @@ self.__precacheManifest = [
   },
   {
     "url": "partials/compressed/sidenavList.html",
-    "revision": "13286d4936f24eb30278df91b653dc77"
+    "revision": "95bc5a373826b76caee5c2e7f9958923"
   },
   {
     "url": "partials/compressed/socialLinks.html",
-    "revision": "5dc04bfd589b4f760753bdea1e2db5ba"
+    "revision": "76ae802a506824366631e365dee442bb"
   },
   {
     "url": "partials/compressed/svgLogo.html",
@@ -383,11 +383,11 @@ self.__precacheManifest = [
   },
   {
     "url": "partials/sidenavList.html",
-    "revision": "0376068954ca05158d359f2ed3bfb3c0"
+    "revision": "41c8f1a76fc9b5ee460ee2cd1dd550b6"
   },
   {
     "url": "partials/socialLinks.html",
-    "revision": "5c20730e529df0fd51d2818c9b1080e9"
+    "revision": "af270fc71f73cb59b1bc3b541c6a4148"
   },
   {
     "url": "partials/svgLogo.html",
@@ -403,7 +403,7 @@ self.__precacheManifest = [
   },
   {
     "url": "styles/compressed/styles.min.css",
-    "revision": "2918f87a7b7aac21a9700ca1ef150e6a"
+    "revision": "abd2eb517dc0c727f8261f59612ec6ce"
   }
 ].concat(self.__precacheManifest || []);
 workbox.precaching.precacheAndRoute(self.__precacheManifest, {});

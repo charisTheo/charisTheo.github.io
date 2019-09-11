@@ -42,6 +42,25 @@
                 $scope.nightMode = true;
             }
             $scope.documentLoaded = true;
+
+            // * Attach event listeners for sending data to google analytics
+            setTimeout(() => {
+                document.querySelectorAll('.md-button').forEach(button => {
+                    button.addEventListener('click', (event) => {
+                        const data = event.currentTarget.getAttribute('data-analytics');
+                        const dataArr = data.split(' ');
+                        const eventCategory = dataArr.splice(0, 1)[0];
+                        const eventLabel = dataArr.join(' ');
+
+                        ga('send', {
+                            hitType: 'event',
+                            eventAction: 'click',
+                            eventCategory,
+                            eventLabel
+                        });
+                    });
+                });
+            }, 1000);
         });
 
         $scope.selectCard = function($event, $index) {

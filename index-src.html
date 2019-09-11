@@ -167,7 +167,7 @@
             md-colors="{color: 'accent'}" 
             ng-click="toggleSideNav()" 
             class="md-icon-button" 
-            aria-label="Settings"
+            aria-label="Close side navigation menu"
           >
             <i class="material-icons">close</i>
           </md-button>
@@ -190,7 +190,7 @@
       <md-button 
         ng-click="toggleSideNav()" 
         class="md-icon-button" 
-        aria-label="Show side menu"
+        aria-label="Open side navigation menu"
         ng-if="!$mdMedia('min-width: 959px') && selectedCardIndex === undefined"
       >
           <i class="material-icons">menu</i>
@@ -222,9 +222,11 @@
           <div flex></div>
           <!-- Search button -->
           <md-button 
-          class="top-nav-btn md-fab md-primary" 
-          ng-click="showFilters = !showFilters" 
-          aria-label="search the website"
+            class="top-nav-btn md-fab md-primary" 
+            ng-class="{'pressed' : showFilters}"
+            ng-click="showFilters = !showFilters" 
+            aria-label="search the website"
+            data-analytics="Search Toggle search bar"
           >
             <i md-colors="{color: 'accent'}" class="material-icons">search</i>
           </md-button>
@@ -300,6 +302,7 @@
                     title="Open this project's website in a new window"
                     aria-label="{{ project.url }}"
                     class="md-icon-button"
+                    data-analytics="Visit {{ project.title }} url"
                   >
                     <i 
                       md-colors="{color: 'accent'}" 
@@ -345,29 +348,55 @@
           <md-card-content class="card-bottom-action-buttons">
             <md-card-actions layout="row" layout-align="center center">
                 <!-- Github Buttons -->
-                <md-button ng-if="$index == selectedCardIndex || $mdMedia('min-width: 600px')" class="md-icon-button" ng-href="https://github.com/charisTheo/{{ project.github_repo_name }}">
+                <md-button 
+                  ng-if="$index == selectedCardIndex || $mdMedia('min-width: 600px')" 
+                  class="md-icon-button" 
+                  ng-href="https://github.com/charisTheo/{{ project.github_repo_name }}"
+                  data-analytics="Star {{ project.github_repo_name }} on Github"
+                >
                   <i class="material-icons" aria-label="Star {{ project.github_repo_name }} on GitHub">star_border</i>
                   <div class="icon-label"> Star {{ project.github_repo_name }} on GitHub </div>
                 </md-button>
-                <md-button ng-if="$index == selectedCardIndex || $mdMedia('min-width: 600px')" class="md-icon-button" ng-href="https://github.com/charisTheo/{{ project.github_repo_name }}/subscription">
+                <md-button 
+                  ng-if="$index == selectedCardIndex || $mdMedia('min-width: 600px')" 
+                  class="md-icon-button" 
+                  ng-href="https://github.com/charisTheo/{{ project.github_repo_name }}/subscription"
+                  data-analytics="Watch {{ project.github_repo_name }} on Github"
+                >
                   <i class="material-icons" aria-label="Watch {{ project.github_repo_name }} on GitHub">remove_red_eye</i>
                   <div class="icon-label"> Watch {{ project.github_repo_name }} on GitHub </div>
                 </md-button>
-                <md-button ng-if="$index == selectedCardIndex || $mdMedia('min-width: 600px')" class="md-icon-button" ng-href="https://github.com/charisTheo/{{ project.github_repo_name }}/fork">
+                <md-button 
+                  ng-if="$index == selectedCardIndex || $mdMedia('min-width: 600px')" 
+                  class="md-icon-button" 
+                  ng-href="https://github.com/charisTheo/{{ project.github_repo_name }}/fork"
+                  data-analytics="Fork {{ project.github_repo_name }} on Github"
+                >
                   <i class="material-icons" aria-label="Fork {{ project.github_repo_name }} on GitHub">call_split</i>
                   <div class="icon-label"> Fork {{ project.github_repo_name }} on GitHub </div>
                 </md-button>
                   
-                <md-button ng-click="onFavouriteClick($event)" class="md-icon-button">
+                <md-button 
+                  ng-click="onFavouriteClick($event)" 
+                  class="md-icon-button"
+                  data-analytics="Favourite {{ project.title }}"
+                >
                   <!-- TODO: make it full if pressed <i class="material-icons">favorite</i> -->
                   <i class="material-icons">favorite_border</i>
                 </md-button>
-                <md-button class="md-icon-button share-button" ng-click="shareButtonListener($event)" ng-href="{{ project.url }}">
-                    <span class="share-button-text" hidden>
-                      {{ project.share_description }}
-                    </span>
-                    <i class="material-icons">share</i>
+
+                <md-button 
+                  class="md-icon-button share-button" 
+                  ng-click="shareButtonListener($event)" 
+                  ng-href="{{ project.url }}"
+                  data-analytics="Share {{ project.title }}"
+                >
+                  <span class="share-button-text" hidden>
+                    {{ project.share_description }}
+                  </span>
+                  <i class="material-icons">share</i>
                 </md-button>
+
               </md-card-actions>
           </md-card-content>              
           </md-card>
@@ -375,9 +404,6 @@
       </md-content>
   </main>
 
-  <!-- <script src="./js/bundle/angular-bundle.min.js"></script> -->
-  <script async defer src="js/bundle/bundle.min.js"></script>
-  
   <script async defer type="text/javascript">
     if ('serviceWorker' in navigator) { 
       navigator.serviceWorker.register('/service-worker.js', {scope: '/'})
@@ -389,6 +415,8 @@
       });
     }
   </script>
+
+  <script async defer src="js/bundle/bundle.min.js"></script>
 
   <!-- PeoplePerHour Profile Widget -->
   <script async defer type="text/javascript">
@@ -407,7 +435,6 @@
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-
     gtag('config', 'UA-135267871-1');
   </script>
 

@@ -270,6 +270,10 @@ md-sidenav md-list-item .md-secondary-container .md-button {
 md-card {
   position: relative;
   width: 100%;
+  transition: box-shadow 0.35s;
+}
+md-card:not(.expanded):hover {
+  box-shadow: 0px 3px 10px rgba(0,0,0,0.3);
 }
 md-card.expanded {
   margin: 0;
@@ -332,6 +336,10 @@ md-card.card .card-bottom-action-buttons {
 }
 button.md-button.top-nav-btn i {
   vertical-align: middle;
+  transition: box-shadow 0.35s;
+}
+button.md-button.pressed {
+  box-shadow: none;
 }
 .card.ng-animate {
   transition: all .5s;

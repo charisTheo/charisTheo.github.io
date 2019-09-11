@@ -52,7 +52,7 @@
                         const eventCategory = dataArr.splice(0, 1)[0];
                         const eventLabel = dataArr.join(' ');
 
-                        ga('send', {
+                        window.ga('send', {
                             hitType: 'event',
                             eventAction: 'click',
                             eventCategory,

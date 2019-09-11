@@ -429,14 +429,21 @@
     }(document, 'script'));
   </script>
 
-  <!-- Global site tag (gtag.js) - Google Analytics -->
-  <script async defer src="https://www.googletagmanager.com/gtag/js?id=UA-135267871-1"></script>
+  <!-- Google Analytics -->
+  <script async defer>
+    window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+    ga('create', 'UA-135267871-1', 'auto');
+    ga('send', 'pageview');
+  </script>
+  <script async defer src='https://www.google-analytics.com/analytics.js'></script>
+
+  <!-- <script async defer src="https://www.googletagmanager.com/gtag/js?id=UA-135267871-1"></script>
   <script async defer>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
     gtag('config', 'UA-135267871-1');
-  </script>
+  </script> -->
 
   <script async defer src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 

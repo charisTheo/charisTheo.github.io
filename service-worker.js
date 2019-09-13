@@ -54,6 +54,10 @@ self.__precacheManifest = [
     "revision": "7d97e3396110fd50ac9c8634a9b3c099"
   },
   {
+    "url": "favicons/logo-ct-512.png",
+    "revision": "6c8a9e3ace168a7d71e4e69c00b8aeb0"
+  },
+  {
     "url": "favicons/mstile-150x150.png",
     "revision": "c30998cdf86dace44478d667eaf8753f"
   },
@@ -295,11 +299,11 @@ self.__precacheManifest = [
   },
   {
     "url": "index-src.html",
-    "revision": "d388feb98a79f7a8362e3419e888dec7"
+    "revision": "f1a386c89749d533b359307776deb8e9"
   },
   {
     "url": "index.html",
-    "revision": "6ddea4b5758c86bc679d4f8bc81aad37"
+    "revision": "9590664c2e366656ec9c547bf8726564"
   },
   {
     "url": "js/accelerometer.notused.js",
@@ -311,11 +315,11 @@ self.__precacheManifest = [
   },
   {
     "url": "js/bundle/angular-bundle.min.js",
-    "revision": "2d5abd18c827a42497f83276ce6621b8"
+    "revision": "af779db1ac53db28ffca5be91e0cbd4d"
   },
   {
     "url": "js/bundle/bundle.min.js",
-    "revision": "6fd4cedb55a9ec3c3b984217c8269b6c"
+    "revision": "550d0b5dd47896685eb4be2fd32da96c"
   },
   {
     "url": "js/bundle/portfolio-bundle.min.js",
@@ -335,11 +339,11 @@ self.__precacheManifest = [
   },
   {
     "url": "manifest.json",
-    "revision": "bbe084dff3e730254a6037bc2956ecf2"
+    "revision": "8911375d9c07d7518628535364b2a092"
   },
   {
     "url": "manifest.webmanifest",
-    "revision": "bbe084dff3e730254a6037bc2956ecf2"
+    "revision": "8911375d9c07d7518628535364b2a092"
   },
   {
     "url": "package-lock.json",
@@ -363,7 +367,7 @@ self.__precacheManifest = [
   },
   {
     "url": "partials/compressed/socialLinks.html",
-    "revision": "76ae802a506824366631e365dee442bb"
+    "revision": "0f22a34c764129ec5693f4e3bde9ff4c"
   },
   {
     "url": "partials/compressed/svgLogo.html",
@@ -387,7 +391,7 @@ self.__precacheManifest = [
   },
   {
     "url": "partials/socialLinks.html",
-    "revision": "af270fc71f73cb59b1bc3b541c6a4148"
+    "revision": "142b46c28390095f090660897a790209"
   },
   {
     "url": "partials/svgLogo.html",

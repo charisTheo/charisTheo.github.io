@@ -293,12 +293,16 @@
             <md-card-title layout='column' flex-gt-xs='1'>
               <md-card-title-text layout-align-gt-sm="center start">
                 
-                <span class="md-headline">
-                  <a md-colors="{color: nightMode ? 'accent' : 'primary'}">{{ project.title }}</a>
+                <span 
+                  class="md-headline" 
+                  md-colors="{color: nightMode ? 'accent' : 'primary'}"
+                >
+                  {{ project.title }}
                   <md-button 
                     ng-show="$index == selectedCardIndex" 
                     ng-href="{{ project.url }}" 
                     target="_blank"
+                    rel="noopener"
                     title="Open this project's website in a new window"
                     aria-label="{{ project.url }}"
                     class="md-icon-button"

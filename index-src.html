@@ -153,10 +153,9 @@
 
   <script async defer src="js/bundle/bundle.min.js"></script>
 
-  <link rel="stylesheet" href="./styles/compressed/styles.min.css" type="text/css" media="none" onload="if(media!='all')media='all'">
-  <noscript>
-    <link rel="stylesheet" href="./styles/compressed/styles.min.css" type="text/css" />
-  </noscript>
+  <!-- * Replaced by inline styles by the 'minify-html' gulp task -->
+  <link href="./styles/compressed/styles.min.css" rel="stylesheet" type="text/css" />
+
   <link rel="stylesheet" href="./styles/compressed/dark-mode.min.css" type="text/css" media="screen and (prefers-color-scheme: dark)" />
     
 </head>
@@ -198,7 +197,7 @@
   <!---------- end of SIDE NAV ----------->
 
   <!---------- TOP BAR MENU ----------->
-  <md-toolbar id="top-bar-menu" layout="row" layout-align="space-between center">
+  <md-toolbar class="top-bar-menu" layout="row" layout-align="space-between center">
     <div class="md-toolbar-tools" md-colors="{color: 'accent'}">
       <!-- Menu button  -->
       <md-button 
@@ -227,7 +226,7 @@
       ></side-nav-list>  
 
       <!-- TOP NAV OPTIONS -->
-      <md-list id="top-nav-options" flex layout="row">
+      <md-list class="top-nav-options" flex layout="row">
         <md-list-item layout="row" class="noright">
           <a href="https://twitter.com/charisTheo_dev?ref_src=twsrc%5Etfw" class="twitter-follow-button" data-show-count="false">
             Follow @charisTheo_dev
@@ -251,20 +250,18 @@
   <!---------- end of TOP BAR MENU ----------->
 
   <main>
-    <div class="container">
-
     <!---------- SEARCH FILTERS INPUT ----------->
-      <div ng-show="showFilters" layout="row" class="filters" layout-align="center center">
-        <md-input-container class="search-term">
-          <label>Search here...</label>
-          <input type="text" ng-model="searchFilter">
-        </md-input-container>
-        <md-input-container>
-          <md-button class="md-warn" ng-click="searchFilter = ''">
-            clear
-          </md-button>
-        </md-input-container>
-      </div>
+    <div ng-show="showFilters" layout="row" class="filters" layout-align="center center">
+      <md-input-container class="search-term">
+        <label>Search here...</label>
+        <input type="text" ng-model="searchFilter">
+      </md-input-container>
+      <md-input-container>
+        <md-button class="md-warn" ng-click="searchFilter = ''">
+          clear
+        </md-button>
+      </md-input-container>
+    </div>
     <!---------- end of SEARCH FILTERS INPUT ----------->
 
     <!------- PeoplePerHour Profile Widget ------->
@@ -273,153 +270,152 @@
     <!------- Social links toggle list --------->
     <social-links ng-show="showSocialLinks"></social-links>
 
-      <md-content 
-        id="projects" 
-        layout-wrap
-        layout="row"
-        layout-xs="column"
+    <md-content 
+      class="projects-container" 
+      layout-wrap
+      layout="row"
+      layout-xs="column"
+    >
+      <!---------- CARDS ----------->
+      <md-card 
+        md-theme="{{'default'}}" 
+        md-theme-watch
+        md-swipe-right="($index === selectedCardIndex) && selectCard($event, $index)"
+        class="card"
+        ng-attr-id="{{'project' + $index}}"
+        ng-repeat="project in projects | filter: searchFilter"
+        ng-click="($index !== selectedCardIndex) && selectCard($event, $index)"
+        ng-class="{'expanded': $index == selectedCardIndex, 'night-mode-dark': nightMode}"
+        layout="column"
       >
-        <!---------- CARDS ----------->
-        <md-card 
-          md-theme="{{'default'}}" 
-          md-theme-watch
-          md-swipe-right="($index === selectedCardIndex) && selectCard($event, $index)"
-          class="card"
-          ng-attr-id="{{'project' + $index}}"
-          ng-repeat="project in projects | filter: searchFilter"
-          ng-click="($index !== selectedCardIndex) && selectCard($event, $index)"
-          ng-class="{'expanded': $index == selectedCardIndex, 'night-mode-dark': nightMode}"
-          layout="column"
-        >
 
-          <!-- Project banner show only if card is not expanded -->
-          <frameworks-images
-            ng-show="$index != selectedCardIndex" 
-            images="{{project.frameworksImages}}"
-          ></frameworks-images>
-          
-          <image-picker  
-          ng-if="$index == selectedCardIndex" 
-          images="{{project.images}}"
-          ></image-picker>
+        <!-- Project banner show only if card is not expanded -->
+        <frameworks-images
+          ng-show="$index != selectedCardIndex" 
+          images="{{project.frameworksImages}}"
+        ></frameworks-images>
+        
+        <image-picker  
+        ng-if="$index == selectedCardIndex" 
+        images="{{project.images}}"
+        ></image-picker>
 
-          <md-card-content layout-gt-sm="row" class="description">
-            <md-card-title layout='column' flex-gt-xs='1'>
-              <md-card-title-text layout-align-gt-sm="center start">
-                
-                <span 
-                  class="md-headline" 
-                  md-colors="{color: nightMode ? 'accent' : 'primary'}"
-                >
-                  {{ project.title }}
-                  <md-button 
-                    ng-show="$index == selectedCardIndex" 
-                    ng-href="{{ project.url }}" 
-                    target="_blank"
-                    rel="noopener"
-                    title="Open this project's website in a new window"
-                    aria-label="{{ project.url }}"
-                    class="md-icon-button"
-                    data-analytics="Visit {{ project.title }} url"
-                  >
-                    <i 
-                      md-colors="{color: 'accent'}" 
-                      class="material-icons"
-                    >launch</i>
-                  </md-button>
-                </span>
-                
-                <span class="md-subhead" ng-style="nightMode && {'color': '#fff'}">{{ project.subtitle }}</span>
+        <md-card-content layout-gt-sm="row" class="description">
+          <md-card-title layout='column' flex-gt-xs='1'>
+            <md-card-title-text layout-align-gt-sm="center start">
               
-              </md-card-title-text>
-              <md-card-title-text class="md-margin" ng-show="$index == selectedCardIndex">
-                {{ project.description }}
-              </md-card-title-text>
-            </md-card-title>
-            <md-card-content>
-                <!-- Video example animation -->
-                <video 
-                  ng-if="$index == selectedCardIndex" 
-                  class="md-card-video"
-                  loop 
-                  muted 
-                  autoplay
-                  playsinline
-                >
-                  <source ng-src="{{ project.animation.webm }}" type="video/webm">
-                  <source ng-src="{{ project.animation.mp4 }}"  type="video/mp4">
-                </video>
-            </md-card-content>
-          </md-card-content>
-            <md-card-content flex-gt-xs='100' ng-show="$index == selectedCardIndex">
-                <md-content class="md-padding" ng-class="{'night-mode': nightMode}">
-                  <md-subheader class="md-no-sticky" ng-class="{'night-mode': nightMode}">Tools used</md-subheader>
-                      <md-chips ng-model="project.tools_used" readonly='true'>
-                          <md-chip-template>
-                              <span>
-                                <strong md-colors="{color: 'primary'}" >{{ $chip }}</strong>
-                              </span>
-                            </md-chip-template>
-                      </md-chips>
-                </md-content>
-            </md-card-content>
-          <md-card-content class="card-bottom-action-buttons">
-            <md-card-actions layout="row" layout-align="center center">
-                <!-- Github Buttons -->
+              <span 
+                class="md-headline" 
+                md-colors="{color: nightMode ? 'accent' : 'primary'}"
+              >
+                {{ project.title }}
                 <md-button 
-                  ng-if="$index == selectedCardIndex || $mdMedia('min-width: 600px')" 
-                  class="md-icon-button" 
-                  ng-href="https://github.com/charisTheo/{{ project.github_repo_name }}"
-                  data-analytics="Star {{ project.github_repo_name }} on Github"
-                >
-                  <i class="material-icons" aria-label="Star {{ project.github_repo_name }} on GitHub">star_border</i>
-                  <div class="icon-label"> Star {{ project.github_repo_name }} on GitHub </div>
-                </md-button>
-                <md-button 
-                  ng-if="$index == selectedCardIndex || $mdMedia('min-width: 600px')" 
-                  class="md-icon-button" 
-                  ng-href="https://github.com/charisTheo/{{ project.github_repo_name }}/subscription"
-                  data-analytics="Watch {{ project.github_repo_name }} on Github"
-                >
-                  <i class="material-icons" aria-label="Watch {{ project.github_repo_name }} on GitHub">remove_red_eye</i>
-                  <div class="icon-label"> Watch {{ project.github_repo_name }} on GitHub </div>
-                </md-button>
-                <md-button 
-                  ng-if="$index == selectedCardIndex || $mdMedia('min-width: 600px')" 
-                  class="md-icon-button" 
-                  ng-href="https://github.com/charisTheo/{{ project.github_repo_name }}/fork"
-                  data-analytics="Fork {{ project.github_repo_name }} on Github"
-                >
-                  <i class="material-icons" aria-label="Fork {{ project.github_repo_name }} on GitHub">call_split</i>
-                  <div class="icon-label"> Fork {{ project.github_repo_name }} on GitHub </div>
-                </md-button>
-                  
-                <md-button 
-                  ng-click="onFavouriteClick($event)" 
+                  ng-show="$index == selectedCardIndex" 
+                  ng-href="{{ project.url }}" 
+                  target="_blank"
+                  rel="noopener"
+                  title="Open this project's website in a new window"
+                  aria-label="{{ project.url }}"
                   class="md-icon-button"
-                  data-analytics="Favourite {{ project.title }}"
+                  data-analytics="Visit {{ project.title }} url"
                 >
-                  <!-- TODO: make it full if pressed <i class="material-icons">favorite</i> -->
-                  <i class="material-icons">favorite_border</i>
+                  <i 
+                    md-colors="{color: 'accent'}" 
+                    class="material-icons"
+                  >launch</i>
                 </md-button>
+              </span>
+              
+              <span class="md-subhead" ng-style="nightMode && {'color': '#fff'}">{{ project.subtitle }}</span>
+            
+            </md-card-title-text>
+            <md-card-title-text class="md-margin" ng-show="$index == selectedCardIndex">
+              {{ project.description }}
+            </md-card-title-text>
+          </md-card-title>
+          <md-card-content class="card-video-container">
+              <!-- Video example animation -->
+              <video 
+                ng-if="$index == selectedCardIndex" 
+                class="md-card-video"
+                loop 
+                muted 
+                autoplay
+                playsinline
+              >
+                <source ng-src="{{ project.animation.webm }}" type="video/webm">
+                <source ng-src="{{ project.animation.mp4 }}"  type="video/mp4">
+              </video>
+          </md-card-content>
+        </md-card-content>
+          <md-card-content flex-gt-xs='100' ng-show="$index == selectedCardIndex">
+              <md-content class="md-padding" ng-class="{'night-mode': nightMode}">
+                <md-subheader class="md-no-sticky" ng-class="{'night-mode': nightMode}">Tools used</md-subheader>
+                    <md-chips ng-model="project.tools_used" readonly='true'>
+                        <md-chip-template>
+                            <span>
+                              <strong md-colors="{color: 'primary'}" >{{ $chip }}</strong>
+                            </span>
+                          </md-chip-template>
+                    </md-chips>
+              </md-content>
+          </md-card-content>
+        <md-card-content class="card-bottom-action-buttons">
+          <md-card-actions layout="row" layout-align="center center">
+              <!-- Github Buttons -->
+              <md-button 
+                ng-if="$index == selectedCardIndex || $mdMedia('min-width: 600px')" 
+                class="md-icon-button" 
+                ng-href="https://github.com/charisTheo/{{ project.github_repo_name }}"
+                data-analytics="Star {{ project.github_repo_name }} on Github"
+              >
+                <i class="material-icons" aria-label="Star {{ project.github_repo_name }} on GitHub">star_border</i>
+                <div class="icon-label"> Star {{ project.github_repo_name }} on GitHub </div>
+              </md-button>
+              <md-button 
+                ng-if="$index == selectedCardIndex || $mdMedia('min-width: 600px')" 
+                class="md-icon-button" 
+                ng-href="https://github.com/charisTheo/{{ project.github_repo_name }}/subscription"
+                data-analytics="Watch {{ project.github_repo_name }} on Github"
+              >
+                <i class="material-icons" aria-label="Watch {{ project.github_repo_name }} on GitHub">remove_red_eye</i>
+                <div class="icon-label"> Watch {{ project.github_repo_name }} on GitHub </div>
+              </md-button>
+              <md-button 
+                ng-if="$index == selectedCardIndex || $mdMedia('min-width: 600px')" 
+                class="md-icon-button" 
+                ng-href="https://github.com/charisTheo/{{ project.github_repo_name }}/fork"
+                data-analytics="Fork {{ project.github_repo_name }} on Github"
+              >
+                <i class="material-icons" aria-label="Fork {{ project.github_repo_name }} on GitHub">call_split</i>
+                <div class="icon-label"> Fork {{ project.github_repo_name }} on GitHub </div>
+              </md-button>
+                
+              <md-button 
+                ng-click="onFavouriteClick($event)" 
+                class="md-icon-button"
+                data-analytics="Favourite {{ project.title }}"
+              >
+                <!-- TODO: make it full if pressed <i class="material-icons">favorite</i> -->
+                <i class="material-icons">favorite_border</i>
+              </md-button>
 
-                <md-button 
-                  class="md-icon-button share-button" 
-                  ng-click="shareButtonListener($event)" 
-                  ng-href="{{ project.url }}"
-                  data-analytics="Share {{ project.title }}"
-                >
-                  <span class="share-button-text" hidden>
-                    {{ project.share_description }}
-                  </span>
-                  <i class="material-icons">share</i>
-                </md-button>
+              <md-button 
+                class="md-icon-button share-button" 
+                ng-click="shareButtonListener($event)" 
+                ng-href="{{ project.url }}"
+                data-analytics="Share {{ project.title }}"
+              >
+                <span class="share-button-text" hidden>
+                  {{ project.share_description }}
+                </span>
+                <i class="material-icons">share</i>
+              </md-button>
 
-              </md-card-actions>
-          </md-card-content>              
-          </md-card>
-
-      </md-content>
+            </md-card-actions>
+        </md-card-content>              
+        </md-card>
+    </md-content>
   </main>
 
   <!-- PeoplePerHour Profile Widget -->

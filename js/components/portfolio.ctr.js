@@ -19,7 +19,7 @@
         $scope.cardToggle = false;
         $scope.selectedCardIndex = undefined;
         $scope.selectedCard = undefined;
-        $anchorScroll.yOffset = 50;
+        $anchorScroll.yOffset = 72;
 
         $scope.toggleSocialLinks = function() {
             $scope.showSocialLinks = !$scope.showSocialLinks;
@@ -34,7 +34,7 @@
             if ($mdSidenav('left').isOpen) {
                 $mdSidenav('left').toggle();
             }
-        }
+        };
 
         $scope.$watch('$viewContentLoaded', function(){
             const isNightModePreferred = $mdMedia('(prefers-color-scheme: dark)');
@@ -70,14 +70,15 @@
                 $scope.selectedCardIndex = $index;
                 // scroll to top of card
                 $location.hash("project" + $index);
-                $anchorScroll();
+                $anchorScroll("project" + $index);
             } else {
                 // unselect card
                 $scope.selectedCardIndex = undefined;
                 $scope.selectedCard = undefined;
+                $location.url('');
             }
             $event.cancelBubble = true; // prevent from firing again
-        }
+        };
 
         $scope.onFavouriteClick = function($event) {
             // TODO: Add animation transition
@@ -90,11 +91,11 @@
                 _this.children[0].textContent = 'favorite';
             }
             $event.cancelBubble = true; // prevent the card from toggling
-        }
+        };
 
         $scope.toggleSideNav = function() {
             $mdSidenav('left').toggle();
-        }
+        };
     }
 
 })();

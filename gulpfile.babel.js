@@ -1,3 +1,4 @@
+let fs = require('fs');
 let gulp = require('gulp');
 let babel = require('gulp-babel');
 let del = require('del');
@@ -8,6 +9,7 @@ let ngAnnotate = require('gulp-ng-annotate');
 let uglify = require('gulp-uglify');
 let htmlmin = require('gulp-htmlmin');
 var sourcemaps = require('gulp-sourcemaps');
+let replace = require('gulp-replace');
 let workboxBuild = require('workbox-build');
 let browserSync = require('browser-sync');
 let server = browserSync.create();
@@ -116,6 +118,10 @@ gulp.task('minify-html', function(done) {
         minifyJS: true
     }))
     .pipe(concat('index.html'))
+    .pipe(replace(/<link href=".\/styles\/compressed\/styles.min.css"[^>]*>/, function(s) {
+        var style = fs.readFileSync('./styles/compressed/styles.min.css', 'utf8');
+        return '<style>\n' + style + '\n</style>';
+    }))
     .pipe(gulp.dest(__dirname));
 
     return done();
@@ -125,7 +131,7 @@ gulp.task('service-worker', function(done) {
     setTimeout(() => {
         return workboxBuild.generateSW({
             globDirectory: __dirname,
-            globPatterns: ['\*\*/\*.{html,js,css,webp,png,svg,ico,json,webmanifest}'],
+            globPatterns: ['\*\*/\*.{html,js,css,webp,png,svg,ico,json,woff2}'],
             globIgnores: ['{vendor,node_modules,styles/css}/\*\*/\*', 'gulpfile.babel.js', 'babel.config.js'],
             swDest: __dirname + '/service-worker.js',
             skipWaiting: true,

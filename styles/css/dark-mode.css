@@ -25,7 +25,7 @@
 .social-links a.md-fab.md-primary.md-button:hover {
     box-shadow: none;
 }
-md-card.card frameworks-images::before {
+.card frameworks-images::before {
     background-color: #424242 !important;
     opacity: 0.65;
 }
@@ -43,18 +43,18 @@ md-card.card frameworks-images::before {
       color: #fff !important;
     }
   
-    md-card {
+    .card {
       background-color: #424242 !important;
       color: #fff !important;
     }
-    md-card.card frameworks-images::before {
+    .card frameworks-images::before {
       background-color: #424242 !important;
       opacity: 0.65;
     }
-    md-card md-card-title md-card-title-text .md-headline > a {
+    .card md-card-title md-card-title-text .md-headline > a {
       color: rgb(105, 240, 174) !important;
     }
-    md-card md-card-title md-card-title-text .md-subhead {
+    .card md-card-title md-card-title-text .md-subhead {
       color: #ffffff !important;
     }
 /* } */

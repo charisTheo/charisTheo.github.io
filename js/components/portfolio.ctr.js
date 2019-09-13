@@ -28,13 +28,13 @@
                 $mdSidenav('left').toggle();
             }
         };
-        $scope.togglePeoplePerHourWidget = function() {
-            $scope.showPeoplePerHourWidget = !$scope.showPeoplePerHourWidget;
-            // close side nav if open
-            if ($mdSidenav('left').isOpen) {
-                $mdSidenav('left').toggle();
-            }
-        };
+        // $scope.togglePeoplePerHourWidget = function() {
+        //     $scope.showPeoplePerHourWidget = !$scope.showPeoplePerHourWidget;
+        //     // close side nav if open
+        //     if ($mdSidenav('left').isOpen) {
+        //         $mdSidenav('left').toggle();
+        //     }
+        // };
 
         $scope.$watch('$viewContentLoaded', function(){
             const isNightModePreferred = $mdMedia('(prefers-color-scheme: dark)');
@@ -42,6 +42,16 @@
                 $scope.nightMode = true;
             }
             $scope.documentLoaded = true;
+
+            if ('serviceWorker' in navigator) { 
+                navigator.serviceWorker.register('/service-worker.js', {scope: '/'})
+                .then(function(registration) {
+                    console.log('Service Worker registration succeeded. Scope is ' + registration.scope);
+                    
+                }).catch(function(error) {
+                    console.log('Service Worker registration failed with ' + error);
+                });
+            }
 
             // * Attach event listeners for sending data to google analytics
             setTimeout(() => {

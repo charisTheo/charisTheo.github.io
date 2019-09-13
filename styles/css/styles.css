@@ -165,10 +165,10 @@ main .projects-container {
   .top-bar-menu > .md-toolbar-tools .back-button {
     margin-bottom: 10px;
   }
-  .top-nav-options .twitter-follow-button {
+  /* .top-nav-options .twitter-follow-button {
     margin-top: 6px;
     margin-right: 15px;
-  }
+  } */
 }
 
 side-nav-list {

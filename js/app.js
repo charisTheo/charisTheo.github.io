@@ -23,8 +23,7 @@ app
 .directive('sideNavList', function() {
     return {
         scope: {
-            onContactClick: '&',
-            onHireMeClick: '&'
+            onContactClick: '&'
         },
         restrict: 'E',
         templateUrl: '/partials/compressed/sidenavList.html',

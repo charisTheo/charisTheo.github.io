@@ -142,20 +142,6 @@
   <link rel="preload" as="font" href="fonts/michroma.woff2" crossorigin>
   <link rel="preload" as="font" href="fonts/material-icons.woff2" crossorigin>
 
-  <script async defer type="text/javascript">
-    if ('serviceWorker' in navigator) { 
-      navigator.serviceWorker.register('/service-worker.js', {scope: '/'})
-      .then(function(registration) {
-          console.log('Service Worker registration succeeded. Scope is ' + registration.scope);
-          
-      }).catch(function(error) {
-        console.log('Service Worker registration failed with ' + error);
-      });
-    }
-  </script>
-
-  <script async defer src="js/bundle/bundle.min.js"></script>
-
   <!-- * Replaced by inline styles by the 'minify-html' gulp task -->
   <link href="./styles/compressed/styles.min.css" rel="stylesheet" type="text/css" />
 
@@ -192,7 +178,6 @@
       <!-- Partial template -->
       <side-nav-list 
         on-contact-click="toggleSocialLinks()"
-        on-hire-me-click="togglePeoplePerHourWidget()"
       ></side-nav-list>
 
     </md-content>
@@ -225,15 +210,14 @@
       <side-nav-list 
         ng-if="$mdMedia('min-width: 959px')"
         on-contact-click="toggleSocialLinks()"
-        on-hire-me-click="togglePeoplePerHourWidget()"
       ></side-nav-list>  
 
       <!-- TOP NAV OPTIONS -->
       <md-list class="top-nav-options" flex layout="row">
         <md-list-item layout="row" class="noright">
-          <a href="https://twitter.com/charisTheo_dev?ref_src=twsrc%5Etfw" class="twitter-follow-button" data-show-count="false">
+          <!-- <a href="https://twitter.com/charisTheo_dev?ref_src=twsrc%5Etfw" ng-if="documentLoaded" class="twitter-follow-button" data-show-count="false">
             Follow @charisTheo_dev
-          </a>
+          </a> -->
       
           <div flex></div>
           <!-- Search button -->
@@ -268,7 +252,7 @@
     <!---------- end of SEARCH FILTERS INPUT ----------->
 
     <!------- PeoplePerHour Profile Widget ------->
-    <div style="text-align: center;" ng-show="showPeoplePerHourWidget" id="pph-hireme"></div>
+    <!-- <div style="text-align: center;" ng-show="showPeoplePerHourWidget" id="pph-hireme"></div> -->
 
     <!------- Social links toggle list --------->
     <social-links ng-show="showSocialLinks"></social-links>
@@ -421,8 +405,10 @@
     </md-content>
   </main>
 
+  <script async defer src="js/bundle/bundle.min.js"></script>
+
   <!-- PeoplePerHour Profile Widget -->
-  <script async defer type="text/javascript">
+  <!-- <script async defer type="text/javascript">
     (function(d, s) {
         var useSSL = 'https:' == document.location.protocol;
         var js, where = d.getElementsByTagName(s)[0],
@@ -430,7 +416,7 @@
         js.src = (useSSL ? 'https:' : 'http:') +  '//www.peopleperhour.com/hire/1866524758/1523363.js?width=336&height=142&orientation=vertical&theme=dark&rnd='+parseInt(Math.random()*10000, 10);
         try { where.parentNode.insertBefore(js, where); } catch (e) { if (typeof console !== 'undefined' && console.log && e.stack) { console.log(e.stack); } }
     }(document, 'script'));
-  </script>
+  </script> -->
 
   <!-- Google Analytics -->
   <script async defer>
@@ -448,7 +434,7 @@
     gtag('config', 'UA-135267871-1');
   </script> -->
 
-  <script async defer src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+  <!-- <script async defer src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> -->
 
 </body>
 

@@ -315,11 +315,11 @@ self.__precacheManifest = [
   },
   {
     "url": "js/bundle/angular-bundle.min.js",
-    "revision": "af779db1ac53db28ffca5be91e0cbd4d"
+    "revision": "2d5abd18c827a42497f83276ce6621b8"
   },
   {
     "url": "js/bundle/bundle.min.js",
-    "revision": "550d0b5dd47896685eb4be2fd32da96c"
+    "revision": "6fd4cedb55a9ec3c3b984217c8269b6c"
   },
   {
     "url": "js/bundle/portfolio-bundle.min.js",
@@ -355,7 +355,7 @@ self.__precacheManifest = [
   },
   {
     "url": "partials/compressed/frameworksImages.html",
-    "revision": "2123bcf06ff03da0ec5f2cb16d22345b"
+    "revision": "451314030ccedbd8842db1ef71fc3519"
   },
   {
     "url": "partials/compressed/imagePicker.html",
@@ -375,7 +375,7 @@ self.__precacheManifest = [
   },
   {
     "url": "partials/frameworksImages.html",
-    "revision": "465003c6292089d970cd80d96a9f7f05"
+    "revision": "c2985ab1508dae193f063c068b6338c6"
   },
   {
     "url": "partials/imagePicker.html",

@@ -139,6 +139,20 @@
     }
   </style>
 
+  <script async defer type="text/javascript">
+    if ('serviceWorker' in navigator) { 
+      navigator.serviceWorker.register('/service-worker.js', {scope: '/'})
+      .then(function(registration) {
+          console.log('Service Worker registration succeeded. Scope is ' + registration.scope);
+          
+      }).catch(function(error) {
+        console.log('Service Worker registration failed with ' + error);
+      });
+    }
+  </script>
+
+  <script async defer src="js/bundle/bundle.min.js"></script>
+
   <link rel="stylesheet" href="./styles/compressed/styles.min.css" type="text/css" media="none" onload="if(media!='all')media='all'">
   <noscript>
     <link rel="stylesheet" href="./styles/compressed/styles.min.css" type="text/css" />
@@ -407,20 +421,6 @@
 
       </md-content>
   </main>
-
-  <script async defer type="text/javascript">
-    if ('serviceWorker' in navigator) { 
-      navigator.serviceWorker.register('/service-worker.js', {scope: '/'})
-      .then(function(registration) {
-          console.log('Service Worker registration succeeded. Scope is ' + registration.scope);
-          
-      }).catch(function(error) {
-        console.log('Service Worker registration failed with ' + error);
-      });
-    }
-  </script>
-
-  <script async defer src="js/bundle/bundle.min.js"></script>
 
   <!-- PeoplePerHour Profile Widget -->
   <script async defer type="text/javascript">

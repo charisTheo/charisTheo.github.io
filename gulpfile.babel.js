@@ -164,7 +164,7 @@ gulp.task('build', gulp.series(clean, 'minify-css', 'minify-js', 'bundle-js', 'm
 
 const watch = () => {
     gulp.watch('service-worker-src.js', gulp.series('service-worker'));
-    gulp.watch('styles/css/*.css', gulp.series('minify-css', stream));
+    gulp.watch('styles/css/*.css', gulp.series('minify-css', 'minify-html', reload));
     gulp.watch(['js/components/*.js', 'js/*.js'], gulp.series('minify-js', 'bundle-js', reload));
     gulp.watch(['partials/*.html', 'index-src.html', '404.html', 'img/logos/*.svg'], gulp.series('minify-html', reload));
 }

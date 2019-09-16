@@ -23,6 +23,7 @@
     flex-basis: 5%;
     flex-shrink: 5;
     opacity: 0.6;
+    will-change: transform;
 }
 .images-container {
     margin: 30px auto 0;

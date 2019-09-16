@@ -232,6 +232,8 @@ md-toolbar side-nav-list md-list.small-padding md-list-item {
 md-sidenav {
   box-shadow: 0 5px 15px rgba(0,0,0,0.2);
   position: fixed;
+  will-change: transform;
+  transform: translateZ(0);
 }
 /* side nav buttons overrides */
 md-toolbar side-nav-list md-list md-list-item button.md-button {
@@ -260,22 +262,25 @@ md-sidenav md-list-item .md-secondary-container .md-button {
   width: 100%;
   max-width: 800px;
   transition: box-shadow 0.35s;
+  will-change: transform;
+  transform: translateZ(0);
 }
-.card:not(.expanded):hover {
+.card:hover {
   box-shadow: 0px 3px 10px rgba(0,0,0,0.3);
+}
+.card.expanded:hover {
+  box-shadow: none;
 }
 .card.expanded {
   position: fixed;
   z-index: 12;
   top: 50px;
-  left: 0;
   bottom: 0;
   overflow-y: scroll;
   overflow-x: hidden;
-  padding: 0;
   border-radius: initial;
 }
-.card frameworks-images::before {
+frameworks-images::before {
   content: "";
   background-color: #ffffff;
   position: absolute;
@@ -286,13 +291,15 @@ md-sidenav md-list-item .md-secondary-container .md-button {
   z-index: 1;
   opacity: 0.5;
 }
-.card frameworks-images .banner-image {
+frameworks-images .banner-image {
   top: 0;
   position: absolute;
   width: auto;
   max-height: 100%;
   padding: 15px;
   left: 0;
+  will-change: transform;
+  transform: translateZ(0);
   max-width: 100%
 }
 .card .description {

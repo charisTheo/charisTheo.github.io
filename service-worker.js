@@ -307,11 +307,11 @@ self.__precacheManifest = [
   },
   {
     "url": "index-src.html",
-    "revision": "d7223ccf73b4f2567951a5963f2977c7"
+    "revision": "959a39c02842d3c13b43abbc3fbd852a"
   },
   {
     "url": "index.html",
-    "revision": "f4621974930e9c8056945f7c80c8b210"
+    "revision": "17e706fdf79f836ed56bf1e6d98cfc24"
   },
   {
     "url": "js/accelerometer.notused.js",
@@ -319,7 +319,7 @@ self.__precacheManifest = [
   },
   {
     "url": "js/app.js",
-    "revision": "9613d3bedc101fbde56c3ecf753df2e8"
+    "revision": "a0457b2fcabff6784d6f8723f2f7f20d"
   },
   {
     "url": "js/bundle/angular-bundle.min.js",
@@ -327,15 +327,15 @@ self.__precacheManifest = [
   },
   {
     "url": "js/bundle/bundle.min.js",
-    "revision": "956aa9548e6f0116f9282c678391cb3e"
+    "revision": "9669c88177a1209365a982109901fa77"
   },
   {
     "url": "js/bundle/portfolio-bundle.min.js",
-    "revision": "2188b327eb8196e4ff4f0a36c629b521"
+    "revision": "8aa01802c2639e9a9f6a46dc8788a29b"
   },
   {
     "url": "js/components/portfolio.ctr.js",
-    "revision": "b63059976b5547ee6d11690a8955fc2e"
+    "revision": "06bd176b74d846ab683686b9a572428a"
   },
   {
     "url": "js/components/share-listener.fac.js",
@@ -367,7 +367,7 @@ self.__precacheManifest = [
   },
   {
     "url": "partials/compressed/sidenavList.html",
-    "revision": "95bc5a373826b76caee5c2e7f9958923"
+    "revision": "cc4cd3f4333a1c1d5932162589a2f8c5"
   },
   {
     "url": "partials/compressed/socialLinks.html",
@@ -391,7 +391,7 @@ self.__precacheManifest = [
   },
   {
     "url": "partials/sidenavList.html",
-    "revision": "41c8f1a76fc9b5ee460ee2cd1dd550b6"
+    "revision": "e562f9f4026bdbb6984b536ec3848f92"
   },
   {
     "url": "partials/socialLinks.html",
@@ -411,7 +411,7 @@ self.__precacheManifest = [
   },
   {
     "url": "styles/compressed/styles.min.css",
-    "revision": "ce82a8f6e9caa1df22b9b4a7c73d7d1e"
+    "revision": "0607760530a7892b4a88d03b58995bea"
   }
 ].concat(self.__precacheManifest || []);
 workbox.precaching.precacheAndRoute(self.__precacheManifest, {});

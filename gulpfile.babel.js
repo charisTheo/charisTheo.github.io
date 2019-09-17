@@ -129,31 +129,29 @@ gulp.task('minify-html', function(done) {
 
 gulp.task('service-worker', function(done) {
     setTimeout(() => {
-        return workboxBuild.generateSW({
-            globDirectory: __dirname,
-            globPatterns: ['\*\*/\*.{html,js,css,webp,png,svg,ico,json,woff2}'],
-            globIgnores: ['{vendor,node_modules,styles/css}/\*\*/\*', 'gulpfile.babel.js', 'babel.config.js'],
-            swDest: __dirname + '/service-worker.js',
-            skipWaiting: true,
-            // TODO cache runtime files from google analytics, twitter and peopleperhour
-            // runtimeCaching: [{
-            //     urlPattern: /\*\.{js,css}/,
-            //     handler: 'StaleWhileRevalidate',
-            //     options: {
-            //         cacheableResponse: {
-            //             statuses: [0, 200]
-            //         }
-            //     }
-            // }]
-        }).then((resources) => {
-            for (const warning of resources.warnings) {
-              console.log("service-worker: warning", warning);
-            }
-            console.log(`service-worker: Injected ${resources.count} resources for precaching, totaling ${resources.size} bytes.`);
+        return workboxBuild.injectManifest({
+            swSrc: 'service-worker-src.js',
+            swDest: 'service-worker.js',
+            globDirectory: '.',
+            globPatterns: [
+              'index.html',
+              'partials/compressed/*.html',
+              'styles/compressed/*.css',
+              'fonts/*.woff2',
+              'js/bundle/bundle.min.js',
+              'img/**/*.*',
+              'favicons/*',
+              'projects-data.json',
+              'manifest.json',
+              'manifest.webmanifest'
+            ]
+        }).then(resources => {
+            console.log(`Injected ${resources.count} resources for precaching, ` +
+            `totaling ${resources.size} bytes.`);
             return done();
     
-        }).catch((error) => {
-            console.log('service-worker: Uh oh 😬', error);
+        }).catch(err => {
+            console.log('Uh oh 😬', err);
             return done();
     
         });

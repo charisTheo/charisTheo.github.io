@@ -1,69 +1,49 @@
-/**
- * Welcome to your Workbox-powered service worker!
- *
- * You'll need to register this file in your web app and you should
- * disable HTTP caching for this file too.
- * See https://goo.gl/nhQhGp
- *
- * The rest of the code is auto-generated. Please don't update this file
- * directly; instead, make changes to your Workbox build configuration
- * and re-run your build process.
- * See https://goo.gl/2aRDsh
- */
+importScripts('https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js');
 
-importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
+if (workbox) {
+    console.log(`Yay! Workbox is loaded 🎉`);
+    configureWorkbox();
+    workbox.googleAnalytics.initialize();
+  
+  } else {
+    console.log(`Boo! Workbox didn't load 😬`);
+    
+}
 
-workbox.core.skipWaiting();
+function configureWorkbox() {
 
-/**
- * The workboxSW.precacheAndRoute() method efficiently caches and responds to
- * requests for URLs in the manifest.
- * See https://goo.gl/S9QRab
- */
-self.__precacheManifest = [
+    workbox.precaching.precacheAndRoute([
   {
-    "url": "404.html",
-    "revision": "649bec9101046fe8d11183fdde7a271e"
+    "url": "index.html",
+    "revision": "dcd9aff8acfc27210fb9de27f5dcf29f"
   },
   {
-    "url": "blog-posts.data.json",
-    "revision": "403043be541c3769872107f7ca273038"
+    "url": "partials/compressed/frameworksImages.html",
+    "revision": "451314030ccedbd8842db1ef71fc3519"
   },
   {
-    "url": "favicon.ico",
-    "revision": "e1f3026e97a4c78def06b099cdf0d61e"
+    "url": "partials/compressed/imagePicker.html",
+    "revision": "02023f22a27a53395f138bec1a6ccb34"
   },
   {
-    "url": "favicons/android-chrome-192x192.png",
-    "revision": "02314be0fba645963f99944037d901b8"
+    "url": "partials/compressed/sidenavList.html",
+    "revision": "cc4cd3f4333a1c1d5932162589a2f8c5"
   },
   {
-    "url": "favicons/android-chrome-256x256.png",
-    "revision": "1ddbc7ff8b9d845b5cc7b759b1f19d3b"
+    "url": "partials/compressed/socialLinks.html",
+    "revision": "0f22a34c764129ec5693f4e3bde9ff4c"
   },
   {
-    "url": "favicons/apple-touch-icon.png",
-    "revision": "0c9e9349ad1ff0539c267e2895061810"
+    "url": "partials/compressed/svgLogo.html",
+    "revision": "dd69b1c1454d54cdaf29db5ea30a25b8"
   },
   {
-    "url": "favicons/favicon-16x16.png",
-    "revision": "9be91c68aca72a14b8e64ea4398e1ccc"
+    "url": "styles/compressed/dark-mode.min.css",
+    "revision": "0f86485eb0e791e44c5e3d25f887a420"
   },
   {
-    "url": "favicons/favicon-32x32.png",
-    "revision": "7d97e3396110fd50ac9c8634a9b3c099"
-  },
-  {
-    "url": "favicons/logo-ct-512.png",
-    "revision": "6c8a9e3ace168a7d71e4e69c00b8aeb0"
-  },
-  {
-    "url": "favicons/mstile-150x150.png",
-    "revision": "c30998cdf86dace44478d667eaf8753f"
-  },
-  {
-    "url": "favicons/safari-pinned-tab.svg",
-    "revision": "a9b444198302f1fc81a59357297689e5"
+    "url": "styles/compressed/styles.min.css",
+    "revision": "0607760530a7892b4a88d03b58995bea"
   },
   {
     "url": "fonts/material-icons.woff2",
@@ -72,6 +52,10 @@ self.__precacheManifest = [
   {
     "url": "fonts/michroma.woff2",
     "revision": "d61cdce0970cc120a713c713feeb02a5"
+  },
+  {
+    "url": "js/bundle/bundle.min.js",
+    "revision": "787fb1a14e57a36e5253199e8d395099"
   },
   {
     "url": "img/logo-ct.svg",
@@ -134,12 +118,32 @@ self.__precacheManifest = [
     "revision": "16fe3bcb2dc9a858b52b20cf984ba1fe"
   },
   {
+    "url": "img/screenshots/animath/limits_demo.mp4",
+    "revision": "6298864405efa69f6afb68dcf69725b8"
+  },
+  {
+    "url": "img/screenshots/animath/limits_demo.webm",
+    "revision": "4d72ae7baa4808c7751b789dd19ad4b9"
+  },
+  {
     "url": "img/screenshots/animath/limits.png",
     "revision": "f314074c060f820cd3a91da7684b822f"
   },
   {
     "url": "img/screenshots/animath/limits.webp",
     "revision": "a85ba4ed240392f2ad7f81f50fbcb785"
+  },
+  {
+    "url": "img/screenshots/animath/sequences_demo.gif",
+    "revision": "1ed68ab18e1827e54263c5218eeb081e"
+  },
+  {
+    "url": "img/screenshots/animath/sequences_demo.mp4",
+    "revision": "2bc6ec6738437ab0a3f3eaca143c4947"
+  },
+  {
+    "url": "img/screenshots/animath/sequences_demo.webm",
+    "revision": "0e5c1a97e05917e5731ba1723ef081ec"
   },
   {
     "url": "img/screenshots/animath/sequences.png",
@@ -182,6 +186,22 @@ self.__precacheManifest = [
     "revision": "1d6903135343fa27f5684c0e00b2f122"
   },
   {
+    "url": "img/screenshots/beromantic/beromantic.webm",
+    "revision": "29ae51e1f5b7ef6d2c6579f5fbadb014"
+  },
+  {
+    "url": "img/screenshots/cooksurfing/approving.gif",
+    "revision": "a41985fdc2e967f06da4d01d3912423b"
+  },
+  {
+    "url": "img/screenshots/cooksurfing/approving.mp4",
+    "revision": "17f104900b2eebf2d6cf05e7ab417c00"
+  },
+  {
+    "url": "img/screenshots/cooksurfing/approving.webm",
+    "revision": "1b745864dec82a66a887729b97436f7e"
+  },
+  {
     "url": "img/screenshots/cooksurfing/cooksurfing.png",
     "revision": "17680b52a4486932b6589fab4d956917"
   },
@@ -214,6 +234,14 @@ self.__precacheManifest = [
     "revision": "d2fac8d7d1705d3bb79058eb72e9523c"
   },
   {
+    "url": "img/screenshots/cooksurfing/requesting.mp4",
+    "revision": "1c278947b715055fa5bf8f20b24e969e"
+  },
+  {
+    "url": "img/screenshots/cooksurfing/requesting.webm",
+    "revision": "6980cbaaeb1180d689966895a2e9206c"
+  },
+  {
     "url": "img/screenshots/cooksurfing/searchResults.png",
     "revision": "ec2e5441d1548cda5827006e2668a5c5"
   },
@@ -228,6 +256,18 @@ self.__precacheManifest = [
   {
     "url": "img/screenshots/french-bot/french_bot_correct.webp",
     "revision": "91cb6b24dbe124a3bae458009a1a397b"
+  },
+  {
+    "url": "img/screenshots/french-bot/french_bot_demo.gif",
+    "revision": "8b9a07e311cdb9a61d1a7c57223f401c"
+  },
+  {
+    "url": "img/screenshots/french-bot/french_bot_demo.mp4",
+    "revision": "7b35c0a66e500318cfecd728159e2d76"
+  },
+  {
+    "url": "img/screenshots/french-bot/french_bot_demo.webm",
+    "revision": "fa8cfe71722dd438e1874fb2be2ae46f"
   },
   {
     "url": "img/screenshots/french-bot/french_bot_results.png",
@@ -278,6 +318,14 @@ self.__precacheManifest = [
     "revision": "d328cfa4a9ead5f00db2618a2cf6589f"
   },
   {
+    "url": "img/screenshots/node-chat-app/web-app-chat.mp4",
+    "revision": "24b2f91cede86ca92dd494538ee0d35e"
+  },
+  {
+    "url": "img/screenshots/node-chat-app/web-app-chat.webm",
+    "revision": "556ab0a0468429d3eaea4d715a109ee7"
+  },
+  {
     "url": "img/screenshots/node-chat-app/webapp.png",
     "revision": "0a49248c4c5d4a113cc52c98616dfcff"
   },
@@ -306,112 +354,68 @@ self.__precacheManifest = [
     "revision": "66a49535097afc53b7f0d33c32811c9d"
   },
   {
-    "url": "index-src.html",
-    "revision": "959a39c02842d3c13b43abbc3fbd852a"
+    "url": "favicons/android-chrome-192x192.png",
+    "revision": "02314be0fba645963f99944037d901b8"
   },
   {
-    "url": "index.html",
-    "revision": "17e706fdf79f836ed56bf1e6d98cfc24"
+    "url": "favicons/android-chrome-256x256.png",
+    "revision": "1ddbc7ff8b9d845b5cc7b759b1f19d3b"
   },
   {
-    "url": "js/accelerometer.notused.js",
-    "revision": "5f7f331d6540489c6028f968ce7f924d"
+    "url": "favicons/apple-touch-icon.png",
+    "revision": "0c9e9349ad1ff0539c267e2895061810"
   },
   {
-    "url": "js/app.js",
-    "revision": "a0457b2fcabff6784d6f8723f2f7f20d"
+    "url": "favicons/favicon-16x16.png",
+    "revision": "9be91c68aca72a14b8e64ea4398e1ccc"
   },
   {
-    "url": "js/bundle/angular-bundle.min.js",
-    "revision": "2d5abd18c827a42497f83276ce6621b8"
+    "url": "favicons/favicon-32x32.png",
+    "revision": "7d97e3396110fd50ac9c8634a9b3c099"
   },
   {
-    "url": "js/bundle/bundle.min.js",
-    "revision": "9669c88177a1209365a982109901fa77"
+    "url": "favicons/logo-ct-512.png",
+    "revision": "6c8a9e3ace168a7d71e4e69c00b8aeb0"
   },
   {
-    "url": "js/bundle/portfolio-bundle.min.js",
-    "revision": "8aa01802c2639e9a9f6a46dc8788a29b"
+    "url": "favicons/mstile-150x150.png",
+    "revision": "c30998cdf86dace44478d667eaf8753f"
   },
   {
-    "url": "js/components/portfolio.ctr.js",
-    "revision": "06bd176b74d846ab683686b9a572428a"
-  },
-  {
-    "url": "js/components/share-listener.fac.js",
-    "revision": "3bafa71218b31c26cfff3a8633405336"
-  },
-  {
-    "url": "js/jquery.xeyes-2.0.min.js",
-    "revision": "d3c6899617ad69aeb87eee7f33cc38d9"
-  },
-  {
-    "url": "manifest.json",
-    "revision": "8911375d9c07d7518628535364b2a092"
-  },
-  {
-    "url": "package-lock.json",
-    "revision": "26288eaf1dad43d7469ccb9513d2f065"
-  },
-  {
-    "url": "package.json",
-    "revision": "9090fdbb6d57de13799e98de7ff42290"
-  },
-  {
-    "url": "partials/compressed/frameworksImages.html",
-    "revision": "451314030ccedbd8842db1ef71fc3519"
-  },
-  {
-    "url": "partials/compressed/imagePicker.html",
-    "revision": "02023f22a27a53395f138bec1a6ccb34"
-  },
-  {
-    "url": "partials/compressed/sidenavList.html",
-    "revision": "cc4cd3f4333a1c1d5932162589a2f8c5"
-  },
-  {
-    "url": "partials/compressed/socialLinks.html",
-    "revision": "0f22a34c764129ec5693f4e3bde9ff4c"
-  },
-  {
-    "url": "partials/compressed/svgLogo.html",
-    "revision": "dd69b1c1454d54cdaf29db5ea30a25b8"
-  },
-  {
-    "url": "partials/frameworksImages.html",
-    "revision": "c2985ab1508dae193f063c068b6338c6"
-  },
-  {
-    "url": "partials/imagePicker.html",
-    "revision": "fbfeb48b595a822bb1fd002f358317ee"
-  },
-  {
-    "url": "partials/page-loader.css",
-    "revision": "cfeb8d9f99f88c5d9e8a20da694bee98"
-  },
-  {
-    "url": "partials/sidenavList.html",
-    "revision": "e562f9f4026bdbb6984b536ec3848f92"
-  },
-  {
-    "url": "partials/socialLinks.html",
-    "revision": "142b46c28390095f090660897a790209"
-  },
-  {
-    "url": "partials/svgLogo.html",
-    "revision": "dd69b1c1454d54cdaf29db5ea30a25b8"
+    "url": "favicons/safari-pinned-tab.svg",
+    "revision": "a9b444198302f1fc81a59357297689e5"
   },
   {
     "url": "projects-data.json",
     "revision": "9d575ae76f89c04150560766b711a596"
   },
   {
-    "url": "styles/compressed/dark-mode.min.css",
-    "revision": "0f86485eb0e791e44c5e3d25f887a420"
+    "url": "manifest.json",
+    "revision": "8911375d9c07d7518628535364b2a092"
   },
   {
-    "url": "styles/compressed/styles.min.css",
-    "revision": "0607760530a7892b4a88d03b58995bea"
+    "url": "manifest.webmanifest",
+    "revision": "8911375d9c07d7518628535364b2a092"
   }
-].concat(self.__precacheManifest || []);
-workbox.precaching.precacheAndRoute(self.__precacheManifest, {});
+]);
+    
+    workbox.routing.registerRoute(
+        /\.js$/,
+        new workbox.strategies.StaleWhileRevalidate()
+    );
+        
+    workbox.routing.registerRoute(
+        /\.css$/,
+        new workbox.strategies.StaleWhileRevalidate()
+    );
+        
+    workbox.routing.registerRoute(
+        /\.html$/,
+        new workbox.strategies.StaleWhileRevalidate()
+    );
+
+    workbox.routing.registerRoute(
+        /\.{png,svg,webp}$/,
+        new workbox.strategies.StaleWhileRevalidate()
+    );
+}

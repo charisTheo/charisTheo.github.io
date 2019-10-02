@@ -5,9 +5,9 @@
         .module('Portfolio')
         .controller('PortfolioCtrl', PortfolioCtrl);
 
-    PortfolioCtrl.$inject = ["$scope", "$http", "$mdSidenav", "$mdMedia", "ShareListener", '$location', "$anchorScroll"];
+    PortfolioCtrl.$inject = ['$scope', '$http', '$mdSidenav', '$mdMedia', 'ShareListener', '$location', '$anchorScroll', '$mdToast'];
 
-    function PortfolioCtrl($scope, $http, $mdSidenav, $mdMedia, ShareListener, $location, $anchorScroll) {
+    function PortfolioCtrl($scope, $http, $mdSidenav, $mdMedia, ShareListener, $location, $anchorScroll, $mdToast) {
         $http.get('projects-data.json').then(function(response) {
             $scope.projects = response.data;
         });
@@ -46,6 +46,21 @@
             if ('serviceWorker' in navigator) { 
                 navigator.serviceWorker.register('/service-worker.js', {scope: '/'})
                 .then(function(registration) {
+                    registration.onupdatefound = () => {
+                        const newServiceWorker = registration.installing;
+                        newServiceWorker.onstatechange = () => {
+                            switch (newServiceWorker.state) {
+                                case 'installing': 
+                                    if (navigator.serviceWorker.controller) {
+                                        $mdToast.show(
+                                            $mdToast
+                                              .simple()
+                                              .textContent('A new version of the website is available 🙋. <a onclick="window.location.reload()">Reload</a> the page to see the new goodness 💠')
+                                        );
+                                    }
+                            }
+                        }
+                    }
                     console.log('Service Worker registration succeeded. Scope is ' + registration.scope);
                     
                 }).catch(function(error) {

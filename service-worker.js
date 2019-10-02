@@ -3,7 +3,6 @@ importScripts('https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox
 if (workbox) {
     console.log(`Yay! Workbox is loaded 🎉`);
     configureWorkbox();
-    workbox.googleAnalytics.initialize();
   
   } else {
     console.log(`Boo! Workbox didn't load 😬`);
@@ -11,11 +10,14 @@ if (workbox) {
 }
 
 function configureWorkbox() {
-
+    workbox.googleAnalytics.initialize();
+    workbox.core.skipWaiting();
+    workbox.core.clientsClaim();
+    
     workbox.precaching.precacheAndRoute([
   {
     "url": "index.html",
-    "revision": "dcd9aff8acfc27210fb9de27f5dcf29f"
+    "revision": "59a4372e38b9ebe5ffb815ed62f3fa5e"
   },
   {
     "url": "partials/compressed/frameworksImages.html",
@@ -43,7 +45,7 @@ function configureWorkbox() {
   },
   {
     "url": "styles/compressed/styles.min.css",
-    "revision": "0607760530a7892b4a88d03b58995bea"
+    "revision": "a3a2d0ce25338be8f043817075bea7bb"
   },
   {
     "url": "fonts/material-icons.woff2",
@@ -55,7 +57,7 @@ function configureWorkbox() {
   },
   {
     "url": "js/bundle/bundle.min.js",
-    "revision": "787fb1a14e57a36e5253199e8d395099"
+    "revision": "126ef57df49c121daa7e34af02a60e95"
   },
   {
     "url": "img/logo-ct.svg",

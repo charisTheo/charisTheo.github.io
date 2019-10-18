@@ -1,6 +1,7 @@
 [
     {
         "title": "Cooksurfing",
+        "id": "cooksurfing",
         "subtitle": "Dinner Hosting platform",
         "description": "Cooksurfing is a web app dinner hosting platform based on the sharing economy concept",
         "tools_used": ["Node.js", "Express.js", "MongoDB", "Mongoose.js", "GridFS", "Handlebars.js", "Bootstrap 4", "JWT", "Passport", "Service Workers", "Require AMD", "Gulp", "Nodemon", "Javascript", "Google Maps API", "CSS3", "SASS"],
@@ -36,6 +37,7 @@
     },
     {
         "title": "Be Romantic",
+        "id": "beromantic",
         "subtitle": "Fashion Designer's website",
         "description": "This statically generated website was built as a result of a freelancing project. The client was a fashion designer and so showing her collections' pictures in high resolution was an important matter. The website is loaded with pictures so I needed to use something more sophisticated in order to compensate for the picture download speed and quality. So I have used Gatbsy and the gatsby sharp plugin in order to server quality adaptive images for low speed networks without losing the quality or damaging the user experience.",
         "tools_used": ["Gatsby.js", "React.js", "GraphQL", "Prismic", "CMS", "Node.js", "Javascript", "ES6", "CSS3"],
@@ -71,6 +73,7 @@
     },
     {
         "title": "Chat App",
+        "id": "node-chat-app",
         "subtitle": "Chat web app built on socket.io",
         "description": "This Chat App was built as a design concept taking advantage of web sockets to send, receive and broadcast messages between the user and a Node server. The app provides different rooms you can enter by typing the name of the room and a custom username.",
         "tools_used": ["Node.js", "Socket.io", "Express.js", "Mocha", "Nodemon", "Giphy API", "Javascript", "Google Maps API", "CSS3"],
@@ -102,6 +105,7 @@
     },
     {
         "title": "Animath",
+        "id": "animath",
         "subtitle": "Learn Mathematics by scrolling",
         "description": "The goal was to create an interactive interface by which the user can scroll to go to the next explanation of a mathematical model. The interface uses complex animations to achieve easy understanding of mathematical concepts, in an attempt to simplify the complexity of mathematics!",
         "tools_used": ["SVG", "JavaScript", "jQuery", "ScrollMagic.js", "GSAP", "TweenMax.js"],
@@ -133,6 +137,7 @@
     },
     {
         "title": "French Bot",
+        "id": "french-bot",
         "subtitle": "Teaches you French vocabulary",
         "description": "The French Bot was created as a friendly interface which shows random french words on the screen and expects the translation in English. The French word is then translated using the Yandex translation API which returns the word in English. It is then compared to the user's input word and saves the result. The game repeats over a number of times and when the game finishes it outputs the progress of the user with the correct translation to each wrong answer.",
         "tools_used": ["Yandex API", "JavaScript", "csv"],

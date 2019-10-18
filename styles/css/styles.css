@@ -352,6 +352,11 @@ frameworks-images .banner-image {
   -webkit-box-shadow: none;
 }
 
+.unavailable-offline {
+  opacity: 0.25; 
+  pointer-events: none; 
+}
+
 /***************************
 ****************************
         THEME STYLES

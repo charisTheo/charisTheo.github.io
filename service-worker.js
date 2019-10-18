@@ -17,7 +17,11 @@ function configureWorkbox() {
     workbox.precaching.precacheAndRoute([
   {
     "url": "index.html",
-    "revision": "59a4372e38b9ebe5ffb815ed62f3fa5e"
+    "revision": "722f857966f467778c1a159e523dc05d"
+  },
+  {
+    "url": "404.html",
+    "revision": "649bec9101046fe8d11183fdde7a271e"
   },
   {
     "url": "partials/compressed/frameworksImages.html",
@@ -45,7 +49,7 @@ function configureWorkbox() {
   },
   {
     "url": "styles/compressed/styles.min.css",
-    "revision": "a3a2d0ce25338be8f043817075bea7bb"
+    "revision": "72e6f7321b17cbcf51fe56a7e8fc5245"
   },
   {
     "url": "fonts/material-icons.woff2",
@@ -57,7 +61,7 @@ function configureWorkbox() {
   },
   {
     "url": "js/bundle/bundle.min.js",
-    "revision": "126ef57df49c121daa7e34af02a60e95"
+    "revision": "c27193e6770a9436301220bed819b2f3"
   },
   {
     "url": "img/logo-ct.svg",
@@ -72,20 +76,12 @@ function configureWorkbox() {
     "revision": "a6815f03eb24970277c40e478346f5ba"
   },
   {
-    "url": "img/logos/github-octocat.png",
-    "revision": "b2ffb3a32c2e07826c887815599de6f3"
-  },
-  {
     "url": "img/logos/graphql-logo.svg",
     "revision": "21896110cef47a84089c96b91633fcab"
   },
   {
     "url": "img/logos/gsap-logo.svg",
     "revision": "6ebd6dc5c414f58fe404e8caf044195e"
-  },
-  {
-    "url": "img/logos/jquery-logo.png",
-    "revision": "a3af0655fc9a481401550b5be0e86cab"
   },
   {
     "url": "img/logos/js-logo.svg",
@@ -110,230 +106,6 @@ function configureWorkbox() {
   {
     "url": "img/logos/svg-logo.svg",
     "revision": "ee1a32d5c87be556270cc6412f21aceb"
-  },
-  {
-    "url": "img/profile_photo.webp",
-    "revision": "85ed13d4da77fa40e7f893552a1a227b"
-  },
-  {
-    "url": "img/screenshots/animath/demo_tophat.webp",
-    "revision": "16fe3bcb2dc9a858b52b20cf984ba1fe"
-  },
-  {
-    "url": "img/screenshots/animath/limits_demo.mp4",
-    "revision": "6298864405efa69f6afb68dcf69725b8"
-  },
-  {
-    "url": "img/screenshots/animath/limits_demo.webm",
-    "revision": "4d72ae7baa4808c7751b789dd19ad4b9"
-  },
-  {
-    "url": "img/screenshots/animath/limits.png",
-    "revision": "f314074c060f820cd3a91da7684b822f"
-  },
-  {
-    "url": "img/screenshots/animath/limits.webp",
-    "revision": "a85ba4ed240392f2ad7f81f50fbcb785"
-  },
-  {
-    "url": "img/screenshots/animath/sequences_demo.gif",
-    "revision": "1ed68ab18e1827e54263c5218eeb081e"
-  },
-  {
-    "url": "img/screenshots/animath/sequences_demo.mp4",
-    "revision": "2bc6ec6738437ab0a3f3eaca143c4947"
-  },
-  {
-    "url": "img/screenshots/animath/sequences_demo.webm",
-    "revision": "0e5c1a97e05917e5731ba1723ef081ec"
-  },
-  {
-    "url": "img/screenshots/animath/sequences.png",
-    "revision": "257acb3832b6b787113fe2f674496902"
-  },
-  {
-    "url": "img/screenshots/animath/sequences.webp",
-    "revision": "d0fbc83167cf8e10b5fae61dd37df209"
-  },
-  {
-    "url": "img/screenshots/beromantic/beromantic-1.png",
-    "revision": "2e10fafef872e9ef0844d0c7892473d2"
-  },
-  {
-    "url": "img/screenshots/beromantic/beromantic-1.webp",
-    "revision": "fd1a2c6b594b4b16df39456ad74461ed"
-  },
-  {
-    "url": "img/screenshots/beromantic/beromantic-2.png",
-    "revision": "9b7bde6c586ff03655646238c6a80c04"
-  },
-  {
-    "url": "img/screenshots/beromantic/beromantic-2.webp",
-    "revision": "24da2caa1b12daa28f9d0a02e5907be4"
-  },
-  {
-    "url": "img/screenshots/beromantic/beromantic-3.png",
-    "revision": "5154760e51dbc20afe8691b261216f49"
-  },
-  {
-    "url": "img/screenshots/beromantic/beromantic-3.webp",
-    "revision": "eb2b97766faae91a566f9621dc697d27"
-  },
-  {
-    "url": "img/screenshots/beromantic/beromantic-4.png",
-    "revision": "3b464b109b4f9da53bb7db488ce2dd48"
-  },
-  {
-    "url": "img/screenshots/beromantic/beromantic-4.webp",
-    "revision": "1d6903135343fa27f5684c0e00b2f122"
-  },
-  {
-    "url": "img/screenshots/beromantic/beromantic.webm",
-    "revision": "29ae51e1f5b7ef6d2c6579f5fbadb014"
-  },
-  {
-    "url": "img/screenshots/cooksurfing/approving.gif",
-    "revision": "a41985fdc2e967f06da4d01d3912423b"
-  },
-  {
-    "url": "img/screenshots/cooksurfing/approving.mp4",
-    "revision": "17f104900b2eebf2d6cf05e7ab417c00"
-  },
-  {
-    "url": "img/screenshots/cooksurfing/approving.webm",
-    "revision": "1b745864dec82a66a887729b97436f7e"
-  },
-  {
-    "url": "img/screenshots/cooksurfing/cooksurfing.png",
-    "revision": "17680b52a4486932b6589fab4d956917"
-  },
-  {
-    "url": "img/screenshots/cooksurfing/cooksurfing.webp",
-    "revision": "2bfa5818cbac3a5c0a643338c60bb531"
-  },
-  {
-    "url": "img/screenshots/cooksurfing/dashboard_2.png",
-    "revision": "d644d9c0542e200604a9a2acdb7647d3"
-  },
-  {
-    "url": "img/screenshots/cooksurfing/dashboard_2.webp",
-    "revision": "2cff34fea8131e280251b9ad3640ed7c"
-  },
-  {
-    "url": "img/screenshots/cooksurfing/dashboard.png",
-    "revision": "bcace5cc38a32a81e9b33230a91e70a7"
-  },
-  {
-    "url": "img/screenshots/cooksurfing/dashboard.webp",
-    "revision": "bf8a6784b1570fe5b186a84dd1310673"
-  },
-  {
-    "url": "img/screenshots/cooksurfing/logo.png",
-    "revision": "08771ef3962fd607d8fa34b8e54a695e"
-  },
-  {
-    "url": "img/screenshots/cooksurfing/logo.webp",
-    "revision": "d2fac8d7d1705d3bb79058eb72e9523c"
-  },
-  {
-    "url": "img/screenshots/cooksurfing/requesting.mp4",
-    "revision": "1c278947b715055fa5bf8f20b24e969e"
-  },
-  {
-    "url": "img/screenshots/cooksurfing/requesting.webm",
-    "revision": "6980cbaaeb1180d689966895a2e9206c"
-  },
-  {
-    "url": "img/screenshots/cooksurfing/searchResults.png",
-    "revision": "ec2e5441d1548cda5827006e2668a5c5"
-  },
-  {
-    "url": "img/screenshots/cooksurfing/searchResults.webp",
-    "revision": "70e90a4bc425a8b5e1e121dced483406"
-  },
-  {
-    "url": "img/screenshots/french-bot/french_bot_correct.png",
-    "revision": "3436fab8eefd623083ec91a53b28c7cc"
-  },
-  {
-    "url": "img/screenshots/french-bot/french_bot_correct.webp",
-    "revision": "91cb6b24dbe124a3bae458009a1a397b"
-  },
-  {
-    "url": "img/screenshots/french-bot/french_bot_demo.gif",
-    "revision": "8b9a07e311cdb9a61d1a7c57223f401c"
-  },
-  {
-    "url": "img/screenshots/french-bot/french_bot_demo.mp4",
-    "revision": "7b35c0a66e500318cfecd728159e2d76"
-  },
-  {
-    "url": "img/screenshots/french-bot/french_bot_demo.webm",
-    "revision": "fa8cfe71722dd438e1874fb2be2ae46f"
-  },
-  {
-    "url": "img/screenshots/french-bot/french_bot_results.png",
-    "revision": "90fb48011da4737d51f18f65e764ac9e"
-  },
-  {
-    "url": "img/screenshots/french-bot/french_bot_results.webp",
-    "revision": "3d1bcba861267eefe7994b97455f333f"
-  },
-  {
-    "url": "img/screenshots/french-bot/french_bot_wrong.png",
-    "revision": "467c0b5622bc87a3a9e1648fd266725a"
-  },
-  {
-    "url": "img/screenshots/french-bot/french_bot_wrong.webp",
-    "revision": "1e737e4f41573b0bb1e0919c252e9fbf"
-  },
-  {
-    "url": "img/screenshots/french-bot/french_bot.png",
-    "revision": "6a0025a185c66e15ba05c2f28eb63579"
-  },
-  {
-    "url": "img/screenshots/french-bot/french_bot.webp",
-    "revision": "6fb5f971d65c9e2b0100c41b17388e9e"
-  },
-  {
-    "url": "img/screenshots/french-bot/yandex_logo.png",
-    "revision": "6d7007467b9cfa5a11c5185f5138e229"
-  },
-  {
-    "url": "img/screenshots/french-bot/yandex_logo.webp",
-    "revision": "54756091342e6e70238646e8c9ad85a1"
-  },
-  {
-    "url": "img/screenshots/node-chat-app/chat_2.png",
-    "revision": "ec5202158b0c354ac9ab737758d46ee6"
-  },
-  {
-    "url": "img/screenshots/node-chat-app/chat_2.webp",
-    "revision": "94ae88a5fcc6dcee4e84d4cd22379fde"
-  },
-  {
-    "url": "img/screenshots/node-chat-app/chat.png",
-    "revision": "6b5d0c22a92228572d9acc7a196065f5"
-  },
-  {
-    "url": "img/screenshots/node-chat-app/chat.webp",
-    "revision": "d328cfa4a9ead5f00db2618a2cf6589f"
-  },
-  {
-    "url": "img/screenshots/node-chat-app/web-app-chat.mp4",
-    "revision": "24b2f91cede86ca92dd494538ee0d35e"
-  },
-  {
-    "url": "img/screenshots/node-chat-app/web-app-chat.webm",
-    "revision": "556ab0a0468429d3eaea4d715a109ee7"
-  },
-  {
-    "url": "img/screenshots/node-chat-app/webapp.png",
-    "revision": "0a49248c4c5d4a113cc52c98616dfcff"
-  },
-  {
-    "url": "img/screenshots/node-chat-app/webapp.webp",
-    "revision": "1327bcd4466e5637501595938ed327b5"
   },
   {
     "url": "img/social-links/github-circle.svg",
@@ -388,8 +160,12 @@ function configureWorkbox() {
     "revision": "a9b444198302f1fc81a59357297689e5"
   },
   {
+    "url": "favicon.ico",
+    "revision": "e1f3026e97a4c78def06b099cdf0d61e"
+  },
+  {
     "url": "projects-data.json",
-    "revision": "9d575ae76f89c04150560766b711a596"
+    "revision": "774904ab1a9bcba52c8a5d9641840dc4"
   },
   {
     "url": "manifest.json",
@@ -417,7 +193,16 @@ function configureWorkbox() {
     );
 
     workbox.routing.registerRoute(
-        /\.{png,svg,webp}$/,
-        new workbox.strategies.StaleWhileRevalidate()
+        /\.svg$/,
+        new workbox.strategies.CacheFirst()
+    );
+
+    // * store projects' media in a different runtime cache
+    // * checking later inside this cache to decide which projects are available offline
+    workbox.routing.registerRoute(
+        /\.(?:png|gif|webp|mp4|webm)$/,
+        new workbox.strategies.CacheFirst({
+            cacheName: 'runtime-projects-media'
+        })        
     );
 }

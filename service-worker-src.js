@@ -32,7 +32,16 @@ function configureWorkbox() {
     );
 
     workbox.routing.registerRoute(
-        /\.{png,svg,webp}$/,
+        /\.svg$/,
         new workbox.strategies.CacheFirst()
+    );
+
+    // * store projects' media in a different runtime cache
+    // * checking later inside this cache to decide which projects are available offline
+    workbox.routing.registerRoute(
+        /\.(?:png|gif|webp|mp4|webm)$/,
+        new workbox.strategies.CacheFirst({
+            cacheName: 'runtime-projects-media'
+        })        
     );
 }

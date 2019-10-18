@@ -268,8 +268,8 @@
         md-theme="{{'default'}}" 
         md-theme-watch
         md-swipe-right="($index === selectedCardIndex) && selectCard($event, $index)"
-        class="card"
-        ng-attr-id="{{'project' + $index}}"
+        class="project card"
+        ng-attr-id="{{project.id}}"
         ng-repeat="project in projects | filter: searchFilter"
         ng-click="($index !== selectedCardIndex) && selectCard($event, $index)"
         ng-class="{'expanded': $index == selectedCardIndex, 'night-mode-dark': nightMode}"

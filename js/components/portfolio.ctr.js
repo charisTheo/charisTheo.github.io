@@ -121,6 +121,40 @@
         $scope.toggleSideNav = function() {
             $mdSidenav('left').toggle();
         };
+
+        window.addEventListener('offline', function() {
+            $mdToast.show(
+                $mdToast
+                    .simple()
+                    .textContent('You are offline 📴')
+            );
+
+            const projects = document.querySelectorAll('.project')
+            caches.open('runtime-projects-media').then(projectsRuntimeCache => {
+                projects.forEach(project => {
+                    projectsRuntimeCache.keys().then(keys => {
+                        const projectMedia = keys.filter(key => key.url.indexOf(project.id) !== -1);
+                        if (!projectMedia.length) {
+                            // * reduce opacity of unavailable project pages
+                            project.classList.add('unavailable-offline');
+                        }
+                    });
+                });
+            });
+        });
+
+        window.addEventListener('online', function() {
+            $mdToast.show(
+                $mdToast
+                    .simple()
+                    .textContent('You are back online! 🎉')
+            );
+            const projects = document.querySelectorAll('.project');
+            projects.forEach(project => {
+                project.classList.remove('unavailable-offline');
+            });
+        });
+        
     }
 
 })();

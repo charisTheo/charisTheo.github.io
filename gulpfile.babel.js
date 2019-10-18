@@ -134,16 +134,18 @@ gulp.task('service-worker', function(done) {
             swDest: 'service-worker.js',
             globDirectory: '.',
             globPatterns: [
-              'index.html',
-              'partials/compressed/*.html',
-              'styles/compressed/*.css',
-              'fonts/*.woff2',
-              'js/bundle/bundle.min.js',
-              'img/**/*.*',
-              'favicons/*',
-              'projects-data.json',
-              'manifest.json',
-              'manifest.webmanifest'
+                'index.html',
+                '404.html',
+                'partials/compressed/*.html',
+                'styles/compressed/*.css',
+                'fonts/*.woff2',
+                'js/bundle/bundle.min.js',
+                'img/**/*.svg',
+                'favicons/*',
+                'favicon.ico',
+                'projects-data.json',
+                'manifest.json',
+                'manifest.webmanifest'
             ]
         }).then(resources => {
             console.log(`Injected ${resources.count} resources for precaching, ` +

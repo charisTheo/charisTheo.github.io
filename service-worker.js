@@ -17,7 +17,7 @@ function configureWorkbox() {
     workbox.precaching.precacheAndRoute([
   {
     "url": "index.html",
-    "revision": "722f857966f467778c1a159e523dc05d"
+    "revision": "9797e4a900436c8d8ea33419c0a760c1"
   },
   {
     "url": "404.html",
@@ -61,7 +61,7 @@ function configureWorkbox() {
   },
   {
     "url": "js/bundle/bundle.min.js",
-    "revision": "c27193e6770a9436301220bed819b2f3"
+    "revision": "cca56fe1a6073992872b5b1cbba935ef"
   },
   {
     "url": "img/logo-ct.svg",

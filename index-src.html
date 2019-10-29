@@ -215,12 +215,24 @@
       <!-- TOP NAV OPTIONS -->
       <md-list class="top-nav-options" flex layout="row">
         <md-list-item layout="row" class="noright">
+          <!-- TODO -->
           <!-- <a href="https://twitter.com/charisTheo_dev?ref_src=twsrc%5Etfw" ng-if="documentLoaded" class="twitter-follow-button" data-show-count="false">
             Follow @charisTheo_dev
-          </a> -->
-      
+          </a>
+          <script async defer src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> -->
+
           <div flex></div>
-          <!-- Search button -->
+          <!-- * Install button -->
+          <md-button 
+            class="top-nav-btn md-fab md-primary" 
+            ng-click="installPWA()" 
+            ng-show="showPWAInstallButton"
+            aria-label="Install this web app on your device"
+            data-analytics="Install Add to Home Screen"
+            >
+            <i md-colors="{color: 'accent'}" class="material-icons">get_app</i>
+          </md-button>
+          <!-- * Search button -->
           <md-button 
             class="top-nav-btn md-fab md-primary" 
             ng-class="{'pressed' : showFilters}"
@@ -434,7 +446,6 @@
     gtag('config', 'UA-135267871-1');
   </script> -->
 
-  <!-- <script async defer src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> -->
 
 </body>
 

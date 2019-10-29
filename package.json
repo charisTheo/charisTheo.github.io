@@ -19,17 +19,18 @@
   },
   "homepage": "https://github.com/charisTheo/charisTheo.github.io#readme",
   "dependencies": {
-    "@babel/polyfill": "^7.2.5",
+    "@babel/polyfill": "^7.6.0",
     "angular": "^1.7.5",
     "angular-animate": "^1.7.5",
     "angular-aria": "^1.7.5",
-    "angular-material": "^1.1.10",
+    "angular-material": "^1.1.20",
     "angular-messages": "^1.7.5",
     "mdi": "^2.2.43"
   },
   "devDependencies": {
-    "@babel/core": "^7.3.4",
-    "@babel/preset-env": "^7.3.4",
+    "@babel/core": "^7.6.4",
+    "@babel/preset-env": "^7.6.3",
+    "@babel/register": "^7.6.2",
     "babel-plugin-angularjs-annotate": "^0.10.0",
     "browser-sync": "^2.26.7",
     "del": "^3.0.0",

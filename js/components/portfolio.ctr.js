@@ -15,6 +15,8 @@
         $scope.shareButtonListener = ShareListener.listener;
         $scope.copyToClipboard = ShareListener.copyToClipboard;
         $scope.nightMode = false;
+        $scope.showPWAInstallButton = false;
+        $scope.deferredPromptEvent = undefined;
         $scope.documentLoaded = false;
         $scope.cardToggle = false;
         $scope.selectedCardIndex = undefined;
@@ -42,6 +44,11 @@
                 $scope.nightMode = true;
             }
             $scope.documentLoaded = true;
+            if (!isIos && !isInStandaloneMode) {
+                // * show install button
+                console.log('show install button');
+                $scope.showPWAInstallButton = true;
+            }
 
             if ('serviceWorker' in navigator) { 
                 navigator.serviceWorker.register('/service-worker.js', {scope: '/'})
@@ -54,10 +61,13 @@
                                     if (navigator.serviceWorker.controller) {
                                         $mdToast.show(
                                             $mdToast
-                                              .simple()
-                                              .textContent('A new version of the website is available 🙋. <a onclick="window.location.reload()">Reload</a> the page to see the new goodness 💠')
+                                                .simple()
+                                                .textContent('A new version of the website is available 🙋. <a onclick="window.location.reload()">Reload</a> the page to see the new goodness 💠')
                                         );
                                     }
+                                    break;
+                                default:
+                                    break;
                             }
                         }
                     }
@@ -66,6 +76,11 @@
                 }).catch(function(error) {
                     console.log('Service Worker registration failed with ' + error);
                 });
+
+                if (!navigator.connection.downlink) {
+                    // is offline
+                    hideOfflineUnavailableProjects();
+                }
             }
 
             // * Attach event listeners for sending data to google analytics
@@ -100,7 +115,8 @@
                 // unselect card
                 $scope.selectedCardIndex = undefined;
                 $scope.selectedCard = undefined;
-                $location.url('');
+                // $location.url('');
+                window.history.replaceState({}, document.title, '/');
             }
             $event.cancelBubble = true; // prevent from firing again
         };
@@ -122,6 +138,22 @@
             $mdSidenav('left').toggle();
         };
 
+        $scope.installPWA = function() {
+            console.log('Installing PWA');
+
+            $scope.showPWAInstallButton = false;
+            $scope.deferredPromptEvent.prompt();
+            $scope.deferredPromptEvent.userChoice.then(function(choiceResult) {
+                // console.log(choiceResult.outcome) // 'dismissed' or 'accepted'
+                $scope.deferredPromptEvent = null;
+            });
+        };
+
+        window.addEventListener('beforeinstallprompt', function(e) {
+            e.preventDefault(); 
+            $scope.deferredPromptEvent = e; 
+        });
+
         window.addEventListener('offline', function() {
             $mdToast.show(
                 $mdToast
@@ -129,18 +161,7 @@
                     .textContent('You are offline 📴')
             );
 
-            const projects = document.querySelectorAll('.project')
-            caches.open('runtime-projects-media').then(projectsRuntimeCache => {
-                projects.forEach(project => {
-                    projectsRuntimeCache.keys().then(keys => {
-                        const projectMedia = keys.filter(key => key.url.indexOf(project.id) !== -1);
-                        if (!projectMedia.length) {
-                            // * reduce opacity of unavailable project pages
-                            project.classList.add('unavailable-offline');
-                        }
-                    });
-                });
-            });
+            hideOfflineUnavailableProjects();
         });
 
         window.addEventListener('online', function() {
@@ -154,6 +175,27 @@
                 project.classList.remove('unavailable-offline');
             });
         });
+        
+        const hideOfflineUnavailableProjects = () => {
+            const projects = document.querySelectorAll('.project')
+            caches.open('runtime-projects-media').then(projectsRuntimeCache => {
+                projects.forEach(project => {
+                    projectsRuntimeCache.keys().then(keys => {
+                        const projectMedia = keys.filter(key => key.url.indexOf(project.id) !== -1);
+                        if (!projectMedia.length) {
+                            // * reduce opacity of unavailable project pages
+                            project.classList.add('unavailable-offline');
+                        }
+                    });
+                });
+            });
+        }
+
+        // Detects if device is an iOS (including iOS 13) 
+        const isIos = /iPad|iPhone|iPod/.test(navigator.platform) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+
+        // Detects if device is in standalone mode
+        const isInStandaloneMode = 'standalone' in window.navigator && window.navigator.standalone;
         
     }
 

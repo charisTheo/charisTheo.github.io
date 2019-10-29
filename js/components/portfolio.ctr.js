@@ -192,7 +192,7 @@
         }
 
         // Detects if device is an iOS (including iOS 13) 
-        const isIos = /iPad|iPhone|iPod/.test(navigator.platform) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+        const isIos = /iPad|iPhone|iPod/.test(navigator.userAgent) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
 
         // Detects if device is in standalone mode
         const isInStandaloneMode = 'standalone' in window.navigator && window.navigator.standalone;

@@ -1,16 +1,52 @@
 [
     {
+        "title": "PWA Template",
+        "id": "ecommerce-pwa-template",
+        "subtitle": "E-commerce example PWA",
+        "description": "This template was created to help accelerate the adoption of PWAs in general and in the ecommerce environment in specific where various PWA capabilities apply. Some of those capabilities could be: installing the web app (Add to Home screen) to capture the user's device real estate, saving and synchronising offline add-to-cart requests, sending push notifications in the right context for higher user retention and conversion, detecting and prompting the user when has abandoned his/her shopping cart before checkout.",
+        "tools_used": ["Service Workers", "Workbox", "Webpack", "Push Notifications", "Background Sync", "IndexDB", "Polymer 3"],
+        "url": "/ecommerce-example-pwa/",
+        "github_repo_name": "ecommerce-example-pwa",
+        "share_description": "",
+        "frameworksImages": [
+            {"src": "/img/logos/workbox-logo.svg"},
+            {"src": "/img/logos/pwa-logo.svg"}
+        ],
+        "animation": {
+            "webm" : "/img/screenshots/ecommerce-pwa-template/TODO:.webm",
+            "mp4" : "/img/screenshots/ecommerce-pwa-template/TODO:.mp4"
+        },
+        "images": [
+            {
+                "src": "/img/screenshots/ecommerce-pwa-template/homepage.webp",
+                "fallback": "/img/screenshots/ecommerce-pwa-template/homepage.png"
+            },
+            {
+                "src": "/img/screenshots/ecommerce-pwa-template/install-prompt.webp",
+                "fallback": "/img/screenshots/ecommerce-pwa-template/install-prompt.png"
+            },
+            {
+                "src": "/img/screenshots/ecommerce-pwa-template/subscribing.webp",
+                "fallback": "/img/screenshots/ecommerce-pwa-template/subscribing.png"
+            },
+            {
+                "src": "/img/screenshots/ecommerce-pwa-template/notification-actions.webp",
+                "fallback": "/img/screenshots/ecommerce-pwa-template/notification-actions.png"
+            }
+        ] 
+    },
+    {
         "title": "Cooksurfing",
         "id": "cooksurfing",
         "subtitle": "Dinner Hosting platform",
         "description": "Cooksurfing is a web app dinner hosting platform based on the sharing economy concept",
-        "tools_used": ["Node.js", "Express.js", "MongoDB", "Mongoose.js", "GridFS", "Handlebars.js", "Bootstrap 4", "JWT", "Passport", "Service Workers", "Require AMD", "Gulp", "Nodemon", "Javascript", "Google Maps API", "CSS3", "SASS"],
+        "tools_used": ["Node.js", "Express.js", "MongoDB", "Mongoose.js", "GridFS", "Handlebars.js", "JWT", "Passport", "Service Workers", "Require AMD", "Gulp", "Nodemon", "Javascript", "Google Maps API", "CSS3", "SASS"],
         "url": "https://www.cooksurfing.eu/profile/mona",
         "github_repo_name": "cooksurfing",
         "share_description": "Check out my repository Cooksurfing web-app!",
         "frameworksImages": [
-            {"src": "/img/logos/node-logo.svg"},            
-            {"src": "/img/logos/pwa-logo.svg"}            
+            {"src": "/img/logos/node-logo.svg"},
+            {"src": "/img/logos/pwa-logo.svg"}
         ],
         "animation": {
             "webm" : "/img/screenshots/cooksurfing/requesting.webm",
@@ -141,7 +177,7 @@
         "subtitle": "Teaches you French vocabulary",
         "description": "The French Bot was created as a friendly interface which shows random french words on the screen and expects the translation in English. The French word is then translated using the Yandex translation API which returns the word in English. It is then compared to the user's input word and saves the result. The game repeats over a number of times and when the game finishes it outputs the progress of the user with the correct translation to each wrong answer.",
         "tools_used": ["Yandex API", "JavaScript", "csv"],
-        "url": "https://charistheo.github.io/french-bot",
+        "url": "/french-bot",
         "github_repo_name": "french-bot",
         "share_description": "Check out my repository French Bot for learning some French vocabulary!",
         "frameworksImages": [

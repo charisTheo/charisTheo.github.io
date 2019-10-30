@@ -17,7 +17,7 @@ function configureWorkbox() {
     workbox.precaching.precacheAndRoute([
   {
     "url": "index.html",
-    "revision": "9797e4a900436c8d8ea33419c0a760c1"
+    "revision": "fec365129248319f94bab3eebcf077f5"
   },
   {
     "url": "404.html",
@@ -45,11 +45,11 @@ function configureWorkbox() {
   },
   {
     "url": "styles/compressed/dark-mode.min.css",
-    "revision": "0f86485eb0e791e44c5e3d25f887a420"
+    "revision": "f0d2210712fca86d3daa18df585e4c05"
   },
   {
     "url": "styles/compressed/styles.min.css",
-    "revision": "72e6f7321b17cbcf51fe56a7e8fc5245"
+    "revision": "e5355598d7d0f5ee92f1cd91891a7079"
   },
   {
     "url": "fonts/material-icons.woff2",
@@ -61,7 +61,7 @@ function configureWorkbox() {
   },
   {
     "url": "js/bundle/bundle.min.js",
-    "revision": "cca56fe1a6073992872b5b1cbba935ef"
+    "revision": "71542c634a6499d356fad49efadc7b94"
   },
   {
     "url": "img/logo-ct.svg",
@@ -93,7 +93,7 @@ function configureWorkbox() {
   },
   {
     "url": "img/logos/pwa-logo.svg",
-    "revision": "81fb2670658359555b13c5c419c3407e"
+    "revision": "1b7e9a5e0a9271a4314f15c726169315"
   },
   {
     "url": "img/logos/react-logo.svg",
@@ -106,6 +106,10 @@ function configureWorkbox() {
   {
     "url": "img/logos/svg-logo.svg",
     "revision": "ee1a32d5c87be556270cc6412f21aceb"
+  },
+  {
+    "url": "img/logos/workbox-logo.svg",
+    "revision": "62bfdfdef899aa08de83783109200ffd"
   },
   {
     "url": "img/social-links/github-circle.svg",
@@ -165,7 +169,7 @@ function configureWorkbox() {
   },
   {
     "url": "projects-data.json",
-    "revision": "774904ab1a9bcba52c8a5d9641840dc4"
+    "revision": "57dc3f407eca1e0ed70c8e9dcfc9a650"
   },
   {
     "url": "manifest.json",

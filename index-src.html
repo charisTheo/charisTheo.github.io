@@ -304,8 +304,8 @@
             <md-card-title-text layout-align-gt-sm="center start">
               
               <span 
-                class="md-headline" 
-                md-colors="{color: nightMode ? 'accent' : 'primary'}"
+                class="md-headline ribbon-yellow ribbon-flip" 
+                md-colors="{color: 'primary'}"
               >
                 {{ project.title }}
                 <md-button 
@@ -325,7 +325,10 @@
                 </md-button>
               </span>
               
-              <span class="md-subhead" ng-style="nightMode && {'color': '#fff'}">{{ project.subtitle }}</span>
+              <span 
+                class="md-subhead ribbon-yellow"
+                md-colors="{color: 'primary'}"
+              >{{ project.subtitle }}</span>
             
             </md-card-title-text>
             <md-card-title-text class="md-margin" ng-show="$index == selectedCardIndex">

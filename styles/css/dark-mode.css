@@ -54,7 +54,7 @@
     .card md-card-title md-card-title-text .md-headline > a {
       color: rgb(105, 240, 174) !important;
     }
-    .card md-card-title md-card-title-text .md-subhead {
-      color: #ffffff !important;
-    }
 /* } */
+.material-icons {
+  color: #03dac5;
+}

@@ -195,7 +195,7 @@
         const isIos = /iPad|iPhone|iPod/.test(navigator.userAgent) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
 
         // Detects if device is in standalone mode
-        const isInStandaloneMode = 'standalone' in window.navigator && window.navigator.standalone;
+        const isInStandaloneMode = window.matchMedia('(display-mode: standalone)').matches || window.navigator.standalone === true;
         
     }
 

@@ -10,6 +10,7 @@ if (workbox) {
 }
 
 function configureWorkbox() {
+    // workbox.navigationPreload.enable();
     workbox.googleAnalytics.initialize();
     workbox.core.skipWaiting();
     workbox.core.clientsClaim();

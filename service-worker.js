@@ -10,6 +10,7 @@ if (workbox) {
 }
 
 function configureWorkbox() {
+    // workbox.navigationPreload.enable();
     workbox.googleAnalytics.initialize();
     workbox.core.skipWaiting();
     workbox.core.clientsClaim();
@@ -17,7 +18,7 @@ function configureWorkbox() {
     workbox.precaching.precacheAndRoute([
   {
     "url": "index.html",
-    "revision": "fec365129248319f94bab3eebcf077f5"
+    "revision": "a144ee197423f5e9f477dfbdb8bd1322"
   },
   {
     "url": "404.html",
@@ -45,11 +46,11 @@ function configureWorkbox() {
   },
   {
     "url": "styles/compressed/dark-mode.min.css",
-    "revision": "f0d2210712fca86d3daa18df585e4c05"
+    "revision": "b36620b65ea5d2e8b40c29b9b257894c"
   },
   {
     "url": "styles/compressed/styles.min.css",
-    "revision": "e5355598d7d0f5ee92f1cd91891a7079"
+    "revision": "e81fb9bcdb81b27daddd97729afdc273"
   },
   {
     "url": "fonts/material-icons.woff2",
@@ -169,7 +170,7 @@ function configureWorkbox() {
   },
   {
     "url": "projects-data.json",
-    "revision": "57dc3f407eca1e0ed70c8e9dcfc9a650"
+    "revision": "58e726272ea06bc1c9576fc1a9ef8f1a"
   },
   {
     "url": "manifest.json",

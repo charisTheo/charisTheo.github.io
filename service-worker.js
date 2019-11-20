@@ -18,7 +18,7 @@ function configureWorkbox() {
     workbox.precaching.precacheAndRoute([
   {
     "url": "index.html",
-    "revision": "a144ee197423f5e9f477dfbdb8bd1322"
+    "revision": "c8619cc8f987ce78ece6002ebd0994aa"
   },
   {
     "url": "404.html",
@@ -50,7 +50,7 @@ function configureWorkbox() {
   },
   {
     "url": "styles/compressed/styles.min.css",
-    "revision": "e81fb9bcdb81b27daddd97729afdc273"
+    "revision": "c175bc1b5cbd9367e7344b05bbc849c2"
   },
   {
     "url": "fonts/material-icons.woff2",
@@ -62,7 +62,7 @@ function configureWorkbox() {
   },
   {
     "url": "js/bundle/bundle.min.js",
-    "revision": "71542c634a6499d356fad49efadc7b94"
+    "revision": "c933b6767d06b08bed92a9f1ff8c06a7"
   },
   {
     "url": "img/logo-ct.svg",
@@ -174,7 +174,7 @@ function configureWorkbox() {
   },
   {
     "url": "manifest.json",
-    "revision": "8911375d9c07d7518628535364b2a092"
+    "revision": "6128161d679bd3cfd01cdeb38a308f62"
   },
   {
     "url": "manifest.webmanifest",

@@ -1,37 +1,37 @@
 [
     {
-        "title": "PWA Template",
-        "id": "ecommerce-pwa-template",
-        "subtitle": "E-commerce example PWA",
-        "description": "This template was created to help accelerate the adoption of PWAs in general and in the ecommerce environment in specific where various PWA capabilities apply. Some of those capabilities could be: installing the web app (Add to Home screen) to capture the user's device real estate, saving and synchronising offline add-to-cart requests, sending push notifications in the right context for higher user retention and conversion, detecting and prompting the user when has abandoned his/her shopping cart before checkout.",
+        "title": "PWA Recipes",
+        "id": "pwa-recipes",
+        "subtitle": "PWA examples for every web-app",
+        "description": "These templates/examples were created to help accelerate the adoption of PWAs in general and the e-commerce sector in specific where various PWA capabilities apply. Some of those capabilities could be: installing the web app (Add to Home screen) to capture the user's device real estate, saving and synchronising offline add-to-cart requests, sending push notifications in the right context for higher user retention and conversion, detecting and prompting the user when has abandoned his/her shopping cart before checkout.",
         "tools_used": ["Service Workers", "Workbox", "Webpack", "Push Notifications", "Background Sync", "IndexDB", "Polymer 3"],
-        "url": "/ecommerce-example-pwa/",
-        "github_repo_name": "ecommerce-example-pwa",
-        "share_description": "",
+        "url": "https://pwa.recipes/",
+        "github_repo_name": "pwa-recipes",
+        "share_description": "PWA Recipes 🥘 for every chef developer 👨‍🍳👩‍🍳",
         "frameworksImages": [
             {"src": "/img/logos/workbox-logo.svg"},
             {"src": "/img/logos/pwa-logo.svg"}
         ],
         "animation": {
-            "webm" : "/img/screenshots/ecommerce-pwa-template/TODO:.webm",
-            "mp4" : "/img/screenshots/ecommerce-pwa-template/TODO:.mp4"
+            "webm" : "/img/screenshots/pwa-recipes/TODO:.webm",
+            "mp4" : "/img/screenshots/pwa-recipes/TODO:.mp4"
         },
         "images": [
             {
-                "src": "/img/screenshots/ecommerce-pwa-template/homepage.webp",
-                "fallback": "/img/screenshots/ecommerce-pwa-template/homepage.png"
+                "src": "/img/screenshots/pwa-recipes/homepage.webp",
+                "fallback": "/img/screenshots/pwa-recipes/homepage.png"
             },
             {
-                "src": "/img/screenshots/ecommerce-pwa-template/install-prompt.webp",
-                "fallback": "/img/screenshots/ecommerce-pwa-template/install-prompt.png"
+                "src": "/img/screenshots/pwa-recipes/install-prompt.webp",
+                "fallback": "/img/screenshots/pwa-recipes/install-prompt.png"
             },
             {
-                "src": "/img/screenshots/ecommerce-pwa-template/subscribing.webp",
-                "fallback": "/img/screenshots/ecommerce-pwa-template/subscribing.png"
+                "src": "/img/screenshots/pwa-recipes/subscribing.webp",
+                "fallback": "/img/screenshots/pwa-recipes/subscribing.png"
             },
             {
-                "src": "/img/screenshots/ecommerce-pwa-template/notification-actions.webp",
-                "fallback": "/img/screenshots/ecommerce-pwa-template/notification-actions.png"
+                "src": "/img/screenshots/pwa-recipes/notification-actions.webp",
+                "fallback": "/img/screenshots/pwa-recipes/notification-actions.png"
             }
         ] 
     },

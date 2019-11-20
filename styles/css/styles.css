@@ -49,7 +49,6 @@ body.ng-scope {
     height: auto; 
     overflow-x: hidden;
     overflow-y: auto;
-    font-family: 'Michroma', sans-serif;
     margin: 0;
     -webkit-tap-highlight-color: #03dac58f;
     background-color: #eee;
@@ -386,6 +385,17 @@ frameworks-images .banner-image {
   left: -2px;
 }
 
+@media all and (display-mode: browser) {
+  body {
+    font-family: 'Michroma', sans-serif;
+  }
+}
+/* * If launched in standalone mode use system fonts */
+@media all and (display-mode: standalone) {
+  body {
+    font-family: "system-ui", "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  }
+}
 
 /***************************
 ****************************

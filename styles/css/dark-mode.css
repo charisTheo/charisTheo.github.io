@@ -37,10 +37,12 @@
 }
 /* @media (prefers-color-scheme: dark) { */
     body, 
-    md-card-content md-content,
     md-card-content md-content .md-subheader  {
       background-color: #303030 !important;
       color: #fff !important;
+    }
+    md-card-content md-content {
+      background-color: transparent !important;
     }
   
     .card {

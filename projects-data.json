@@ -13,8 +13,8 @@
             {"src": "/img/logos/pwa-logo.svg"}
         ],
         "animation": {
-            "webm" : "/img/screenshots/pwa-recipes/TODO:.webm",
-            "mp4" : "/img/screenshots/pwa-recipes/TODO:.mp4"
+            "webm" : "/img/screenshots/pwa-recipes/offline-pages-mobile-example.webm",
+            "mp4" : "/img/screenshots/pwa-recipes/offline-pages-mobile-example.mp4"
         },
         "images": [
             {

@@ -1,4 +1,4 @@
-importScripts('https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js');
+importScripts('https://storage.googleapis.com/workbox-cdn/releases/5.0.0/workbox-sw.js');
 
 if (workbox) {
     console.log(`Yay! Workbox is loaded 🎉`);
@@ -10,19 +10,21 @@ if (workbox) {
 }
 
 function configureWorkbox() {
-    // workbox.navigationPreload.enable();
+    workbox.navigationPreload.enable();
+
     workbox.googleAnalytics.initialize();
+
     workbox.core.skipWaiting();
     workbox.core.clientsClaim();
     
     workbox.precaching.precacheAndRoute([
   {
     "url": "index.html",
-    "revision": "c8619cc8f987ce78ece6002ebd0994aa"
+    "revision": "5b7a8baca48426d315814d15653dfbc8"
   },
   {
     "url": "404.html",
-    "revision": "649bec9101046fe8d11183fdde7a271e"
+    "revision": "f6e9df83957e47afaf25f30fb3f79cac"
   },
   {
     "url": "partials/compressed/frameworksImages.html",
@@ -34,7 +36,7 @@ function configureWorkbox() {
   },
   {
     "url": "partials/compressed/sidenavList.html",
-    "revision": "cc4cd3f4333a1c1d5932162589a2f8c5"
+    "revision": "a8d753e73ae4c03a5814ba7a19a39a2a"
   },
   {
     "url": "partials/compressed/socialLinks.html",
@@ -46,11 +48,11 @@ function configureWorkbox() {
   },
   {
     "url": "styles/compressed/dark-mode.min.css",
-    "revision": "b36620b65ea5d2e8b40c29b9b257894c"
+    "revision": "f47198665a9c6a748ec89d6a7bab6610"
   },
   {
     "url": "styles/compressed/styles.min.css",
-    "revision": "c175bc1b5cbd9367e7344b05bbc849c2"
+    "revision": "eb4691851ab82b760965a898405ee6ef"
   },
   {
     "url": "fonts/material-icons.woff2",
@@ -62,7 +64,7 @@ function configureWorkbox() {
   },
   {
     "url": "js/bundle/bundle.min.js",
-    "revision": "c933b6767d06b08bed92a9f1ff8c06a7"
+    "revision": "805200ded3bba1df34791711de4e994f"
   },
   {
     "url": "img/logo-ct.svg",
@@ -157,6 +159,10 @@ function configureWorkbox() {
     "revision": "6c8a9e3ace168a7d71e4e69c00b8aeb0"
   },
   {
+    "url": "favicons/maskable_icon.png",
+    "revision": "f12757db949a6f007e31f7a458f2ab2b"
+  },
+  {
     "url": "favicons/mstile-150x150.png",
     "revision": "c30998cdf86dace44478d667eaf8753f"
   },
@@ -170,30 +176,16 @@ function configureWorkbox() {
   },
   {
     "url": "projects-data.json",
-    "revision": "58e726272ea06bc1c9576fc1a9ef8f1a"
+    "revision": "6561584e3e898f112d874bd08c79ae1e"
   },
   {
     "url": "manifest.json",
-    "revision": "6128161d679bd3cfd01cdeb38a308f62"
-  },
-  {
-    "url": "manifest.webmanifest",
-    "revision": "8911375d9c07d7518628535364b2a092"
+    "revision": "d64e10e28e5f724a650a415d7e864b39"
   }
 ]);
     
     workbox.routing.registerRoute(
-        /\.js$/,
-        new workbox.strategies.StaleWhileRevalidate()
-    );
-        
-    workbox.routing.registerRoute(
-        /\.css$/,
-        new workbox.strategies.StaleWhileRevalidate()
-    );
-        
-    workbox.routing.registerRoute(
-        /\.html$/,
+        /\.(?:js|css|html)$/,
         new workbox.strategies.StaleWhileRevalidate()
     );
 

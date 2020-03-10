@@ -18,6 +18,7 @@
         $scope.showPWAInstallButton = false;
         $scope.deferredPromptEvent = undefined;
         $scope.documentLoaded = false;
+        $scope.twitterButtonInitialised = false;
         $scope.cardToggle = false;
         $scope.selectedCardIndex = undefined;
         $scope.selectedCard = undefined;
@@ -77,11 +78,24 @@
                     console.log('Service Worker registration failed with ' + error);
                 });
 
-                if (!navigator.connection.downlink) {
-                    // is offline
-                    hideOfflineUnavailableProjects();
+            }
+
+            // * check network status and handle offline status
+            if (!navigator.onLine) {
+                handleOfflineEvent();
+            } else {
+                // * fetch Twitter script for follow button
+                var twitterButtonScript = document.createElement("script");
+                twitterButtonScript.type = "text/javascript"
+                twitterButtonScript.src = "https://platform.twitter.com/widgets.js";
+                twitterButtonScript.charset = "utf-8";
+                twitterButtonScript.async = true;
+                document.querySelector('head').appendChild(twitterButtonScript);
+                twitterButtonScript.onload = function() {
+                    $scope.twitterButtonInitialised = true;
                 }
             }
+
 
             // * Attach event listeners for sending data to google analytics
             setTimeout(() => {
@@ -144,7 +158,8 @@
             $scope.showPWAInstallButton = false;
             $scope.deferredPromptEvent.prompt();
             $scope.deferredPromptEvent.userChoice.then(function(choiceResult) {
-                // console.log(choiceResult.outcome) // 'dismissed' or 'accepted'
+                // * track PWA installs
+                ga('send', 'event', 'A2HS', choiceResult.outcome); // 'dismissed' or 'accepted'
                 $scope.deferredPromptEvent = null;
             });
         };
@@ -154,27 +169,8 @@
             $scope.deferredPromptEvent = e; 
         });
 
-        window.addEventListener('offline', function() {
-            $mdToast.show(
-                $mdToast
-                    .simple()
-                    .textContent('You are offline 📴')
-            );
-
-            hideOfflineUnavailableProjects();
-        });
-
-        window.addEventListener('online', function() {
-            $mdToast.show(
-                $mdToast
-                    .simple()
-                    .textContent('You are back online! 🎉')
-            );
-            const projects = document.querySelectorAll('.project');
-            projects.forEach(project => {
-                project.classList.remove('unavailable-offline');
-            });
-        });
+        window.addEventListener('offline', () => { handleOfflineEvent() });
+        window.addEventListener('online', () => { handleOnlineEvent() });
         
         const hideOfflineUnavailableProjects = () => {
             const projects = document.querySelectorAll('.project')
@@ -188,6 +184,25 @@
                         }
                     });
                 });
+            });
+        }
+
+        const handleOfflineEvent = () => {
+            $mdToast.show(
+                $mdToast.simple().textContent('You are offline 📴')
+            );
+
+            hideOfflineUnavailableProjects();
+        }
+
+        const handleOnlineEvent = () => {
+            $mdToast.show(
+                $mdToast.simple().textContent('You are back online! 🎉')
+            );
+
+            const projects = document.querySelectorAll('.project');
+            projects.forEach(project => {
+                project.classList.remove('unavailable-offline');
             });
         }
 

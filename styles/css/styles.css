@@ -169,6 +169,12 @@ main .projects-container {
     margin-right: 15px;
   } */
 }
+.twitter-button-container {
+  visibility: hidden;
+}
+.twitter-button-container.show {
+  visibility: visible;
+}
 
 side-nav-list {
   width: 100%;
@@ -293,13 +299,13 @@ frameworks-images::before {
 frameworks-images .banner-image {
   top: 0;
   position: absolute;
-  width: auto;
+  width: 100%;
+  max-width: 100%;
   max-height: 100%;
   padding: 15px;
   left: 0;
   will-change: transform;
   transform: translateZ(0);
-  max-width: 100%
 }
 .card .description {
   z-index: 10; 

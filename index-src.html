@@ -17,6 +17,7 @@
   <link rel="canonical" href="https://charistheo.io">
 
   <link rel="preconnect" href="https://fonts.gstatic.com" />
+  <link rel="preconnect" href="https://www.google-analytics.com/" />
 
   <meta name="msapplication-TileColor" content="#ffc40d">
   <meta name="msapplication-config" content="./browserconfig.xml">
@@ -25,7 +26,6 @@
   <link rel="apple-touch-icon" sizes="180x180" href="./favicons/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="./favicons/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="./favicons/favicon-16x16.png">
-  <link rel="manifest" href="./manifest.webmanifest">
   <link rel="manifest" href="./manifest.json">
   
   <!-- inlined page-loader.css for priority -->
@@ -215,11 +215,14 @@
       <!-- TOP NAV OPTIONS -->
       <md-list class="top-nav-options" flex layout="row">
         <md-list-item layout="row" class="noright">
-          <!-- TODO -->
-          <!-- <a href="https://twitter.com/charisTheo_dev?ref_src=twsrc%5Etfw" ng-if="documentLoaded" class="twitter-follow-button" data-show-count="false">
-            Follow @charisTheo_dev
-          </a>
-          <script async defer src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> -->
+          <div class="twitter-button-container" ng-class="{'show': twitterButtonInitialised}">
+            <a 
+              href="https://twitter.com/charisTheo_dev?ref_src=twsrc%5Etfw" 
+              class="twitter-follow-button" 
+              data-show-count="false">
+              Follow me
+            </a>
+          </div>
 
           <div flex></div>
           <!-- * Install button -->
@@ -351,7 +354,7 @@
           </md-card-content>
         </md-card-content>
           <md-card-content flex-gt-xs='100' ng-show="$index == selectedCardIndex">
-              <md-content class="md-padding" ng-class="{'night-mode': nightMode}">
+              <md-content class="md-padding">
                 <md-subheader class="md-no-sticky" ng-class="{'night-mode': nightMode}">Tools used</md-subheader>
                     <md-chips ng-model="project.tools_used" readonly='true'>
                         <md-chip-template>

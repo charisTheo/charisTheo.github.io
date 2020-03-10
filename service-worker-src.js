@@ -1,4 +1,4 @@
-importScripts('https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js');
+importScripts('https://storage.googleapis.com/workbox-cdn/releases/5.0.0/workbox-sw.js');
 
 if (workbox) {
     console.log(`Yay! Workbox is loaded 🎉`);
@@ -10,25 +10,17 @@ if (workbox) {
 }
 
 function configureWorkbox() {
-    // workbox.navigationPreload.enable();
+    workbox.navigationPreload.enable();
+
     workbox.googleAnalytics.initialize();
+
     workbox.core.skipWaiting();
     workbox.core.clientsClaim();
     
     workbox.precaching.precacheAndRoute([]);
     
     workbox.routing.registerRoute(
-        /\.js$/,
-        new workbox.strategies.StaleWhileRevalidate()
-    );
-        
-    workbox.routing.registerRoute(
-        /\.css$/,
-        new workbox.strategies.StaleWhileRevalidate()
-    );
-        
-    workbox.routing.registerRoute(
-        /\.html$/,
+        /\.(?:js|css|html)$/,
         new workbox.strategies.StaleWhileRevalidate()
     );
 

@@ -144,8 +144,7 @@ gulp.task('service-worker', function(done) {
                 'favicons/*',
                 'favicon.ico',
                 'projects-data.json',
-                'manifest.json',
-                'manifest.webmanifest'
+                'manifest.json'
             ]
         }).then(resources => {
             console.log(`Injected ${resources.count} resources for precaching, ` +

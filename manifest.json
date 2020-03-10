@@ -1,7 +1,7 @@
 {
-    "name": "charisTheo",
+    "name": "charisTheo Portfolio",
     "short_name": "charisTheo",
-    "description": "My portfolio website",
+    "description": "A Portfolio Website, listing past projects and tools developed by Charis Theo.",
     "start_url": ".",
     "lang": "en-GB",
     "icons": [
@@ -19,6 +19,12 @@
             "src": "./favicons/logo-ct-512.png",
             "sizes": "512x512",
             "type": "image/png"
+        },
+        {
+            "src": "./favicons/maskable_icon.png",
+            "sizes": "196x196",
+            "type": "image/png",
+            "purpose": "maskable"
         }
     ],
     "serviceworker": {

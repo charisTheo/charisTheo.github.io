@@ -3,13 +3,12 @@ importScripts('https://storage.googleapis.com/workbox-cdn/releases/5.0.0/workbox
 if (workbox) {
     console.log(`Yay! Workbox is loaded 🎉`);
     configureWorkbox();
-  
-  } else {
+} else {
     console.log(`Boo! Workbox didn't load 😬`);
-    
 }
 
 function configureWorkbox() {
+    self.__WB_DISABLE_DEV_LOGS = true;
     workbox.navigationPreload.enable();
 
     workbox.googleAnalytics.initialize();

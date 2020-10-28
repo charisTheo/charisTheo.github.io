@@ -3,13 +3,12 @@ importScripts('https://storage.googleapis.com/workbox-cdn/releases/5.0.0/workbox
 if (workbox) {
     console.log(`Yay! Workbox is loaded 🎉`);
     configureWorkbox();
-  
-  } else {
+} else {
     console.log(`Boo! Workbox didn't load 😬`);
-    
 }
 
 function configureWorkbox() {
+    self.__WB_DISABLE_DEV_LOGS = true;
     workbox.navigationPreload.enable();
 
     workbox.googleAnalytics.initialize();
@@ -20,7 +19,7 @@ function configureWorkbox() {
     workbox.precaching.precacheAndRoute([
   {
     "url": "index.html",
-    "revision": "5b7a8baca48426d315814d15653dfbc8"
+    "revision": "3dc23255760c2b36a508c4d569a825ca"
   },
   {
     "url": "404.html",
@@ -64,7 +63,7 @@ function configureWorkbox() {
   },
   {
     "url": "js/bundle/bundle.min.js",
-    "revision": "805200ded3bba1df34791711de4e994f"
+    "revision": "b1a21f95cc204ec4609346c4415226fd"
   },
   {
     "url": "img/logo-ct.svg",
@@ -176,7 +175,7 @@ function configureWorkbox() {
   },
   {
     "url": "projects-data.json",
-    "revision": "6561584e3e898f112d874bd08c79ae1e"
+    "revision": "b9038263c965564852947b5446e2b3f8"
   },
   {
     "url": "manifest.json",

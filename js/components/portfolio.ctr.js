@@ -102,16 +102,24 @@
                 document.querySelectorAll('.md-button').forEach(button => {
                     button.addEventListener('click', (event) => {
                         const data = event.currentTarget.getAttribute('data-analytics');
+                        if (!data) {
+                            return
+                        }
                         const dataArr = data.split(' ');
                         const eventCategory = dataArr.splice(0, 1)[0];
                         const eventLabel = dataArr.join(' ');
 
-                        window.ga('send', {
-                            hitType: 'event',
-                            eventAction: 'click',
-                            eventCategory,
-                            eventLabel
-                        });
+                        gtag(
+                            'event', 
+                            'click', 
+                            {[eventCategory]: eventLabel}
+                        )
+                        // window.ga('send', {
+                        //     hitType: 'event',
+                        //     eventAction: 'click',
+                        //     eventCategory,
+                        //     eventLabel
+                        // });
                     });
                 });
             }, 1000);

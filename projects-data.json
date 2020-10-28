@@ -72,14 +72,14 @@
         ] 
     },
     {
-        "title": "Be Romantic",
-        "id": "beromantic",
+        "title": "IreneBielsa.com",
+        "id": "irenebielsa",
         "subtitle": "Fashion Designer's website",
         "description": "This statically generated website was built as a result of a freelancing project. The client was a fashion designer and so showing her collections' pictures in high resolution was an important matter. The website is loaded with pictures so I needed to use something more sophisticated in order to compensate for the picture download speed and quality. So I have used Gatbsy and the gatsby sharp plugin in order to server quality adaptive images for low speed networks without losing the quality or damaging the user experience.",
         "tools_used": ["Gatsby.js", "React.js", "GraphQL", "Prismic", "CMS", "Node.js", "Javascript", "ES6", "CSS3"],
-        "url": "https://beromantic.es",
+        "url": "https://www.irenebielsa.com/",
         "github_repo_name": "beromantic",
-        "share_description": "Check out this cool fashion designer site built by Gatsby.js!",
+        "share_description": "Check out IreneBielsa.com, a fashion designer site built by Gatsby.js!",
         "frameworksImages": [
             {"src": "/img/logos/graphql-logo.svg"},
             {"src": "/img/logos/react-logo.svg"}

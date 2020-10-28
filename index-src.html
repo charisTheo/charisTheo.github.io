@@ -425,33 +425,47 @@
 
   <script async defer src="./js/bundle/bundle.min.js"></script>
 
-  <!-- PeoplePerHour Profile Widget -->
-  <!-- <script async defer type="text/javascript">
-    (function(d, s) {
-        var useSSL = 'https:' == document.location.protocol;
-        var js, where = d.getElementsByTagName(s)[0],
-        js = d.createElement(s);
-        js.src = (useSSL ? 'https:' : 'http:') +  '//www.peopleperhour.com/hire/1866524758/1523363.js?width=336&height=142&orientation=vertical&theme=dark&rnd='+parseInt(Math.random()*10000, 10);
-        try { where.parentNode.insertBefore(js, where); } catch (e) { if (typeof console !== 'undefined' && console.log && e.stack) { console.log(e.stack); } }
-    }(document, 'script'));
-  </script> -->
-
   <!-- Google Analytics -->
-  <script async defer>
+  <!-- <script async defer>
     window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
     ga('create', 'UA-135267871-1', 'auto');
     ga('send', 'pageview');
   </script>
-  <script async defer src='https://www.google-analytics.com/analytics.js'></script>
+  <script async defer src='https://www.google-analytics.com/analytics.js'></script> -->
 
-  <!-- <script async defer src="https://www.googletagmanager.com/gtag/js?id=UA-135267871-1"></script>
+  <script async defer src="https://www.googletagmanager.com/gtag/js?id=UA-135267871-1"></script>
   <script async defer>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
     gtag('config', 'UA-135267871-1');
-  </script> -->
+  </script>
 
+  <script defer src="https://unpkg.com/web-vitals@0.2.4/dist/web-vitals.es5.umd.min.js"></script>
+  <script>
+    function sendToGoogleAnalytics({name, delta, id}) {
+      gtag('event', name, {
+        event_category: 'Web Vitals',
+        // Google Analytics metrics must be integers, so the value is rounded.
+        // For CLS the value is first multiplied by 1000 for greater precision
+        // (note: increase the multiplier for greater precision if needed).
+        value: Math.round(name === 'CLS' ? delta * 1000 : delta),
+        // The `id` value will be unique to the current page load. When sending
+        // multiple values from the same page (e.g. for CLS), Google Analytics can
+        // compute a total by grouping on this ID (note: requires `eventLabel` to
+        // be a dimension in your report).
+        event_label: id,
+        // Use a non-interaction event to avoid affecting bounce rate.
+        non_interaction: true,
+      });
+    }
+
+    addEventListener('DOMContentLoaded', function() {
+      webVitals.getCLS(sendToGoogleAnalytics);
+      webVitals.getFID(sendToGoogleAnalytics);
+      webVitals.getLCP(sendToGoogleAnalytics);
+    });
+  </script>
 
 </body>
 

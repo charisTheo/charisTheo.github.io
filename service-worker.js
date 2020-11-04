@@ -19,7 +19,7 @@ function configureWorkbox() {
     workbox.precaching.precacheAndRoute([
   {
     "url": "index.html",
-    "revision": "a431639c84bc4b4cdb40be81424b4576"
+    "revision": "03f1f4d1dddc1925033d11e8db58a438"
   },
   {
     "url": "404.html",
